@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lab 4 bài 3</title>
+	<script>
+		var a= null;
+		function mocuaso() {
+			a= window.open("https://www.pepsico.com/","PEPSI","width: 500px ; height: 500px");
+		}
+		function dongcuaso() {
+			a.close();
+		}
+		function kiemtra() {
+			if (a.closed == true) {
+				document.write("Cửa sổ đã đóng");
+			}else{
+				document.write("Cửa sổ chưa đóng");
+			}
+		}
+	</script>
+</head>
+<body>
+	<button onclick="mocuaso();">Mở cửa sổ </button>
+	<button onclick="dongcuaso();">Đóng cửa số </button>
+	<button onclick="kiemtra();">Kiểm tra cửa số mới đã đóng hay chưa</button>
+</body>
+</html>
