@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 29, 2019 lúc 06:53 AM
--- Phiên bản máy phục vụ: 10.3.16-MariaDB
--- Phiên bản PHP: 7.3.6
+-- Thời gian đã tạo: Th10 30, 2019 lúc 06:46 AM
+-- Phiên bản máy phục vụ: 10.4.8-MariaDB
+-- Phiên bản PHP: 7.1.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -55,6 +55,13 @@ CREATE TABLE `films` (
   `url` varchar(255) NOT NULL,
   `active` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `films`
+--
+
+INSERT INTO `films` (`id`, `name`, `series`, `year`, `categories`, `author`, `banner`, `thumbnail`, `content`, `quantity`, `status`, `views`, `url`, `active`) VALUES
+(1, 'doraemon', '', 1985, '', 'Jeffrey Grellman ', '', '', 'Bộ phim kể về một chú mèo máy tên là Doraemon đến từ thế kỉ 22', 0, 'Đang công chiếu', 11, '', 1);
 
 -- --------------------------------------------------------
 
@@ -120,6 +127,15 @@ CREATE TABLE `roles` (
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Đang đổ dữ liệu cho bảng `roles`
+--
+
+INSERT INTO `roles` (`id`, `status`, `name`) VALUES
+(1, -1, 'đã khóa'),
+(2, 0, 'thành viên'),
+(3, 1, 'admin');
+
 -- --------------------------------------------------------
 
 --
@@ -147,12 +163,19 @@ CREATE TABLE `users` (
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `phone` varchar(10) NOT NULL,
   `email` varchar(255) NOT NULL,
   `avatar` varchar(255) NOT NULL,
   `age` varchar(50) NOT NULL,
   `role_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`, `name`, `email`, `avatar`, `age`, `role_id`) VALUES
+(1, 'nguyenvana', '123456', 'nguyễn văn a', 'haivdph@gmail.com', '', '19', 0),
+(2, 'nguyenvanb', '123123', 'nguyễn văn b', 'bbb@gmail.com', '', '19', 0);
 
 -- --------------------------------------------------------
 
@@ -217,8 +240,7 @@ ALTER TABLE `roles`
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`),
-  ADD UNIQUE KEY `email` (`email`),
-  ADD UNIQUE KEY `phone` (`phone`);
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Chỉ mục cho bảng `years`
@@ -240,7 +262,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT cho bảng `films`
 --
 ALTER TABLE `films`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `follows`
@@ -270,13 +292,13 @@ ALTER TABLE `reviews`
 -- AUTO_INCREMENT cho bảng `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `years`
