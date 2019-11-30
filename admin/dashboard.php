@@ -31,7 +31,7 @@ error_reporting(0);
 						<span id="notification">0</span>
 					</li>
 					<li>
-						<img class="avatar" src="../images/avatar.jpg">
+						<img class="avatar" src="../assets/avatars/avatar.jpg">
 						<span>xin chào</span>
 						<b><?php echo $_SESSION['admin'];?></b>
 					</li>
@@ -41,7 +41,7 @@ error_reporting(0);
 			<div class="sidebar">
 				<ul>
 					<li class="active">
-						<a href="quanly.php"><i class="fas fa-home"></i>Dashboard</a>
+						<a href="dashboard.php"><i class="fas fa-home"></i>Dashboard</a>
 					</li>
 					<li>
 						<a href="addfilms.php"><i class="fas fa-plus"></i>Thêm Phim</a>

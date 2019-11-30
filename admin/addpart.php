@@ -38,7 +38,7 @@ if (isset($_POST['addpart'])) {
 <head>
 	<meta charset="UTF-8">
 	<title>Quản lý</title>
-	<link rel="icon"href="../images/logo.png">
+	<link rel="icon"href="../assets/logo.png">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script type="text/javascript" src="js/vue.js"></script>
 	<link rel="stylesheet" href="../font-awesome/css/svg-with-js.css">
@@ -52,7 +52,7 @@ if (isset($_POST['addpart'])) {
 <body>
 	<div id="wrap">
 			<div class="head">
-				<img src="../images/logo.png">
+				<img src="../assets/logo.png">
 				<a href="logout.php">logout</a>
 				<ul>
 					<li>
@@ -60,7 +60,7 @@ if (isset($_POST['addpart'])) {
 						<span id="notification">0</span>
 					</li>
 					<li>
-						<img class="avatar" src="../images/avatar.jpg">
+						<img class="avatar" src="../assets/avatars/avatar.jpg">
 						<span>xin chào</span>
 						<b><?php echo $_SESSION['admin'];?></b>
 					</li>
@@ -70,7 +70,7 @@ if (isset($_POST['addpart'])) {
 			<div class="sidebar">
 				<ul>
 					<li>
-						<a href="quanly.php"><i class="fas fa-home"></i>Dashboard</a>
+						<a href="dashboard.php"><i class="fas fa-home"></i>Dashboard</a>
 					</li>
 					<li>
 						<a href="addfilms.php"><i class="fas fa-plus"></i>Thêm Phim</a>

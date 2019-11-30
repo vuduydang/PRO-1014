@@ -39,7 +39,7 @@ $folder =preg_replace('([\s]+)', '-', strip_tags($folder1)); //xóa khoảng tr�
 	if ($stmt->rowCount()>0) {
 		// mkdir($creatFolder,0777,true); //tạo folder
 		// file_put_contents($files,''); //tạo file theo tập phim
-		header("location: quanly.php");
+		header("location: dashboard.php");
 	}else {
 		echo '<script>alert("Thêm Thấi Bại");</script>';
 	}
@@ -85,7 +85,7 @@ $folder =preg_replace('([\s]+)', '-', strip_tags($folder1)); //xóa khoảng tr�
 			<div class="sidebar">
 				<ul>
 					<li>
-						<a href="quanly.php"><i class="fas fa-home"></i>Dashboard</a>
+						<a href="dashboard.php"><i class="fas fa-home"></i>Dashboard</a>
 					</li>
 					<li class="active">
 						<a href="addfilms.php"><i class="fas fa-plus"></i>Thêm Phim</a>
