@@ -1,9 +1,9 @@
 <?php
-require("../config.php");
+require("../commons/db.php");
 session_start();
-if (isset($_SESSION['admin'])==false) {
-	header("location: index.php");
-}
+// if (isset($_SESSION['admin'])==false) {
+// 	header("location: index.php");
+// }
 if (isset($_POST['add'])) {
 	
 	// --------------//
