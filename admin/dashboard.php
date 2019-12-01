@@ -1,5 +1,11 @@
 <?php
 error_reporting(0);
+session_start();
+require_once("../commons/constants.php");
+require_once("../commons/db.php");
+require_once("../commons/helpers.php");
+
+
 ?>
 
 
@@ -9,22 +15,22 @@ error_reporting(0);
 <head>
 	<meta charset="UTF-8">
 	<title>Quản lý</title>
-	<link rel="icon"href="../images/logo.png">
+	<link rel="icon"href="../assets/ico.png">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script type="text/javascript" src="js/vue.js"></script>
-	<link rel="stylesheet" href="../font-awesome/css/svg-with-js.css">
-	<link rel="stylesheet" href="../font-awesome/css/all.min.css">
-	<link rel="stylesheet" href="../font-awesome/css/brands.min.css">
-	<link rel="stylesheet" href="../font-awesome/css/regular.min.css">
-	<link rel="stylesheet" href="../font-awesome/css/svg-with-js.css">
-	<link rel="stylesheet" href="../font-awesome/css/solid.min.css">
-	<link rel="stylesheet" href="../font-awesome/css/v4-shims.min.css">
+	<link rel="stylesheet" href="../public/font-awesome/css/svg-with-js.css">
+	<link rel="stylesheet" href="../public/font-awesome/css/all.min.css">
+	<link rel="stylesheet" href="../public/font-awesome/css/brands.min.css">
+	<link rel="stylesheet" href="../public/font-awesome/css/regular.min.css">
+	<link rel="stylesheet" href="../public/font-awesome/css/svg-with-js.css">
+	<link rel="stylesheet" href="../public/font-awesome/css/solid.min.css">
+	<link rel="stylesheet" href="../public/font-awesome/css/v4-shims.min.css">
 </head>
 <body>
 	<div id="wrap">
 			<div class="head">
-				<img src="../images/logo.png">
-				<a href="logout.php">logout</a>
+				<img src="../assets/logo.png">
+				<a href="logout.php"><i class="fas fa-sign-out-alt"></i></a>
 				<ul>
 					<li>
 						<i class="far fa-bell"></i>
@@ -33,7 +39,7 @@ error_reporting(0);
 					<li>
 						<img class="avatar" src="../assets/avatars/avatar.jpg">
 						<span>xin chào</span>
-						<b><?php echo $_SESSION['admin'];?></b>
+						<b>- <?php echo $_SESSION[AUTH_YF]['name'];?></b>
 					</li>
 				</ul>
 			</div>

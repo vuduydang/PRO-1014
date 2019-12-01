@@ -1,9 +1,9 @@
 <?php
-require("../commons/db.php");
 session_start();
-// if (isset($_SESSION['admin'])==false) {
-// 	header("location: index.php");
-// }
+require_once("../commons/constants.php");
+require_once("../commons/db.php");
+require_once("../commons/helpers.php");
+
 if (isset($_POST['add'])) {
 	
 	// --------------//
@@ -11,7 +11,7 @@ if (isset($_POST['add'])) {
 	if ($_FILES['avatar']['name'] != "") {
 		$avatar = time().$_FILES['avatar']['name'];
 
-		move_uploaded_file($_FILES['avatar']['tmp_name'], "../images/".$avatar);
+		move_uploaded_file($_FILES['avatar']['tmp_name'], "../assets/".$avatar);
 	}else {
 		$avatar = "null.png";
 	}
@@ -50,16 +50,16 @@ $folder =preg_replace('([\s]+)', '-', strip_tags($folder1)); //xóa khoảng tr�
 <head>
 	<meta charset="UTF-8">
 	<title>Quản lý</title>
-	<link rel="icon"href="../images/logo.png">
+	<link rel="icon"href="../assets/ico.png">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script type="text/javascript" src="js/vue.js"></script>
-	<link rel="stylesheet" href="../font-awesome/css/svg-with-js.css">
-	<link rel="stylesheet" href="../font-awesome/css/all.min.css">
-	<link rel="stylesheet" href="../font-awesome/css/brands.min.css">
-	<link rel="stylesheet" href="../font-awesome/css/regular.min.css">
-	<link rel="stylesheet" href="../font-awesome/css/svg-with-js.css">
-	<link rel="stylesheet" href="../font-awesome/css/solid.min.css">
-	<link rel="stylesheet" href="../font-awesome/css/v4-shims.min.css">
+	<link rel="stylesheet" href="../public/font-awesome/css/svg-with-js.css">
+	<link rel="stylesheet" href="../public/font-awesome/css/all.min.css">
+	<link rel="stylesheet" href="../public/font-awesome/css/brands.min.css">
+	<link rel="stylesheet" href="../public/font-awesome/css/regular.min.css">
+	<link rel="stylesheet" href="../public/font-awesome/css/svg-with-js.css">
+	<link rel="stylesheet" href="../public/font-awesome/css/solid.min.css">
+	<link rel="stylesheet" href="../public/font-awesome/css/v4-shims.min.css">
 	<script src="js/nicEdit-latest.js" type="text/javascript"></script>
 	<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
 						
@@ -67,17 +67,17 @@ $folder =preg_replace('([\s]+)', '-', strip_tags($folder1)); //xóa khoảng tr�
 <body>
 	<div id="wrap">
 			<div class="head">
-				<img src="../images/logo.png">
-				<a href="logout.php">logout</a>
+				<img src="../assets/logo.png">
+				<a href="logout.php"><i class="fas fa-sign-out-alt"></i></a>
 				<ul>
 					<li>
 						<i class="far fa-bell"></i>
 						<span id="notification">0</span>
 					</li>
 					<li>
-						<img class="avatar" src="../images/avatar.jpg">
+						<img class="avatar" src="../assets/avatars/avatar.jpg">
 						<span>xin chào</span>
-						<b><?php echo $_SESSION['admin'];?></b>
+						<b>- <?php echo $_SESSION[AUTH_YF]['name'];?></b>
 					</li>
 				</ul>
 			</div>

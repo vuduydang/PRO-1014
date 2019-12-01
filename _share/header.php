@@ -4,7 +4,7 @@
 			<div class="navbar-header">
 				<div class="navbar-brand">
 					<a class="logo" href="index.php">
-						<img src="assets/img/logo.png" alt="ClipAnime.Com">
+						<img src="assets/logo.png" alt="ClipAnime.Com">
 					</a>
 				</div>
 				<div class="navbar-menu-toggle" id="navbar-toggle">

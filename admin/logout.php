@@ -1,4 +1,7 @@
 <?php
+
 session_start();
-unset($_SESSION['admin']);
+require_once"../commons/constants.php";
+
+unset($_SESSION[AUTH_YF]);
 header("location: index.php");

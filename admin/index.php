@@ -97,7 +97,6 @@ if (isset($_POST['sigin'])) {
 
 		img.avatar {
 		  width: 40%;
-		  border-radius: 50%;
 		}
 
 		.container {
@@ -180,7 +179,7 @@ if (isset($_POST['sigin'])) {
   
   <form class="modal-content animate" action="" method="post">
     <div class="imgcontainer">
-      <img src="../images/logo.png" alt="Avatar" class="avatar" width="100">
+      <img src="../assets/logo.png" alt="Avatar" class="avatar" width="100">
     </div>
 
     <div class="container">
