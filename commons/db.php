@@ -33,11 +33,4 @@ function executeQuery($sqlQuery, $getAll = false){
 	}
 	return $result[0];
 }
-
-function dd($value)
-{
-	echo '<pre>';
-	print_r($value);
-	echo '<pre>';
-}
  ?>
