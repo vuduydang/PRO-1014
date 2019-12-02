@@ -215,7 +215,7 @@
                 <hr>
 
                 <!-- BÌNH LUẬN -->
-                <!-- <div class="player-sidebar-body body-comment hidde">
+                <div class="player-sidebar-body body-comment hidde">
                     <h3><i class="fas fa-film"></i> BÌNH LUẬN PHIM</h3>
                     <div class="comment-input">
                     <input type="text" name="comment-input" value="" id="comment-input">
@@ -237,7 +237,7 @@
                     <input type="text" name="reply-input" id="reply-input" class="reply-input hidden">
                 </div>
                 <div class="loading"></div>
-                </div> -->
+                </div>
             </div>
 
 

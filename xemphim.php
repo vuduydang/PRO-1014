@@ -43,8 +43,8 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 
     <link rel="stylesheet" href="./public/css/style.css">
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="./public/js/jquery-ui.min.js"></script>
 
     
 
@@ -217,10 +217,10 @@
 
         
         
-    <script type="text/javascript" src="js/vlib581a.js?id=d0a34b993528e375202d"></script>
+    <script type="text/javascript" src="./public/js/vlib581a.js?id=d0a34b993528e375202d"></script>
         
-    <script type="text/javascript" src="js/enginee614.js?id=713d724142b81de2a286"></script>
-    <script type="text/javascript" src="js/bfilm8ae2.js?id=508bade3ec5ab00fc518"></script>
+    <script type="text/javascript" src="./public/js/enginee614.js?id=713d724142b81de2a286"></script>
+    <script type="text/javascript" src="./public/js/bfilm8ae2.js?id=508bade3ec5ab00fc518"></script>
 
 
     		<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -235,7 +235,7 @@
 		<script type="text/javascript" async defer src="../ss.yomedia.vn/js/ads.js"></script>
 
     <!-- push link video -->
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="./public/js/main.js"></script>
 	<script type="text/javascript">
         $(document).ready(function(){
             setTimeout(function(){
