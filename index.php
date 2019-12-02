@@ -29,9 +29,9 @@
     
        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     
-      <link rel="stylesheet" href="css/home9039.css?id=0cadef886044cb02b356">
+      <link rel="stylesheet" href="./public/css/home9039.css?id=0cadef886044cb02b356">
   
-      <link rel="stylesheet" href="public/css/style.css">
+      <link rel="stylesheet" href="./public/css/style.css">
     </head>
 <body>
 
