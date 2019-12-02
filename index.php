@@ -1,7 +1,7 @@
 <?php 
     require_once './commons/constants.php';
     require_once './commons/db.php';
-    // require_once './commons/helpers.php';
+    require_once './commons/helpers.php';
     $sqlQuery = "select * from films  limit 6";
     $films = executeQuery($sqlQuery, true);
     
