@@ -31,7 +31,7 @@
     
       <link rel="stylesheet" href="css/home9039.css?id=0cadef886044cb02b356">
   
-      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="public/css/style.css">
     </head>
 <body>
 
