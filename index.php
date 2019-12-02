@@ -1,3 +1,13 @@
+<?php 
+    require_once './commons/constants.php';
+    require_once './commons/db.php';
+    // require_once './commons/helpers.php';
+    $sqlQuery = "select * from films  limit 6";
+    $films = executeQuery($sqlQuery, true);
+    
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -41,85 +51,38 @@
 
       <div class="column-left">
         <!-- Latest episodes -->
+
+
+
+         
+
         <section class="tray episode">
             <div class="tray-title">
               <a href="tap-moi-nhat.php">Tập Mới Nhất <i class="icon icon-right"></i></a>
             </div>
+
+            <?php foreach ($films as $films): ?>
             <div class="tray-content index">
-                                    <div class="tray-item">
-  <a href="info.php">
-      <img class="tray-item-thumbnail" src="assets/img/3.jpg" alt="Pokemon Tập 1090 - Cám Ơn Alola! Hành Trình Của Mỗi Người!!">
-      <div class="tray-item-description">
-          <div class="tray-item-title">Pokemon</div>
-          <div class="tray-item-meta-info">
-              <span class="tray-episode-name">Tập 1090 - Cám Ơn Alola! Hành Trình Của Mỗi Người!!</span>
-              <span class="tray-episode-views">2,826 lượt xem</span>
-          </div>
-      </div>
+                  <div class="tray-item">
+                        <a href="info.php?id=<?=$films['id']?>">
+                            <img class="tray-item-thumbnail" src="<?php echo $films['thumbnail'] ?>" >
+                            <div class="tray-item-description">
+                                <div class="tray-item-title"><?php echo $films['name'] ?></div>
+                                <div class="tray-item-meta-info">
+                                    <span class="tray-episode-name"><?php echo $films['series'] ?></span>
+                                    <span class="tray-episode-views"><?php echo $films['views'] ?>lượt xem</span>
+                                </div>
+                            </div>
       
-              </a>
-</div>                                    <div class="tray-item">
-  <a href="info.php">
-      <img class="tray-item-thumbnail" src="assets/img/4.jpg" alt="Pokemon Tập 1090 - Cám Ơn Alola! Hành Trình Của Mỗi Người!!">
-      <div class="tray-item-description">
-          <div class="tray-item-title">Doraemon</div>
-          <div class="tray-item-meta-info">
-              <span class="tray-episode-name">Tập 576 - Máy câu tìm đồ bị mất &amp; Nuôi thú dữ trong nhà</span>
-              <span class="tray-episode-views">1,429 lượt xem</span>
-          </div>
-      </div>
-      
-              </a>
-</div>                                    <div class="tray-item">
-  <a href="info.php">
-      <img class="tray-item-thumbnail" src="assets/img/1.jpg" alt="Pokemon Tập 1090 - Cám Ơn Alola! Hành Trình Của Mỗi Người!!">
-      <div class="tray-item-description">
-          <div class="tray-item-title">Naruto Next Generations</div>
-          <div class="tray-item-meta-info">
-              <span class="tray-episode-name">Tập 131 - Sức mạnh của Cửu Vĩ</span>
-              <span class="tray-episode-views">191,716 lượt xem</span>
-          </div>
-      </div>
-      
-              </a>
-</div>                                    <div class="tray-item">
- <a href="info.php">
-      <img class="tray-item-thumbnail" src="assets/img/6.jpg" alt="Pokemon Tập 1090 - Cám Ơn Alola! Hành Trình Của Mỗi Người!!">
-      <div class="tray-item-description">
-          <div class="tray-item-title">Alicization</div>
-          <div class="tray-item-meta-info">
-              <span class="tray-episode-name">Tập 28 - Dark Territory</span>
-              <span class="tray-episode-views">44,062 lượt xem</span>
-          </div>
-      </div>
-      
-              </a>
-</div>                                    <div class="tray-item">
-  <a href="info.php">
-      <img class="tray-item-thumbnail" src="assets/img/4.jpg" alt="Pokemon Tập 1090 - Cám Ơn Alola! Hành Trình Của Mỗi Người!!">
-      <div class="tray-item-description">
-          <div class="tray-item-title">Dr. Stone</div>
-          <div class="tray-item-meta-info">
-              <span class="tray-episode-name">Tập 18 - Thạch Chiến</span>
-              <span class="tray-episode-views">56,429 lượt xem</span>
-          </div>
-      </div>
-      
-              </a>
-</div>                                    <div class="tray-item">
-  <a href="info.php">
-      <img class="tray-item-thumbnail" src="assets/img/5.jpg" alt="Pokemon Tập 1090 - Cám Ơn Alola! Hành Trình Của Mỗi Người!!">
-      <div class="tray-item-description">
-          <div class="tray-item-title">Vua Hải Tặc</div>
-          <div class="tray-item-meta-info">
-              <span class="tray-episode-name">Tập 908 - Tàu kho báu về tay! Luffy trả ơn!</span>
-              <span class="tray-episode-views">85,599 lượt xem</span>
-          </div>
-      </div>
-      
-              </a>
-</div>                            </div>
+                       </a>
+                </div>    
+                 
+                                  </div>
+              <?php endforeach ?>
         </section>
+
+
+        
         <!-- END latest episodes -->
 
         
@@ -129,72 +92,19 @@
               <a href="video-2.php">Video Mới <i class="icon icon-right"></i></a>
             </div>
             <div class="tray-content">
+              
                                   <div class="video-item">
-                    <a href="info.php">
-                      <img class="video-item-thumbnail" src="assets/img/7.jpg" alt="Erza vS her mom&#039;s Dragon Form - Fairy Tail Final Season  AMV">
-                        <div class="video-item-title">Erza vS her mom&#039;s Dragon Form - Fairy Tail Final Season  AMV</div>
-                        <div class="video-item-duration">03:42</div>
+                    <a href="info.php?id=<?=$films['id']?>">
+                      <img class="video-item-thumbnail" src="<?php echo $films['thumbnail'] ?>" >
+                        <div class="video-item-title">a</div>
+                        <div class="video-item-duration"></div>
                         <div class="video-item-play-button">
                           <i class="icon-play"></i>
                         </div>
                     </a>
                     <div class="video-item-views">2 ngày trước - 724 lượt xem</div>
                   </div>
-                                  <div class="video-item">
-                    <a href="info.php">
-                      <img class="video-item-thumbnail" src="assets/img/8.jpg" alt="Kimetsu no Yaiba「 AMV 」- Louder">
-                        <div class="video-item-title">Kimetsu no Yaiba「 AMV 」- Louder</div>
-                        <div class="video-item-duration">02:43</div>
-                        <div class="video-item-play-button">
-                          <i class="icon-play"></i>
-                        </div>
-                    </a>
-                    <div class="video-item-views">2 ngày trước - 1,533 lượt xem</div>
-                  </div>
-                                  <div class="video-item">
-                    <a href="info.php">
-                      <img class="video-item-thumbnail" src="assets/img/11.jpg" alt="Bungou Stray Dogs Season 3 「 AMV 」- Antidote">
-                        <div class="video-item-title">Bungou Stray Dogs Season 3 「 AMV 」- Antidote</div>
-                        <div class="video-item-duration">03:14</div>
-                        <div class="video-item-play-button">
-                          <i class="icon-play"></i>
-                        </div>
-                    </a>
-                    <div class="video-item-views">2 ngày trước - 430 lượt xem</div>
-                  </div>
-                                  <div class="video-item">
-                    <a href="info.php">
-                      <img class="video-item-thumbnail" src="assets/img/10.jpg" alt="Ｄｒ．ＳＴＯＮＥ「AMV」- Can&#039;t Stop Me Now">
-                        <div class="video-item-title">Ｄｒ．ＳＴＯＮＥ「AMV」- Can&#039;t Stop Me Now</div>
-                        <div class="video-item-duration">03:45</div>
-                        <div class="video-item-play-button">
-                          <i class="icon-play"></i>
-                        </div>
-                    </a>
-                    <div class="video-item-views">2 ngày trước - 475 lượt xem</div>
-                  </div>
-                                  <div class="video-item">
-                    <a href="info.php">
-                      <img class="video-item-thumbnail" src="assets/img/9.jpg" alt="One Punch Man Season 2「AMV」- Killer Inside of Me [HD]">
-                        <div class="video-item-title">One Punch Man Season 2「AMV」- Killer Inside of Me [HD]</div>
-                        <div class="video-item-duration">03:08</div>
-                        <div class="video-item-play-button">
-                          <i class="icon-play"></i>
-                        </div>
-                    </a>
-                    <div class="video-item-views">5 ngày trước - 1,657 lượt xem</div>
-                  </div>
-                                  <div class="video-item">
-                    <a href="info.php">
-                      <img class="video-item-thumbnail" src="assets/img/8.jpg" alt="Garou vs Class A &amp; B Heroes「 AMV 」- One Punch Man Season 2">
-                        <div class="video-item-title">Garou vs Class A &amp; B Heroes「 AMV 」- One Punch Man Season 2</div>
-                        <div class="video-item-duration">03:07</div>
-                        <div class="video-item-play-button">
-                          <i class="icon-play"></i>
-                        </div>
-                    </a>
-                    <div class="video-item-views">5 ngày trước - 658 lượt xem</div>
-                  </div>
+                                  
                             </div>
         </section>
 

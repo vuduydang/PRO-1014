@@ -1,3 +1,14 @@
+<?php 
+    require_once './commons/constants.php';
+    require_once './commons/db.php';
+    // require_once './commons/helpers.php';
+    $id = isset($_GET['id']) ? $_GET['id'] : "";
+    $sqlQuery = "select * from films  where id = $id";
+    $films = executeQuery($sqlQuery, true);
+    
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -56,26 +67,26 @@
          data-type="" data-is-upcoming="" data-copyrighted=""
          
          data-name="Doraemon" data-episode-min="1" data-episode-max="505">
-
+        <?php foreach ($films as $films): ?>
         <div class="banner">
-            <img src="assets/img/banner.png" alt="" style="width: 100%; height: 100%">
+            <img src="<?php echo $films['banner'] ?>" alt="" style="width: 100%; height: 100%">
         </div>
                                                 
 
         
-
+         
         <div id="infomation" class="player-wrapper">
             <div class="img-thumbnail">
-                <img src="images/doraemon.jpg" alt="Doraemon Movie 36: Shin Nobita no Nippon Tanjou">
+                <img src="<?php echo $films['thumbnail'] ?>" alt="Doraemon Movie 36: Shin Nobita no Nippon Tanjou">
             </div>
             <div class="info">
-                <h1 class="film-info-title">Doraemon Movie 36: Shin Nobita no Nippon Tanjou</h1>
-                <p>Thể loại: <span>Adventure, Comedy, Fantasy, Kids, Shounen</span></p>
-                <p>Kiểu phim: <span>Adventure, Comedy, Fantasy, Kids, Shounen</span></p>
-                <p>Tác giả: <span>Fujiko Fujio</span></p>
-                <p>Năm SX: <span>Adventure, Comedy, Fantasy, Kids, Shounen</span></p>
-                <p>Lượt xem: <span>2,704,999</span></p>
-                <p>Trạng thái <span>Đang phát sóng</span></p>
+                <h1 class="film-info-title"><?php echo $films['name'] ?> - <?php echo $films['series'] ?></h1>
+                <p>Thể loại: <span><?php echo $films['categories'] ?></span></p>
+                <p>Đạo diễn: <span><?php echo $films['author'] ?></span></p>
+                <p>Năm xuất bản: <span><?php echo $films['year'] ?></span></p>
+                <p>Thời lượng: <span><?php echo $films['quantity'] ?></span></p>
+                <p>Lượt xem: <span><?php echo $films['views'] ?></span></p>
+                <p>Trạng thái <span><?php echo $films['status'] ?></span></p>
                 <a class="click-view" href="./xemphim.php">Xem phim</a>
                 <a class="click-follow" href="#follows">Theo dõi</a>
             </div>
@@ -90,6 +101,7 @@
             </div> -->
             
         </div>
+        
 
         <div class="player-meta">
             
@@ -101,6 +113,7 @@
          <div class="film-related video" style="margin-top: -16px;">
             <hr>
             <h3 class="dsp">Liên quan</h3>
+            
                 <div class="film-related-item">
                     <div class="film-related-thumbnail">
                         <a href="xemphim.php">
@@ -195,13 +208,14 @@
                 <div class="film-info-description">
                     <!--  -->
                     <h3><i class="fas fa-film"></i> GIỚI THIỆU PHIM</h3>
-                    Bộ phim kể về một chú mèo máy tên là Doraemon đến từ thế kỉ 22 để giúp một cậu bé lớp 4 hậu đậu tên là Nobi Nobita. Các câu chuyện của Doraemon thường ngắn gọn, dễ hiểu, dí dỏm và mang cái nhìn lạc quan về cuộc sống tương lai cũng như sự phát triển của khoa học - kĩ thuật.
+                    <?php echo $films['content'] ?>
                 </div>
+                <?php endforeach ?>
 
                 <hr>
 
                 <!-- BÌNH LUẬN -->
-                <div class="player-sidebar-body body-comment hidde">
+                <!-- <div class="player-sidebar-body body-comment hidde">
                     <h3><i class="fas fa-film"></i> BÌNH LUẬN PHIM</h3>
                     <div class="comment-input">
                     <input type="text" name="comment-input" value="" id="comment-input">
@@ -222,8 +236,8 @@
                     <input type="button" class="comment-more hidden" value="Xem thêm">
                     <input type="text" name="reply-input" id="reply-input" class="reply-input hidden">
                 </div>
-                <!-- <div class="loading"></div> -->
-                </div>
+                <div class="loading"></div>
+                </div> -->
             </div>
 
 
