@@ -95,8 +95,8 @@
                 <div class="video-item">
                     <a href="info.php?id=<?=$value['id']?>">
                       <img class="video-item-thumbnail" src="<?php echo $value['thumbnail'] ?>" >
-                        <div class="video-item-title">a</div>
-                        <div class="video-item-duration"></div>
+                        <div class="video-item-title"><?php echo $value['name'] ?></div>
+                        <div class="video-item-duration"><?php echo $value['name'] ?></div>
                         <div class="video-item-play-button">
                           <i class="icon-play"></i>
                         </div>
@@ -248,45 +248,7 @@
 
         
 
-        <div class="video-hot">
-          <div class="tray-title">Video HOT</div>
-                    <div class="video-hot-item">
-            <a href="video/176993.php">
-              <img class="video-hot-thumbnail" src="assets/img/1.jpg">
-              <div class="video-hot-title">Tom & jerry</div>
-            </a>
-          </div>
-                    <div class="video-hot-item">
-            <a href="video/176994.php">
-              <img class="video-hot-thumbnail" src="assets/img/2.jpg">
-              <div class="video-hot-title">Tom & jerry</div>
-            </a>
-          </div>
-                    <div class="video-hot-item">
-            <a href="video/176985.php">
-              <img class="video-hot-thumbnail" src="assets/img/3.jpg">
-              <div class="video-hot-title">Tom & jerry</div>
-            </a>
-          </div>
-                    <div class="video-hot-item">
-            <a href="video/176979.php">
-              <img class="video-hot-thumbnail" src="assets/img/4.jpg">
-              <div class="video-hot-title">Tom & jerry</div>
-            </a>
-          </div>
-                    <div class="video-hot-item">
-            <a href="video/176962.php">
-              <img class="video-hot-thumbnail" src="assets/img/5.jpg">
-              <div class="video-hot-title">Tom & jerry</div>
-            </a>
-          </div>
-                    <div class="video-hot-item">
-            <a href="video/176969.php">
-              <img class="video-hot-thumbnail" src="assets/img/6.jpg">
-              <div class="video-hot-title">Tom & jerry</div>
-            </a>
-          </div>
-                  </div>
+        <div class="video-hot"></div>
 
         <div class="anime-hot">
           <div class="tray-title">Anime HOT</div>
