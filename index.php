@@ -27,7 +27,7 @@
     
 
     
-       <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+       <link rel="shortcut icon" href="./assets/ico.png" type="image/png" />
     
       <link rel="stylesheet" href="./public/css/home9039.css?id=0cadef886044cb02b356">
   
@@ -58,26 +58,24 @@
 
         <section class="tray episode">
             <div class="tray-title">
-              <a href="tap-moi-nhat.php">Tập Mới Nhất <i class="icon icon-right"></i></a>
+              <a href="tap-moi-nhat.php">Phim mới <i class="icon icon-right"></i></a>
             </div>
 
-            <?php foreach ($films as $films): ?>
+            <?php foreach ($films as $value): ?>
             <div class="tray-content index">
                   <div class="tray-item">
-                        <a href="info.php?id=<?=$films['id']?>">
-                            <img class="tray-item-thumbnail" src="<?php echo $films['thumbnail'] ?>" >
+                        <a href="info.php?id=<?=$value['id']?>">
+                            <img class="tray-item-thumbnail" src="<?php echo $value['thumbnail'] ?>" >
                             <div class="tray-item-description">
-                                <div class="tray-item-title"><?php echo $films['name'] ?></div>
+                                <div class="tray-item-title"><?php echo $value['name'] ?></div>
                                 <div class="tray-item-meta-info">
-                                    <span class="tray-episode-name"><?php echo $films['series'] ?></span>
-                                    <span class="tray-episode-views"><?php echo $films['views'] ?>lượt xem</span>
+                                    <span class="tray-episode-name"><?php echo $value['series'] ?></span>
+                                    <span class="tray-episode-views"><?php echo $value['views'] ?>lượt xem</span>
                                 </div>
                             </div>
-      
-                       </a>
-                </div>    
-                 
-                                  </div>
+                        </a>
+                  </div> 
+            </div>
               <?php endforeach ?>
         </section>
 
@@ -89,13 +87,14 @@
                           
         <section class="tray">
             <div class="tray-title">
-              <a href="video-2.php">Video Mới <i class="icon icon-right"></i></a>
+              <a href="video-2.php">Tập mới <i class="icon icon-right"></i></a>
             </div>
             <div class="tray-content">
-              
-                                  <div class="video-item">
-                    <a href="info.php?id=<?=$films['id']?>">
-                      <img class="video-item-thumbnail" src="<?php echo $films['thumbnail'] ?>" >
+
+              <?php foreach ($films as $value) : ?>
+                <div class="video-item">
+                    <a href="info.php?id=<?=$value['id']?>">
+                      <img class="video-item-thumbnail" src="<?php echo $value['thumbnail'] ?>" >
                         <div class="video-item-title">a</div>
                         <div class="video-item-duration"></div>
                         <div class="video-item-play-button">
@@ -103,9 +102,9 @@
                         </div>
                     </a>
                     <div class="video-item-views">2 ngày trước - 724 lượt xem</div>
-                  </div>
-                                  
-                            </div>
+                </div>
+              <?php endforeach?>
+            </div>
         </section>
 
         

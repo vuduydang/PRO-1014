@@ -66,10 +66,15 @@ a{
 	height: 35px;
 	position: absolute;
 	top: 360px;
-	border: 1px #328 solid;
+	border: 1px #666 solid;
 	border-radius: 10px;
 	text-align: center;
 	line-height: 34px;
+}
+.info .click-view:hover, .info .click-follow:hover{
+	transition: 1.2s;
+	border-radius: 10px;
+	background-color: #ccccff;
 }
 .info .click-view{left: 160px}
 .info .click-follow{left: 0}

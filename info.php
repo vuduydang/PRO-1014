@@ -26,7 +26,7 @@
 	<meta name="robots" content="index, follow" />
 	<meta name="language" content="Vietnamese, English" />
 	
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./assets/ico.png" type="image/png" />   
 
 	<meta name="description" content="Doraemon Tập 1 - Tập đặc biệt: Ao cá trong phòng học &amp; Cỗ máy thời gian đâu mất rồi &amp; Nhớ lại! ấn tượng ngày đầu tiên" />
 	<meta name="keywords" content="doraemon,doraemon tap 1" />
