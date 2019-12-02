@@ -45,6 +45,7 @@ a{
 }
 
 /*info films*/
+
 .img-thumbnail {
     width: 315px;
     height: 420px;
@@ -52,22 +53,25 @@ a{
     margin-right: 20px;
 }
 .info{
-	padding:6px;
 	position: relative;
+	display: block;
+	float: left;
 }
 .info>h1{margin-bottom: 20px}
-.info>p{line-height: 26px}
+.info>p{line-height: 32px}
 .info span{color: #5c00ef}
 .info .click-view, .info .click-follow{
 	display: inline-block;
 	width: 92px;
 	height: 35px;
 	position: absolute;
-	top: 380px;
+	top: 360px;
 	border: 1px #328 solid;
 	border-radius: 10px;
 	text-align: center;
 	line-height: 34px;
 }
-.info .click-view{left: 540px}
-.info .click-follow{left: 400px}
+.info .click-view{left: 160px}
+.info .click-follow{left: 0}
+
+.dsp{line-height: 26px;}

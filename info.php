@@ -77,7 +77,7 @@
          
         <div id="infomation" class="player-wrapper">
             <div class="img-thumbnail">
-                <img src="<?php echo $films['thumbnail'] ?>" alt="Doraemon Movie 36: Shin Nobita no Nippon Tanjou">
+                <img width="310" height="410" src="<?php echo $films['thumbnail'] ?>" alt="Doraemon Movie 36: Shin Nobita no Nippon Tanjou">
             </div>
             <div class="info">
                 <h1 class="film-info-title"><?php echo $films['name'] ?> - <?php echo $films['series'] ?></h1>
@@ -112,7 +112,7 @@
 
          <div class="film-related video" style="margin-top: -16px;">
             <hr>
-            <h3 class="dsp">Liên quan</h3>
+            <h3 class="dsp">Danh sách tập</h3>
             
                 <div class="film-related-item">
                     <div class="film-related-thumbnail">
