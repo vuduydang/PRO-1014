@@ -240,7 +240,7 @@
         $(document).ready(function(){
             setTimeout(function(){
                 $(".player-video").attr("src",
-                    "./videos/KyYeuNhay.mp4"+"#t=0.1");
+                    "./videos/video1.mp4"+"#t=0.1");
                 
             }, 2000);
                     });
