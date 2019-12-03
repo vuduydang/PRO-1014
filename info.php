@@ -79,7 +79,7 @@
          
         <div id="infomation" class="player-wrapper">
             <div class="img-thumbnail">
-                <img width="310" height="410" src="<?php echo $films['thumbnail'] ?>" alt="Doraemon Movie 36: Shin Nobita no Nippon Tanjou">
+                <img width="310" height="410" src="<?php echo $films['thumbnail'] ?>">
             </div>
             <div class="info">
                 <h1 class="film-info-title"><?php echo $films['name'] ?> - <?php echo $films['series'] ?></h1>

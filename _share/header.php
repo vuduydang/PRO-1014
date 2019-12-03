@@ -82,47 +82,50 @@
 </div>
 
 <div class="navbar-user-body tab-login">
-    <div class="navbar-form-group">
-        <label>Tên đăng nhập</label>
-        <input type="text" name="username">
-        <i class="icon icon-person"></i>
-        <span class="tip"></span>
-    </div>
-    <div class="navbar-form-group">
-        <label>Mật khẩu</label>
-        <input type="password" name="password">
-        <i class="icon icon-lock"></i>
-        <span class="tip"></span>
-    </div>
-    <div class="navbar-form-group">
-        <label class="navbar-form-checkbox">
-            <input type="checkbox" name="remember" checked>
-            <span>Ghi nhớ</span>
-        </label>
-        <a href="quen-mat-khau.html" class="forgot-password">Quên mật khẩu</a>
-    </div>
-    <div class="navbar-form-group hidden">
-        <ul id="form-login-warning"></ul>
-    </div>
-    <div class="navbar-form-group submit">
-        <input class="vuighe" id="login" type="button" name="submit" value="Đăng nhập">
-    </div>
-    <hr>
-    <div class="navbar-form-group">
-        <a class="social-login" href="https://www.facebook.com/v3.0/dialog/oauth?client_id=196545913738468&amp;redirect_uri=https%3A%2F%2Fclipanime.com%2Fdang-nhap-facebook%2Fcallback&amp;scope=email&amp;response_type=code&amp;state=duIRta4fvKtoBol8WZlKHk3H2R3gCDGxfGVkxnQV">
-            <input type="button" class="facebook" value="Đăng nhập với Facebook">
-            <i class="icon icon-facebook"></i>
-        </a>
-    </div>
-    <div class="navbar-form-group">
-        <a class="social-login" href="https://accounts.google.com/o/oauth2/auth?client_id=753633937173-6ot0fvct80pi5n8t3q06p4ctrc7ip3k8.apps.googleusercontent.com&amp;redirect_uri=https%3A%2F%2Fclipanime.com%2Fdang-nhap-google%2Fcallback&amp;scope=openid+profile+email&amp;response_type=code&amp;state=z6Lj3rZQ0lRXIQZTlEYDEX8S6gV66Y5JdsmXydjU">
-            <input type="button" class="google" value="Đăng nhập với Google">
-            <i class="icon icon-google"></i>
-        </a>
-    </div>
+    <form action="./admin/index.php" method="post" >
+        <div class="navbar-form-group">
+            <label>Tên đăng nhập</label>
+            <input type="text" name="user">
+            <i class="icon icon-person"></i>
+            <span class="tip"></span>
+        </div>
+        <div class="navbar-form-group">
+            <label>Mật khẩu</label>
+            <input type="password" name="password">
+            <i class="icon icon-lock"></i>
+            <span class="tip"></span>
+        </div>
+        <div class="navbar-form-group">
+            <label class="navbar-form-checkbox">
+                <input type="checkbox" name="remember" checked>
+                <span>Ghi nhớ</span>
+            </label>
+            <a href="quen-mat-khau.html" class="forgot-password">Quên mật khẩu</a>
+        </div>
+        <div class="navbar-form-group hidden">
+            <ul id="form-login-warning"></ul>
+        </div>
+        <div class="navbar-form-group submit">
+            <input class="vuigshe" type="button" name="sigin" value="Đăng nhập">
+        </div>
+        <!-- <hr>
+        <div class="navbar-form-group">
+            <a class="social-login" href="https://www.facebook.com/v3.0/dialog/oauth?client_id=196545913738468&amp;redirect_uri=https%3A%2F%2Fclipanime.com%2Fdang-nhap-facebook%2Fcallback&amp;scope=email&amp;response_type=code&amp;state=duIRta4fvKtoBol8WZlKHk3H2R3gCDGxfGVkxnQV">
+                <input type="button" class="facebook" value="Đăng nhập với Facebook">
+                <i class="icon icon-facebook"></i>
+            </a>
+        </div>
+        <div class="navbar-form-group">
+            <a class="social-login" href="https://accounts.google.com/o/oauth2/auth?client_id=753633937173-6ot0fvct80pi5n8t3q06p4ctrc7ip3k8.apps.googleusercontent.com&amp;redirect_uri=https%3A%2F%2Fclipanime.com%2Fdang-nhap-google%2Fcallback&amp;scope=openid+profile+email&amp;response_type=code&amp;state=z6Lj3rZQ0lRXIQZTlEYDEX8S6gV66Y5JdsmXydjU">
+                <input type="button" class="google" value="Đăng nhập với Google">
+                <i class="icon icon-google"></i>
+            </a>
+        </div> -->
+    </form>
 </div>
 
-<div class="navbar-user-body tab-signup">
+<form action="" method="post">
+    <div class="navbar-user-body tab-signup">
     <div class="navbar-form-group">
         <label>Tên đăng nhập</label>
         <input type="text" name="username">
@@ -187,9 +190,10 @@
     </div>
 </div>
 <div class="loading hidden"></div>
-	    						<div class="navbar-close">
-					<i class="icon-close"></i>
-				</div>
+                                <div class="navbar-close">
+                    <i class="icon-close"></i>
+                </div>
+</form>
 			</div>
 		</div>
     	
