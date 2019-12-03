@@ -1,10 +1,13 @@
 <?php 
     require_once './commons/constants.php';
     require_once './commons/db.php';
-    // require_once './commons/helpers.php';
+    require_once './commons/helpers.php';
     $id = isset($_GET['id']) ? $_GET['id'] : "";
     $sqlQuery = "select * from films  where id = $id";
-    $films = executeQuery($sqlQuery, true);
+    $films = executeQuery($sqlQuery);
+
+    $sqlQuery = "select * from parts  where film_id = $id";
+    $parts = executeQuery($sqlQuery, true);
     
 
  ?>
@@ -67,7 +70,6 @@
          data-type="" data-is-upcoming="" data-copyrighted=""
          
          data-name="Doraemon" data-episode-min="1" data-episode-max="505">
-        <?php foreach ($films as $films): ?>
         <div class="banner">
             <img src="<?php echo $films['banner'] ?>" alt="" style="width: 100%; height: 100%">
         </div>
@@ -110,91 +112,27 @@
         
         
 
-         <div class="film-related video" style="margin-top: -16px;">
+         <div class="film-related video" >
             <hr>
             <h3 class="dsp">Danh sách tập</h3>
-            
-                <div class="film-related-item">
-                    <div class="film-related-thumbnail">
-                        <a href="xemphim.php">
-                            <img src="assets/img/1.jpg">
-                        </a>
+            <div id="list-parts" >
+                <?php foreach ($parts as  $value) : ?>
+                    <div class="film-related-item">
+                        <div class="film-related-thumbnail">
+                            <a href="xemphim.php">
+                                <img src="assets/img/1.jpg">
+                            </a>
+                        </div>
+                        <div class="film-related-meta">
+                            <a href="xemphim.php">
+                                <div class="film-related-title"><?php echo $value['name'] ?></div>
+                            </a>
+                            <div class="film-related-views">725 lượt xem</div>
+                        </div>
                     </div>
-                    <div class="film-related-meta">
-                        <a href="xemphim.php">
-                            <div class="film-related-title">Erza vS her mom&#039;s Dragon Form - Fairy Tail Final Season  AMV</div>
-                        </a>
-                        <div class="film-related-views">725 lượt xem</div>
-                    </div>
-                </div>
-                                <div class="film-related-item">
-                    <div class="film-related-thumbnail">
-                        <a href="xemphim.php">
-                           <img src="assets/img/4.jpg">
-                        </a>
-                    </div>
-                    <div class="film-related-meta">
-                        <a href="xemphim.php">
-                            <div class="film-related-title">Kimetsu no Yaiba「 AMV 」- Louder</div>
-                        </a>
-                        <div class="film-related-views">1,537 lượt xem</div>
-                    </div>
-                </div>
-                <div class="film-related-item">
-                    <div class="film-related-thumbnail">
-                        <a href="xemphim.php">
-                           <img src="assets/img/4.jpg">
-                        </a>
-                    </div>
-                    <div class="film-related-meta">
-                        <a href="xemphim.php">
-                            <div class="film-related-title">Kimetsu no Yaiba「 AMV 」- Louder</div>
-                        </a>
-                        <div class="film-related-views">1,537 lượt xem</div>
-                    </div>
-                </div>
-                <div class="film-related-item">
-                    <div class="film-related-thumbnail">
-                        <a href="xemphim.php">
-                           <img src="assets/img/4.jpg">
-                        </a>
-                    </div>
-                    <div class="film-related-meta">
-                        <a href="xemphim.php">
-                            <div class="film-related-title">Kimetsu no Yaiba「 AMV 」- Louder</div>
-                        </a>
-                        <div class="film-related-views">1,537 lượt xem</div>
-                    </div>
-                </div>
-
-                                <div class="film-related-item">
-                    <div class="film-related-thumbnail">
-                        <a href="xemphim.php">
-                            <img src="assets/img/3.jpg">
-                        </a>
-                    </div>
-                    <div class="film-related-meta">
-                        <a href="xemphim.php">
-                            <div class="film-related-title">Bungou Stray Dogs Season 3 「 AMV 」- Antidote</div>
-                        </a>
-                        <div class="film-related-views">432 lượt xem</div>
-                    </div>
-                </div>
-                                <div class="film-related-item">
-                    <div class="film-related-thumbnail">
-                        <a href="xemphim.php">
-                            <img src="assets/img/2.jpg">
-                        </a>
-                    </div>
-                    <div class="film-related-meta">
-                        <a href="xemphim.php">
-                            <div class="film-related-title">Ｄｒ．ＳＴＯＮＥ「AMV」- Can&#039;t Stop Me Now</div>
-                        </a>
-                        <div class="film-related-views">476 lượt xem</div>
-                    </div>
-                </div>
-                                
+                <?php endforeach ?>
             </div>
+        </div>
                 
         
                     <!-- INFO -->
@@ -210,7 +148,6 @@
                     <h3><i class="fas fa-film"></i> GIỚI THIỆU PHIM</h3>
                     <?php echo $films['content'] ?>
                 </div>
-                <?php endforeach ?>
 
                 <hr>
 
@@ -236,7 +173,7 @@
                     <input type="button" class="comment-more hidden" value="Xem thêm">
                     <input type="text" name="reply-input" id="reply-input" class="reply-input hidden">
                 </div>
-                <div class="loading"></div>
+                <!-- <div class="loading"></div> -->
                 </div>
             </div>
 

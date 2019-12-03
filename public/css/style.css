@@ -9,6 +9,22 @@ a{
 	text-decoration: none;
 	color: #000;
 }
+#list-parts::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+#list-parts::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+#list-parts::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+}
 .clearfix{display: block;clear: both; padding: 5px;}
 
 /*header menu*/
@@ -79,4 +95,15 @@ a{
 .info .click-view{left: 160px}
 .info .click-follow{left: 0}
 
-.dsp{line-height: 26px;}
+/*Danh sách tập*/
+.film-related.video{
+	margin-top: -16px;
+}
+#list-parts{
+	width: auto;
+	margin-top: 10px;
+	height: 430px;
+	overflow: hidden;
+	overflow: scroll;
+	overflow-x: hidden;
+}

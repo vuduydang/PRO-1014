@@ -95,8 +95,8 @@
                 <div class="video-item">
                     <a href="info.php?id=<?=$value['id']?>">
                       <img class="video-item-thumbnail" src="<?php echo $value['thumbnail'] ?>" >
-                        <div class="video-item-title">a</div>
-                        <div class="video-item-duration"></div>
+                        <div class="video-item-title"><?php echo $value['name'] ?></div>
+                        <div class="video-item-duration"><?php echo $value['name'] ?></div>
                         <div class="video-item-play-button">
                           <i class="icon-play"></i>
                         </div>
@@ -120,124 +120,24 @@
         
         <section class="tray all">
             <div class="tray-title">
-              <a href="anime.php">Anime Mới <i class="icon icon-right"></i></a>
+              <a href="anime.php">TẤT CẢ ANIME<i class="icon icon-right"></i></a>
             </div>
+            <?php foreach ($films as $value) : ?>
             <div class="tray-content">
-                                     <div class="tray-item">
-    <a href="dr-stone.php">
-        <img class="tray-item-thumbnail" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://i.imacdn.com/vg/2019/10/13/a8648186489cdaca_7e9643ea246c8fef_3823115709731078185710.jpg" alt="Dr. Stone">
-        <div class="tray-item-description">
-            <div class="tray-item-title">Dr. Stone</div>
-            <div class="tray-item-meta-info">
-                <div class="tray-film-views">1,264,486 lượt xem</div>
-                <div class="tray-film-likes">1,807 thích</div>
+                <div class="tray-item">
+                  <a href="info.php?id=<?=$value['id']?>">
+                      <img class="tray-item-thumbnail" src="<?php echo $value['thumbnail'] ?>" alt="">
+                      <div class="tray-item-description">
+                          <div class="tray-item-title"><?php echo $value['name'] ?></div>
+                          <div class="tray-item-meta-info">
+                              <div class="tray-film-views"><?php echo $value['views'] ?> lượt xem</div>
+                              <div class="tray-film-likes">1,807 thích</div>
+                          </div>
+                      </div>
+                  </a>
+                </div>                                       
             </div>
-        </div>
-        <div class="tray-film-genres">
-                        <span>Khoa Học Viễn Tưởng</span>,&nbsp;                         <span>Phiêu Lưu</span>                    </div>
-        <div class="tray-film-update">
-                    3 / ??? tập
-                </div>
-        
-
-        
-            </a>
-</div>                                     <div class="tray-item">
-    <a href="to-muon-an-tuy-cua-cau.php">
-        <img class="tray-item-thumbnail" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://i.imacdn.com/vg/2019/04/28/0afe3dc9c1f9f421_f4d259d1716295c5_3326015564306791129205.jpg" alt="Tớ Muốn Ăn Tụy Của Cậu">
-        <div class="tray-item-description">
-            <div class="tray-item-title">Tớ Muốn Ăn Tụy Của Cậu</div>
-            <div class="tray-item-meta-info">
-                <div class="tray-film-views">98,117 lượt xem</div>
-                <div class="tray-film-likes">777 thích</div>
-            </div>
-        </div>
-        <div class="tray-film-genres">
-                        <span>Lãng Mạn</span>,&nbsp;                         <span>Trường Học</span>,&nbsp;                         <span>Đời Thường</span>                    </div>
-        <div class="tray-film-update">
-                    109 phút
-                </div>
-        
-
-        
-            </a>
-</div>                                     <div class="tray-item">
-    <a href="fatestay-night-movie-heavens-feel-ii-lost-butterfly.php">
-        <img class="tray-item-thumbnail" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://i.imacdn.com/vg/2019/04/27/9ed39cb57d0bf03a_bcc8887ecbc0c44a_34503155635084639674.jpg" alt="Fate/stay night Movie: Heaven&#039;s Feel - II. Lost Butterfly">
-        <div class="tray-item-description">
-            <div class="tray-item-title">Fate/stay night Movie: Heaven&#039;s Feel - II. Lost Butterfly</div>
-            <div class="tray-item-meta-info">
-                <div class="tray-film-views">78,137 lượt xem</div>
-                <div class="tray-film-likes">245 thích</div>
-            </div>
-        </div>
-        <div class="tray-film-genres">
-                        <span>Hành Động</span>,&nbsp;                         <span>Khoa Học Viễn Tưởng</span>,&nbsp;                         <span>Siêu Nhiên</span>                    </div>
-        <div class="tray-film-update">
-                    117 phút
-                </div>
-        
-
-        
-            </a>
-</div>                                     <div class="tray-item">
-    <a href="fatekaleid-liner-prismaillya-2wei-herz.php">
-        <img class="tray-item-thumbnail" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://i.imacdn.com/vg/2019/02/27/fc247fdf8d8dd575_93943850d263ba75_19377515512691796118684.jpg" alt="Fate/kaleid liner Prisma☆Illya 2wei Herz!">
-        <div class="tray-item-description">
-            <div class="tray-item-title">Fate/kaleid liner Prisma☆Illya 2wei Herz!</div>
-            <div class="tray-item-meta-info">
-                <div class="tray-film-views">11,826 lượt xem</div>
-                <div class="tray-film-likes">67 thích</div>
-            </div>
-        </div>
-        <div class="tray-film-genres">
-                        <span>Hành Động</span>,&nbsp;                         <span>Hài Hước</span>,&nbsp;                         <span>Siêu Nhiên</span>,&nbsp;                         <span>Đời Thường</span>                    </div>
-        <div class="tray-film-update">
-                    10 / 10 tập
-                </div>
-        
-
-        
-            </a>
-</div>                                     <div class="tray-item">
-    <a href="tu-chien-thanh-da-bang.php">
-        <img class="tray-item-thumbnail" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://i.imacdn.com/vg/2019/02/08/5bb3388a8e6a18b7_45de0b55c99d0d84_46554154961780561.jpg" alt="Tử Chiến Thành Đa Bang">
-        <div class="tray-item-description">
-            <div class="tray-item-title">Tử Chiến Thành Đa Bang</div>
-            <div class="tray-item-meta-info">
-                <div class="tray-film-views">21,838 lượt xem</div>
-                <div class="tray-film-likes">102 thích</div>
-            </div>
-        </div>
-        <div class="tray-film-genres">
-                        <span>Hành Động</span>,&nbsp;                         <span>Võ Thuật</span>                    </div>
-        <div class="tray-film-update">
-                    3 / 3 tập
-                </div>
-        
-
-        
-            </a>
-</div>                                     <div class="tray-item">
-    <a href="ly-thuong-kiet.php">
-        <img class="tray-item-thumbnail" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://i.imacdn.com/vg/2019/02/08/3355857aa672d4ef_22e6152186b94ac9_36564154961644351.jpg" alt="Lý Thường Kiệt">
-        <div class="tray-item-description">
-            <div class="tray-item-title">Lý Thường Kiệt</div>
-            <div class="tray-item-meta-info">
-                <div class="tray-film-views">68,843 lượt xem</div>
-                <div class="tray-film-likes">271 thích</div>
-            </div>
-        </div>
-        <div class="tray-film-genres">
-                        <span>Hành Động</span>,&nbsp;                         <span>Võ Thuật</span>                    </div>
-        <div class="tray-film-update">
-                    3 / 3 tập
-                </div>
-        
-
-        
-            </a>
-</div>                            </div>
+          <?php endforeach ?>
             
         </section>
 
@@ -248,45 +148,7 @@
 
         
 
-        <div class="video-hot">
-          <div class="tray-title">Video HOT</div>
-                    <div class="video-hot-item">
-            <a href="video/176993.php">
-              <img class="video-hot-thumbnail" src="assets/img/1.jpg">
-              <div class="video-hot-title">Tom & jerry</div>
-            </a>
-          </div>
-                    <div class="video-hot-item">
-            <a href="video/176994.php">
-              <img class="video-hot-thumbnail" src="assets/img/2.jpg">
-              <div class="video-hot-title">Tom & jerry</div>
-            </a>
-          </div>
-                    <div class="video-hot-item">
-            <a href="video/176985.php">
-              <img class="video-hot-thumbnail" src="assets/img/3.jpg">
-              <div class="video-hot-title">Tom & jerry</div>
-            </a>
-          </div>
-                    <div class="video-hot-item">
-            <a href="video/176979.php">
-              <img class="video-hot-thumbnail" src="assets/img/4.jpg">
-              <div class="video-hot-title">Tom & jerry</div>
-            </a>
-          </div>
-                    <div class="video-hot-item">
-            <a href="video/176962.php">
-              <img class="video-hot-thumbnail" src="assets/img/5.jpg">
-              <div class="video-hot-title">Tom & jerry</div>
-            </a>
-          </div>
-                    <div class="video-hot-item">
-            <a href="video/176969.php">
-              <img class="video-hot-thumbnail" src="assets/img/6.jpg">
-              <div class="video-hot-title">Tom & jerry</div>
-            </a>
-          </div>
-                  </div>
+        <div class="video-hot"></div>
 
         <div class="anime-hot">
           <div class="tray-title">Anime HOT</div>
