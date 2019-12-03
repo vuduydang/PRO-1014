@@ -128,12 +128,12 @@
                   <a href="info.php?id=<?=$value['id']?>">
                       <img class="tray-item-thumbnail" src="<?php echo $value['thumbnail'] ?>" alt="">
                       <div class="tray-item-description">
-                          <div class="tray-item-title"><?php echo $value['name'] ?></div>
+                        <div class="tray-item-title"><?php echo $value['name'] ?></div>
                           <div class="tray-item-meta-info">
                               <div class="tray-film-views"><?php echo $value['views'] ?> lượt xem</div>
                               <div class="tray-film-likes">1,807 thích</div>
                           </div>
-                      </div>
+                        </div>
                   </a>
                 </div>                                       
             </div>

@@ -141,6 +141,7 @@ ul li,h1:hover{
 }
 .addfilms .left{
 	width: 460px;
+	height: 480px;
 	float: left;
 	text-align: right;
 }
