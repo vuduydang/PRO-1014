@@ -5,6 +5,11 @@ require_once("../commons/constants.php");
 require_once("../commons/db.php");
 require_once("../commons/helpers.php");
 
+$sqlQuery 	= "SELECT COUNT(*) FROM films";
+$countFilms = executeQuery($sqlQuery);
+
+$sqlQuery 	= "SELECT COUNT(*) FROM parts";
+$countParts = executeQuery($sqlQuery);
 
 ?>
 
@@ -17,7 +22,6 @@ require_once("../commons/helpers.php");
 	<title>Quản lý</title>
 	<link rel="icon"href="../assets/ico.png">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script type="text/javascript" src="js/vue.js"></script>
 	<link rel="stylesheet" href="../public/font-awesome/css/svg-with-js.css">
 	<link rel="stylesheet" href="../public/font-awesome/css/all.min.css">
 	<link rel="stylesheet" href="../public/font-awesome/css/brands.min.css">
@@ -64,12 +68,12 @@ require_once("../commons/helpers.php");
 					<article>
 						<i class="fas fa-suitcase"></i>
 						<p>Số phim</p>
-						<span><?php echo $countFilms;?></span>
+						<span><?php echo $countFilms[0];?></span>
 					</article>
 					<article>
 						<i class="fas fa-tape"></i>
 						<p>Số tập</p>
-						<span><?php echo $countParts;?></span>
+						<span><?php echo $countParts[0];?></span>
 					</article>
 				</div>
 
