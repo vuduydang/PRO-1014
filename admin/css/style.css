@@ -69,7 +69,8 @@ ul li,h1:hover{
 	z-index: 5;
 	top: 80px;
 	left: 0;
-	width: 220px;
+	width: 15%;
+	max-width: 220px;
 	height: 980px;
 	background-color: #2B333E;
 }
