@@ -1,41 +1,52 @@
 <?php
 
-error_reporting(0);
+// error_reporting(0);
 session_start();
 require_once("../commons/constants.php");
 require_once("../commons/db.php");
 require_once("../commons/helpers.php");
 
-if (isset($_POST['add'])) {
-	$thumbnail = $_FILES['thumbnail'];
-	$banner = $_FILES['banner'];
 
-	move_uploaded_file($thumbnail['tmp_name'], "../assets/".$thumbnail['name']);
-	move_uploaded_file($banner['tmp_name'], "../assets/".$banner['name']);
-	var_dump($thumbnail, $banner);die;
+
+	// move_uploaded_file($thumbnail['tmp_name'], "../assets/".$thumbnail['name']);
+	// move_uploaded_file($banner['tmp_name'], "../assets/".$banner['name']);
 	
 	// --------------//
-	$user = isset($_POST['user']) ? $_POST['user'] : "";
-	
-	if ($_FILES['avatar']['name'] != "") {
-		$avatar = time().$_FILES['avatar']['name'];
+	$categories = isset($_POST['categories']) ? $_POST['categories'] : "";
+	$name 		= isset($_POST['name']) ? $_POST['name'] : "";
+	$author 	= isset($_POST['author']) ? $_POST['author'] : "";
+	$series 	= isset($_POST['series']) ? $_POST['series'] : "";
+	$year 		= isset($_POST['year']) ? $_POST['year'] : "";
+	$quantity 	= isset($_POST['quantity']) ? $_POST['quantity'] : "";
+	$status 	= isset($_POST['status']) ? $_POST['status'] : "";
+	$content 	= isset($_POST['content']) ? $_POST['content'] : "";
+	$thumbnail 	= isset($_FILES['thumbnail']) ? $_FILES['thumbnail'] : "";
+	$banner 	= isset($_FILES['banner']) ? $_FILES['banner'] : "";
 
-		move_uploaded_file($_FILES['avatar']['tmp_name'], "../assets/".$avatar);
-	}else {
-		$avatar = "null.png";
+	
+	if ($thumbnail['name'] != "") {
+		$thumbnailName = $thumbnail['name'];
+		move_uploaded_file($thumbnail['tmp_name'], "../assets/".$thumbnailName);
 	}
-$folder1=preg_replace('/([^\pL\.\ ]+)/u', '', strip_tags($namefilm)); //xóa kí tự đặc biệt trong chuỗi
-$folder =preg_replace('([\s]+)', '-', strip_tags($folder1)); //xóa khoảng trắng
+	if ($banner['name'] != "") {
+		$bannerName = $banner['name'];
+		move_uploaded_file($banner['tmp_name'], "../assets/". $bannerName);
+	}
 
-	
+	$url_1 	= preg_replace('/([^\pL\.\ ]+)/u', '', strip_tags($name)); //xóa kí tự đặc biệt trong chuỗi
+	$url 	= preg_replace('([\s]+)', '-', strip_tags($url_1)); //xóa khoảng trắng
+
+	$sqlInsert = "INSERT INTO films VALUES ('null','$name','$series','$year','$categories','$author','$bannerName','$thumbnailName','$content','$quantity','$status','0','$url','1')"; 
+	executeQuery($sqlInsert);
+
+	header("location: dashboard.php");
 
 	// $creatFolder = "../films/".$folder;
 	// $files 		= "../".$link;
-	if ($stmt->rowCount()>0) {
-		// mkdir($creatFolder,0777,true); //tạo folder
-		// file_put_contents($files,''); //tạo file theo tập phim
-		header("location: dashboard.php");
-	}else {
-		echo '<script>alert("Thêm Thấi Bại");</script>';
-	}
-}
+	// if ($stmt->rowCount()>0) {
+	// 	// mkdir($creatFolder,0777,true); //tạo folder
+	// 	// file_put_contents($files,''); //tạo file theo tập phim
+	// 	header("location: dashboard.php");
+	// }else {
+	// 	echo '<script>alert("Thêm Thấi Bại");</script>';
+	// }

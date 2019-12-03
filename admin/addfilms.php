@@ -13,7 +13,6 @@ require_once("../commons/helpers.php");
 	<title>Quản lý</title>
 	<link rel="icon"href="../assets/ico.png">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script type="text/javascript" src="js/vue.js"></script>
 	<link rel="stylesheet" href="../public/font-awesome/css/svg-with-js.css">
 	<link rel="stylesheet" href="../public/font-awesome/css/all.min.css">
 	<link rel="stylesheet" href="../public/font-awesome/css/brands.min.css">
@@ -21,6 +20,8 @@ require_once("../commons/helpers.php");
 	<link rel="stylesheet" href="../public/font-awesome/css/svg-with-js.css">
 	<link rel="stylesheet" href="../public/font-awesome/css/solid.min.css">
 	<link rel="stylesheet" href="../public/font-awesome/css/v4-shims.min.css">
+	<!-- <script src="js/jquery-ui.min.js" type="text/javascript"></script> -->
+	<script src="js/jquery.min.js" type="text/javascript"></script>
 	<script src="js/nicEdit-latest.js" type="text/javascript"></script>
 	<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
 						
