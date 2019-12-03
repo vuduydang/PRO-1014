@@ -92,7 +92,7 @@ ul li,h1:hover{
 	float: right;
 	margin-top: 70px;
 	border-radius: 4px;
-	width: 1160px;
+	width: 86%;
 	background-color: #fff;
 }
 
@@ -227,6 +227,8 @@ ul li,h1:hover{
 	float: left;
 	position: sticky;
 	left: 50%;
+	clear: both;
+	
 }
 .addfilms .button button{
 	width: 120px;
