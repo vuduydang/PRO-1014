@@ -60,7 +60,7 @@ require_once("../commons/helpers.php");
 				
 				<div class="addfilms">
 					<h2>Thêm phim</h2>
-					<form>
+					<form action="./router.php" method="post" enctype="multipart/form-data">
 						<div class="left">
 							<div><p>Tên Phim : </p><input type="text" name="name" placeholder="HARRY POTTER VÀ HÒN ĐÁ PHÙ THỦY"></div>
 							<div><p>Thể Loại : </p><input type="text" name="name" placeholder="Hành Động, Viễn Tưởng, ..."></div>
@@ -79,13 +79,24 @@ require_once("../commons/helpers.php");
 								</select>
 							</div>
 							<div class="col-2">
-								<p>Thumbnail: </p><input type="file" class="file" name="name" placeholder="Harry Potter">
-								<p>Banner : </p><input type="file" class="file" name="name" placeholder="2001">
+								<div class="browser-upload">
+									<i class="title-browser-upload">Thumbnail</i>
+									<input type="file" class="file" name="name">
+									<span class="browser"><i class="fas fa-cloud-upload-alt"></i></span>
+								</div>
+								<div class="browser-upload">
+									<i class="title-browser-upload">Banner</i>
+									<input type="file" class="file" name="name">
+									<span class="browser"><i class="fas fa-cloud-upload-alt"></i></span>
+								</div>
 							</div>
 						</div>
 						<div class="right">
 							<p>Nội Dung</p>
 							<textarea name="content" placeholder="Contnets"></textarea>
+						</div>
+						<div class="button">
+							<button>SUBMIT</button>
 						</div>
 					</form>
 				</div>
