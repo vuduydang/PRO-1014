@@ -106,7 +106,7 @@
             <ul id="form-login-warning"></ul>
         </div>
         <div class="navbar-form-group submit">
-            <input type="button" name="sigin" value="Đăng nhập">
+        <input class="vuighe" id="login" type="button" name="submit" value="Đăng nhập">
         </div>
     </form>
 </div>

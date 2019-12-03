@@ -60,33 +60,33 @@ require_once("../commons/helpers.php");
 				
 				<div class="addfilms">
 					<h2>Thêm phim</h2>
-					<form action="./router.php" method="post" enctype="multipart/form-data">
+					<form action="./push-films.php" method="post" enctype="multipart/form-data">
 						<div class="left">
 							<div><p>Tên Phim : </p><input type="text" name="name" placeholder="HARRY POTTER VÀ HÒN ĐÁ PHÙ THỦY"></div>
-							<div><p>Thể Loại : </p><input type="text" name="name" placeholder="Hành Động, Viễn Tưởng, ..."></div>
-							<div><p>Tác Giả : </p><input type="text" name="name" placeholder="Steve Kloves"></div>
+							<div><p>Thể Loại : </p><input type="text" name="categories" placeholder="Hành Động, Viễn Tưởng, ..."></div>
+							<div><p>Tác Giả : </p><input type="text" name="author" placeholder="Steve Kloves"></div>
 							<div class="col-2">
-								<p>Series : </p><input type="text" name="name" placeholder="Harry Potter">
-								<p>Năm : </p><input type="text" name="name" placeholder="2001">
+								<p>Series : </p><input type="text" name="series" placeholder="Harry Potter">
+								<p>Năm : </p><input type="text" name="year" placeholder="2001">
 							</div>
 							<div class="col-2">
-								<p>Số Tập : </p><input type="number" name="name" placeholder="1">
+								<p>Số Tập : </p><input type="number" name="quantity" placeholder="1">
 								<p>Trạng thái : </p>
-								<select>
-									<option>Hoàn Thành</option>
-									<option>Đang Chiếu</option>
-									<option>Sắp Chiếu</option>
+								<select name="status">
+									<option value="Hoàn thành">Hoàn Thành</option>
+									<option value="Đang chiếu">Đang Chiếu</option>
+									<option value="Sắp chiếu">Sắp Chiếu</option>
 								</select>
 							</div>
 							<div class="col-2">
 								<div class="browser-upload">
 									<i class="title-browser-upload">Thumbnail</i>
-									<input type="file" class="file" name="name">
+									<input type="file" class="file" name="thumbnail">
 									<span class="browser"><i class="fas fa-cloud-upload-alt"></i></span>
 								</div>
 								<div class="browser-upload">
 									<i class="title-browser-upload">Banner</i>
-									<input type="file" class="file" name="name">
+									<input type="file" class="file" name="banner">
 									<span class="browser"><i class="fas fa-cloud-upload-alt"></i></span>
 								</div>
 							</div>
