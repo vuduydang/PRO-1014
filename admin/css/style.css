@@ -3,20 +3,13 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-@font-face{
-	font-family: UTM Cookies;
-	src: url("../fonts/UTM Cookies.ttf");
-}
-@font-face{
-	font-family: SVN-Block;
-	src: url("../fonts/SVN-Block.ttf");
-}
 #wrap{
 	font-family: Tahoma;
 	width: 100%;
 	min-width: 1044px;
 }
 a{text-decoration: none;}
+a:hover{text-decoration: none; color: #666}
 .sidebar a{color: #fff}
 .active{border-left: 4px solid #3287B2; background-color: #333}
 .head{
@@ -98,7 +91,7 @@ ul li,h1:hover{
 	float: right;
 	margin-top: 70px;
 	border-radius: 4px;
-	width: 82%;
+	width: 1160px;
 	background-color: #fff;
 }
 
@@ -139,61 +132,45 @@ ul li,h1:hover{
 .dashboard article span{font-size: 14px}
 
 /*addfilms*/
-.addfilms{
-	padding: 20px;
+.addfilms .left{
+	width: 460px;
+	float: left;
+	text-align: right;
 }
-.addfilm{
-	width: 100%;
-	padding: 20px;
-	margin: auto;
+.addfilms .right{
+	float: left;
+	width: 620px;
+	margin-left: 40px;
 }
-.addpart{
-	width: 100%;
-	margin: 40px auto;
-}
-.left , .right{ float: left; margin-left: 10px;padding: 10px }
-legend{
-	font-family: SVN-Block; 
-	text-decoration: underline; 
-	font-size: 26px;
-	margin-bottom: 30px;
-}
-input,  select{
-	width: 260px;
-	height: 32px;
-	border: 1px solid #666;
-	border-radius: 6px;
-	padding-left: 10px;
-}
- input:focus{
-	outline: none;
-}
- label{
-	font-size: 13px;
-	font-weight: 600;
+.addfilms p{
 	display: inline-block;
-	margin-left: 10px;
+	width: 100px;
+	text-align: right;
+	font-weight: 700;
+	margin: 10px 0;
+}
+.addfilms input, .addfilms select{
+	width: 280px;
+	height: 32px;
+	padding-left: 10px;
+	border-radius: 12px;
+	border: 1px #239 solid;
+	margin-left: 80px;
+}
+.addfilms input:focus, .addfilms select:focus{
+	outline: none;
+	border: 1px green solid;
+	box-shadow: 2px 2px 5px #888;
+}
+.addfilms .col-2 p{
+	width: 80px;
+}
+.addfilms .col-2 input, .addfilms select{
 	width: 120px;
-	height: 32px;
+	margin-left: 18px;
 }
-.addfilms .addfilm .row{
-	width: 200px;
-}
-
-/*manager*/
-table{
-	border: 2px solid #ccc;
-    border-collapse: collapse;
-    margin: 12px;
-	text-align: center;
-}
-table input{
+.addfilms textarea{
 	width: 100%;
-	border: none;
+	height: 400px;
 }
-table input:focus{outline: none;}
-table td{
-	padding: 0 8px;
-	height: 32px;
-}
-td p{display: inline-block; margin: 0 2px;}
+.file{opacity: 0}

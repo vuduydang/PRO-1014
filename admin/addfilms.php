@@ -5,46 +5,6 @@ require_once("../commons/constants.php");
 require_once("../commons/db.php");
 require_once("../commons/helpers.php");
 
-if (isset($_POST['add'])) {
-	
-	// --------------//
-	extract($_REQUEST);
-	if ($_FILES['avatar']['name'] != "") {
-		$avatar = time().$_FILES['avatar']['name'];
-
-		move_uploaded_file($_FILES['avatar']['tmp_name'], "../assets/".$avatar);
-	}else {
-		$avatar = "null.png";
-	}
-$folder1=preg_replace('/([^\pL\.\ ]+)/u', '', strip_tags($namefilm)); //xóa kí tự đặc biệt trong chuỗi
-$folder =preg_replace('([\s]+)', '-', strip_tags($folder1)); //xóa khoảng trắng
-
-	$insert 	= "INSERT INTO films_db VALUES 
-	(NULL,:name,:avatar,:kind,:year,:time,:content,:parts,'0',:type,:season,:link,'0')";
-	$stmt		= $conn->prepare($insert);
-	$stmt->bindParam(':name',$namefilm);
-	$stmt->bindParam(':avatar',$avatar);
-	$stmt->bindParam(':kind',$kinds);
-	$stmt->bindParam(':year',$year);
-	$stmt->bindParam(':time',$times);
-	$stmt->bindParam(':content',$content);
-	$stmt->bindParam(':parts',$parts);
-	$stmt->bindParam(':type',$types);
-	$stmt->bindParam(':season',$season);
-	$link = "$folder".$parts."/xemphim.html";
-	$stmt->bindParam(':link',$link);
-	$stmt->execute();
-
-	// $creatFolder = "../films/".$folder;
-	// $files 		= "../".$link;
-	if ($stmt->rowCount()>0) {
-		// mkdir($creatFolder,0777,true); //tạo folder
-		// file_put_contents($files,''); //tạo file theo tập phim
-		header("location: dashboard.php");
-	}else {
-		echo '<script>alert("Thêm Thấi Bại");</script>';
-	}
-}
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -99,44 +59,36 @@ $folder =preg_replace('([\s]+)', '-', strip_tags($folder1)); //xóa khoảng tr�
 			<section class="content">
 				
 				<div class="addfilms">
-	<article class="addfilm">
-		<form action="addfilms.php" method="post" enctype="multipart/form-data">
-			 	<legend>Thêm phim</legend>
-			<div class="left">
-			 	<label>Tên Phim</label>
-			 	<input type="text" name="namefilm" placeholder="tên phim" required><br>
-			 	<label>Phần</label>
-			 	<input type="number" name="parts" placeholder="vd: 1" required class="row" style="width: 80px;"><br>
-			 	<label>Thể loại</label>
-			 	<input type="text" name="kinds" placeholder="thể loại" required class="row"><br>
-			 	<label>Phim Bộ/Movie</label>
-			 	<select name="types" class="row" required>
-			 		<option value="0">Phim Bộ</option>
-			 		<option value="1">Movie</option>
-			 	</select><br>
-			 	<label>Mùa</label>
-			 	<select name="season" class="row" required>
-			 		<option value="0">Mùa Xuân</option>
-			 		<option value="1">Mùa Hè</option>
-			 		<option value="2">Mùa Thu</option>
-			 		<option value="3">Mùa Đông</option>
-			 	</select><br>
-			 	<label>Năm phát hành</label>
-			 	<input type="text" name="year" placeholder="năm sản xuất" required class="row"><br>
-			 	<label>Độ dài phim</label>
-			 	<input type="text" name="times" placeholder="thời lượng phim" required  style="width: 80px;"><br>
-			 	<label>Avatar phim</label>
-			 	<input type="file" name="avatar" style="width: 160px;height: 22px; padding:0;">
-			</div>
-			<div class="right" style="border-left: 1px solid #999">
-			 	<label>Nội Dung</label>
-			 	<textarea name="content" cols="62" rows="14"></textarea><br>
-			</div>
-		 	<input type="submit" name="add" value="Thêm Phim" style="width: 100px; padding:0; background-color: #328; color: #fff; margin: 16px 160px;">
-		</form>
-	</article>
-
-</div>
+					<h2>Thêm phim</h2>
+					<form>
+						<div class="left">
+							<div><p>Tên Phim : </p><input type="text" name="name" placeholder="HARRY POTTER VÀ HÒN ĐÁ PHÙ THỦY"></div>
+							<div><p>Thể Loại : </p><input type="text" name="name" placeholder="Hành Động, Viễn Tưởng, ..."></div>
+							<div><p>Tác Giả : </p><input type="text" name="name" placeholder="Steve Kloves"></div>
+							<div class="col-2">
+								<p>Series : </p><input type="text" name="name" placeholder="Harry Potter">
+								<p>Năm : </p><input type="text" name="name" placeholder="2001">
+							</div>
+							<div class="col-2">
+								<p>Số Tập : </p><input type="number" name="name" placeholder="1">
+								<p>Trạng thái : </p>
+								<select>
+									<option>Hoàn Thành</option>
+									<option>Đang Chiếu</option>
+									<option>Sắp Chiếu</option>
+								</select>
+							</div>
+							<div class="col-2">
+								<p>Thumbnail: </p><input type="file" class="file" name="name" placeholder="Harry Potter">
+								<p>Banner : </p><input type="file" class="file" name="name" placeholder="2001">
+							</div>
+						</div>
+						<div class="right">
+							<p>Nội Dung</p>
+							<textarea name="content" placeholder="Contnets"></textarea>
+						</div>
+					</form>
+				</div>
 
 			</section> <!-- section content -->
 		</section> <!--section container-->
