@@ -125,7 +125,7 @@
                         </div>
                         <div class="film-related-meta">
                             <a href="xemphim.php">
-                                <div class="film-related-title">Erza vS her mom&#039;s Dragon Form - Fairy Tail Final Season  AMV</div>
+                                <div class="film-related-title"><?php echo $value['name'] ?></div>
                             </a>
                             <div class="film-related-views">725 lượt xem</div>
                         </div>
