@@ -143,12 +143,14 @@ ul li,h1:hover{
 .addfilms .left{
 	width: 460px;
 	height: 480px;
+	margin-top: 40px;
 	float: left;
 	text-align: right;
 }
 .addfilms .right{
 	float: left;
-	width: 620px;
+	width: 50%;
+	min-width: 510px;
 	margin-left: 40px;
 }
 .addfilms p{
