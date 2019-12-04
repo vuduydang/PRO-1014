@@ -12,8 +12,8 @@ require_once("../commons/helpers.php");
 	// move_uploaded_file($banner['tmp_name'], "../assets/".$banner['name']);
 	
 	// --------------//
-	$name 		= isset($_POST['name']) ? $_POST['name'] : "";
 	$categories = isset($_POST['categories']) ? $_POST['categories'] : "";
+	$name 		= isset($_POST['name']) ? $_POST['name'] : "";
 	$author 	= isset($_POST['author']) ? $_POST['author'] : "";
 	$series 	= isset($_POST['series']) ? $_POST['series'] : "";
 	$year 		= isset($_POST['year']) ? $_POST['year'] : "";
@@ -23,11 +23,6 @@ require_once("../commons/helpers.php");
 	$thumbnail 	= isset($_FILES['thumbnail']) ? $_FILES['thumbnail'] : "";
 	$banner 	= isset($_FILES['banner']) ? $_FILES['banner'] : "";
 
-	if ($name=="" || $categories=="" || $author=="" || $year=="" || $quantity=="" || $content=="" || $thumbnail=="" || $banner=="") {
-		echo "<script>alert('Thiếu thông tin phim rồi, chú ý vào !')</script>";
-		echo "<script>window.history.back()</script>";
-		die();
-	}
 	
 	if ($thumbnail['name'] != "") {
 		$thumbnailName = $thumbnail['name'];
