@@ -31,15 +31,15 @@ require_once("../commons/helpers.php");
 	
 	if ($thumbnail['name'] != "") {
 		$thumbnailName = $thumbnail['name'];
-		move_uploaded_file($thumbnail['tmp_name'], "../assets/".$thumbnailName);
+		move_uploaded_file($thumbnail['tmp_name'], "../assets/thumbnails/".$thumbnailName);
 	}
 	if ($banner['name'] != "") {
 		$bannerName = $banner['name'];
-		move_uploaded_file($banner['tmp_name'], "../assets/". $bannerName);
+		move_uploaded_file($banner['tmp_name'], "../assets/banners/". $bannerName);
 	}
 
 	$url_1 	= preg_replace('/([^\pL\.\ ]+)/u', '', strip_tags($name)); //xóa kí tự đặc biệt trong chuỗi
-	$url 	= preg_replace('([\s]+)', '-', strip_tags($url_1)); //xóa khoảng trắng
+	$url 	= preg_replace('([\s]+)', '-', strip_tags($url_1)).'html'; //xóa khoảng trắng
 
 	$sqlInsert = "INSERT INTO films VALUES ('null','$name','$series','$year','$categories','$author','$bannerName','$thumbnailName','$content','$quantity','$status','0','$url','1')"; 
 	executeQuery($sqlInsert);

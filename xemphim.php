@@ -42,9 +42,6 @@
         <link rel="stylesheet" href="./public/css/film99f8.css?id=57f035621535aaa1179c">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 
-    <link rel="stylesheet" href="./public/css/style.css">
-    <script type="text/javascript" src="./public/js/jquery.min.js"></script>
-    <script type="text/javascript" src="./public/js/jquery-ui.min.js"></script>
 
     
 

@@ -1,4 +1,8 @@
-    
+<head>
+    <link rel="stylesheet" href="./public/css/style.css">
+    <script type="text/javascript" src="./public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="./public/js/jquery-ui.min.js"></script>
+</head>
 <header>
     <nav class="navbar">
     	<div class="navbar-container">
@@ -83,7 +87,7 @@
             <div class="navbar-user-body tab-login">
                 <div class="navbar-form-group">
                     <label>Tên đăng nhập</label>
-                    <input type="text" name="user">
+                    <input type="text" name="username">
                     <i class="icon icon-person"></i>
                     <span class="tip"></span>
                 </div>

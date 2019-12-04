@@ -366,14 +366,14 @@ function login() {
             username: t,
             password: a,
             remember: i
-        },
-        n = sendAjax("POST", _GLOBAL._API + "/users/login", o);
-    n.onload = function() {
-        if (200 == n.status) return void window.location.reload();
-        400 == n.status ? e.innerHTML = "<li>Thông tin đăng nhập không chính xác</li>" : 403 == n.status && (e.innerHTML = "<li>Hệ thống đang tắt chức năng đăng nhập</li>"), e.parentNode.classList.remove("hidden"), loginButton.classList.remove("disabled"), navbarLoading.classList.add("hidden")
-    }, n.onerror = function(t) {
-        e.innerHTML = "<li>Lỗi kết nối, vui lòng thử lại</li>", e.parentNode.classList.remove("hidden"), loginButton.classList.remove("disabled"), navbarLoading.classList.add("hidden")
-    }
+        };
+        alert(o['username']);
+    // n.onload = function() {
+    //     if (200 == n.status) return void window.location.reload();
+    //     400 == n.status ? e.innerHTML = "<li>Thông tin đăng nhập không chính xác</li>" : 403 == n.status && (e.innerHTML = "<li>Hệ thống đang tắt chức năng đăng nhập</li>"), e.parentNode.classList.remove("hidden"), loginButton.classList.remove("disabled"), navbarLoading.classList.add("hidden")
+    // }, n.onerror = function(t) {
+    //     e.innerHTML = "<li>Lỗi kết nối, vui lòng thử lại</li>", e.parentNode.classList.remove("hidden"), loginButton.classList.remove("disabled"), navbarLoading.classList.add("hidden")
+    // }
 }
 
 function logout() {
