@@ -64,7 +64,6 @@
               var _avlVar = _avlVar || [];
               _avlVar.push(["685a2cbb1c3448729f4a578af4a29f25","[yo_page_url]","[width]","[height]"]);
     </script>
-    <script type="text/javascript" src="../../ss.yomedia.vn/js/yomedia-sdk30f4.js?v=3" id="s-685a2cbb1c3448729f4a578af4a29f25"></script>
         
 
         <div class="player-wrapper">
@@ -232,7 +231,6 @@
 
           gtag('config', 'UA-81129102-2');
         </script>
-		<script type="text/javascript" async defer src="../ss.yomedia.vn/js/ads.js"></script>
 
     <!-- push link video -->
     <script type="text/javascript" src="./public/js/main.js"></script>
