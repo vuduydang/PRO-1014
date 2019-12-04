@@ -1,9 +1,14 @@
 <?php
-error_reporting(0);
+// error_reporting(0);
 session_start();
 require_once("../commons/constants.php");
 require_once("../commons/db.php");
 require_once("../commons/helpers.php");
+
+$session = isset($_SESSION[AUTH_YF]) ? $_SESSION[AUTH_YF] : "";
+if (empty($_SESSION[AUTH_YF]) || $session['role_id'] != 1) {
+	header("location:".BASE_URL."/admin/");
+}
 
 ?>
 <!DOCTYPE html>

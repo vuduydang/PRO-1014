@@ -361,13 +361,28 @@ function login() {
     if (e.parentNode.classList.add("hidden"), e.innerHTML = "", navbarLoading.classList.remove("hidden"), loginButton.classList.add("disabled"), !validateLoginUsername() || !validatePassword(loginTab)) return e.innerHTML = "<li>Thông tin đăng nhập không chính xác</li>", e.parentNode.classList.remove("hidden"), loginButton.classList.remove("disabled"), void navbarLoading.classList.add("hidden");
     var t = document.querySelector('input[name="username"]').value,
         a = document.querySelector('input[name="password"]').value,
-        i = document.querySelector('input[name="remember"]').checked,
-        o = {
-            username: t,
-            password: a,
-            remember: i
-        };
-        alert(o['username']);
+        i = document.querySelector('input[name="remember"]').checked;
+        
+        $.ajax({
+            url: "http://localhost/Git/PRO-1014/user/login.php",
+            type: "POST",
+            dataType: 'text',
+            data: {
+                'username' : t,
+                'password' : a,
+                'checked'  : i
+            },
+            success : function(msg){
+                if (msg == 'true') {
+                    location.reload();
+                }else{
+                    e.innerHTML = "<li>Thông tin đăng nhập không chính xác</li>", e.parentNode.classList.remove("hidden"), loginButton.classList.remove("disabled"), navbarLoading.classList.add("hidden");
+                }
+            },
+            error : function(){
+                e.innerHTML = "<li>Lỗi kết nối, vui lòng thử lại</li>", e.parentNode.classList.remove("hidden"), loginButton.classList.remove("disabled"), navbarLoading.classList.add("hidden");
+            }
+        })
     // n.onload = function() {
     //     if (200 == n.status) return void window.location.reload();
     //     400 == n.status ? e.innerHTML = "<li>Thông tin đăng nhập không chính xác</li>" : 403 == n.status && (e.innerHTML = "<li>Hệ thống đang tắt chức năng đăng nhập</li>"), e.parentNode.classList.remove("hidden"), loginButton.classList.remove("disabled"), navbarLoading.classList.add("hidden")

@@ -39,7 +39,7 @@
 		<!-- Bing verification -->
 		<meta name="msvalidate.01" content="C21FDE84CE65ABA807746F89A0D2964C" />
 	
-        <link rel="stylesheet" href="./public/css/film99f8.css?id=57f035621535aaa1179c">
+        <link rel="stylesheet" href="./public/css/film99f8.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 
 
@@ -213,10 +213,10 @@
 
         
         
-    <script type="text/javascript" src="./public/js/vlib581a.js?id=d0a34b993528e375202d"></script>
+    <script type="text/javascript" src="./public/js/vlib581a.js"></script>
         
-    <script type="text/javascript" src="./public/js/enginee614.js?id=713d724142b81de2a286"></script>
-    <script type="text/javascript" src="./public/js/bfilm8ae2.js?id=508bade3ec5ab00fc518"></script>
+    <script type="text/javascript" src="./public/js/enginee614.js"></script>
+    <script type="text/javascript" src="./public/js/bfilm8ae2.js"></script>
 
 
     		<!-- Global site tag (gtag.js) - Google Analytics -->
