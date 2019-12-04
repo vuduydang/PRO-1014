@@ -1,3 +1,11 @@
+<?php
+        require_once './commons/constants.php';
+        require_once './commons/db.php';
+        require_once './commons/helpers.php';
+            $sqlQuery ="SELECT * from categories ORDER BY id limit 5";
+            $categories=executeQuery($sqlQuery, true);
+            ?>
+
 <head>
     <link rel="stylesheet" href="./public/css/style.css">
     <script type="text/javascript" src="./public/js/jquery.min.js"></script>
@@ -44,8 +52,8 @@
                     <li class="dropdown navbar-menu-item">
                       <a class="menu-item" href="?">Phim Mới</a>
                       <ul class="toggle">
-                        <li><a class="menu-item" href="anime.html">Anime Mới</a></li>
-                        <li><a class="menu-item" href="video-2.html">Video Mới</a></li>
+                        <li><a class="menu-item" href="video-2.php">Anime Mới</a></li>
+                        <li><a class="menu-item" href="video-2.php">Video Mới</a></li>
                       </ul>
                     </li>
                     <li class="dropdown navbar-menu-item">
@@ -55,14 +63,14 @@
                         <li><a class="menu-item" href="#">2019</a></li>
                       </ul>
                     </li>
-                    <li class="dropdown navbar-menu-item">
-                      <a class="menu-item" href="?">Thể loại</a>
+                <li class="dropdown navbar-menu-item">
+                        <a class="menu-item" href="?">Thể loại</a>
+                    <?php foreach ($categories as $categorie): ?>
                       <ul class="toggle">
-                        <li><a class="menu-item" href="#">Hành động</a></li>
-                        <li><a class="menu-item" href="#">Lãng Mạn</a></li>
-                        <li><a class="menu-item" href="#">Kinh dị</a></li>
+                        <li><a class="menu-item" href="video-2.php?categories=<?=$categorie['categories']?>"><?php echo $categorie['categories']?></a></li>
                       </ul>
-                    </li>
+                    <?php endforeach ?>
+                </li>
                   </ul>
         		</div>
 
