@@ -225,7 +225,7 @@
 </div>    
 
     
-    <script type="text/javascript" src="./public/js/bhome3422.js?id=f33d477c99c33e5d550a"></script>
+    <script type="text/javascript" src="./public/js/bfilms.js"></script>
               
 
             <!-- Global site tag (gtag.js) - Google Analytics -->

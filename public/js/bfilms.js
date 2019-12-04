@@ -1,10 +1,16 @@
+// var loginYF = sessionStorage.getItem('loginYF');
+// alert(loginYF);
+// if (typeof loginYF != "undefined") {
+//     const LoginSuccess = loginYF;
+// }
+const LoginSuccess = 1;
+
 function iOSversion() {
     if (/iP(hone|od|ad)/.test(navigator.platform)) {
         var e = navigator.appVersion.match(/OS (\d+)_(\d+)_?(\d+)?/);
         return [parseInt(e[1], 10), parseInt(e[2], 10), parseInt(e[3] || 0, 10)]
     }
 }
-
 function sendAjax(e, t, a, i) {
     i || (i = {});
     var o = new XMLHttpRequest;
@@ -374,6 +380,7 @@ function login() {
             },
             success : function(msg){
                 if (msg == 'true') {
+                    const LoginSuccess = 1;
                     location.reload();
                 }else{
                     e.innerHTML = "<li>Thông tin đăng nhập không chính xác</li>", e.parentNode.classList.remove("hidden"), loginButton.classList.remove("disabled"), navbarLoading.classList.add("hidden");
@@ -590,7 +597,7 @@ function getSeasons(e) {
 }
 
 function addHistory(e, t) {
-    if (1 == _GLOBAL._IS_LOGGED_IN) {
+    if (1 == LoginSuccess) {
         sendAjax("POST", _GLOBAL._API + "/" + e + "/" + t + "/histories")
     }
 }
@@ -745,7 +752,7 @@ function setCommentItem(e, t) {
         o.appendChild(u)
     }
     return s.onclick = function() {
-        return _GLOBAL._IS_LOGGED_IN ? e.is_banned ? (alertify.logPosition("top right"), void alertify.error("Không thể trả lời bình luận này")) : (t.reply ? (replyComment = {
+        return LoginSuccess ? e.is_banned ? (alertify.logPosition("top right"), void alertify.error("Không thể trả lời bình luận này")) : (t.reply ? (replyComment = {
             id: t.parentId,
             author: e.author
         }, t.commentBody.appendChild(replyInput)) : (replyComment = {
@@ -2420,7 +2427,7 @@ function playVideoFromEpisode(e, t) {
     a.sort(function(e, t) {
         return parseInt(e.quality) < parseInt(t.quality) ? -1 : parseInt(e.quality) > parseInt(t.quality) ? 1 : 0
     }), player.cache_.sources = a;
-    if (!_GLOBAL._IS_LOGGED_IN && (656 == film.id || 5076 == film.id)) return !0, player.video.pause(), player.el_.classList.add("player-blocked"), player.el_.classList.add("player-error"), player.el_.classList.remove("player-waiting"), void(player.error.message.innerHTML = "CLIPANIME TẠM NGƯNG CHIẾU PHIM NÀY");
+    if (!LoginSuccess && (656 == film.id || 5076 == film.id)) return !0, player.video.pause(), player.el_.classList.add("player-blocked"), player.el_.classList.add("player-error"), player.el_.classList.remove("player-waiting"), void(player.error.message.innerHTML = "CLIPANIME TẠM NGƯNG CHIẾU PHIM NÀY");
     player.el_.classList.remove("player-blocked");
     var c = !1;
     if (e.sources.hls && playHLS(player, e, a) && (c = !0), !c) {
@@ -4206,7 +4213,7 @@ var pageLoaded = !1;
 ismobile.tv || filmOnLoad(), window.addEventListener("load", filmOnLoad), document.addEventListener("load", filmOnLoad), window.addEventListener("click", function(e) {
     windowOnClick(e)
 }), commentEmoticon.onclick = function() {
-    if (!_GLOBAL._IS_LOGGED_IN) return void showLoginForm();
+    if (!LoginSuccess) return void showLoginForm();
     emojiPicker.classList.toggle("hidden");
     var e = getElement(".emoji-list");
     if (!e.querySelector(".emoji-item")) {
@@ -4221,7 +4228,7 @@ ismobile.tv || filmOnLoad(), window.addEventListener("load", filmOnLoad), docume
 }, commentMore.onclick = function() {
     commentLoading.classList.remove("hidden"), getComments()
 }, commentInput.onclick = function() {
-    if (!_GLOBAL._IS_LOGGED_IN) return void showLoginForm()
+    if (!LoginSuccess) return void showLoginForm()
 }, emoji.panda = [{
     code: ":daynay:",
     value: "1.gif"

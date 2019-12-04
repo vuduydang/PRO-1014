@@ -188,10 +188,10 @@
 
         
         
-    <script type="text/javascript" src="js/vlib581a.js?id=d0a34b993528e375202d"></script>
+    <script type="text/javascript" src="./public/js/vlib581a.js?id=d0a34b993528e375202d"></script>
         
-    <script type="text/javascript" src="js/enginee614.js?id=713d724142b81de2a286"></script>
-    <script type="text/javascript" src="js/bfilm8ae2.js?id=508bade3ec5ab00fc518"></script>
+    <script type="text/javascript" src="./public/js/enginee614.js?id=713d724142b81de2a286"></script>
+    <script type="text/javascript" src="./public/js/bfilms.js"></script>
 
     		<!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-81129102-2"></script>
@@ -202,7 +202,6 @@
 
           gtag('config', 'UA-81129102-2');
         </script>
-		<script type="text/javascript" async defer src="../ss.yomedia.vn/js/ads.js"></script>
 	    	
 </body>
 </html>
