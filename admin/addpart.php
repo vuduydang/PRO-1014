@@ -1,16 +1,18 @@
 <?php
-require("../commons/db.php");
 session_start();
-// if (isset($_SESSION['admin'])==false) {
-// 	header("location: index.php");
-// }
+require_once("../commons/constants.php");
+require_once("../commons/db.php");
+require_once("../commons/helpers.php");
+
+$session = isset($_SESSION[AUTH_YF]) ? $_SESSION[AUTH_YF] : "";
+if (empty($_SESSION[AUTH_YF]) || $session['role_id'] != 1) {
+	header("location:".BASE_URL."/admin/");
+}
 
 if (isset($_GET['id'])) {
 	$id 	= $_GET['id'];
-	$select = "SELECT * FROM films_db WHERE id='$id'";
-	$stmt 	= $conn->prepare($select);
-	$stmt->execute();
-	$list	= $stmt->fetch();
+	$select = "SELECT * FROM films WHERE id='$id'";
+	$list 	= executeQuery($select);
 }
 if (isset($_POST['addpart'])) {
 	extract($_REQUEST);
@@ -38,22 +40,22 @@ if (isset($_POST['addpart'])) {
 <head>
 	<meta charset="UTF-8">
 	<title>Quản lý</title>
-	<link rel="icon"href="../assets/logo.png">
+	<link rel="icon"href="../assets/ico.png">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script type="text/javascript" src="js/vue.js"></script>
-	<link rel="stylesheet" href="../font-awesome/css/svg-with-js.css">
-	<link rel="stylesheet" href="../font-awesome/css/all.min.css">
-	<link rel="stylesheet" href="../font-awesome/css/brands.min.css">
-	<link rel="stylesheet" href="../font-awesome/css/regular.min.css">
-	<link rel="stylesheet" href="../font-awesome/css/svg-with-js.css">
-	<link rel="stylesheet" href="../font-awesome/css/solid.min.css">
-	<link rel="stylesheet" href="../font-awesome/css/v4-shims.min.css">
+	<link rel="stylesheet" href="../public/font-awesome/css/svg-with-js.css">
+	<link rel="stylesheet" href="../public/font-awesome/css/all.min.css">
+	<link rel="stylesheet" href="../public/font-awesome/css/brands.min.css">
+	<link rel="stylesheet" href="../public/font-awesome/css/regular.min.css">
+	<link rel="stylesheet" href="../public/font-awesome/css/svg-with-js.css">
+	<link rel="stylesheet" href="../public/font-awesome/css/solid.min.css">
+	<link rel="stylesheet" href="../public/font-awesome/css/v4-shims.min.css">
+	
 </head>
 <body>
 	<div id="wrap">
 			<div class="head">
 				<img src="../assets/logo.png">
-				<a href="logout.php">logout</a>
+				<a href="../user/logout.php"><i class="fas fa-sign-out-alt"></i></a>
 				<ul>
 					<li>
 						<i class="far fa-bell"></i>
@@ -62,7 +64,7 @@ if (isset($_POST['addpart'])) {
 					<li>
 						<img class="avatar" src="../assets/avatars/avatar.jpg">
 						<span>xin chào</span>
-						<b><?php echo $_SESSION['admin'];?></b>
+						<b>- <?php echo $_SESSION[AUTH_YF]['name'];?></b>
 					</li>
 				</ul>
 			</div>
@@ -88,13 +90,8 @@ if (isset($_POST['addpart'])) {
 					 	<input type="hidden" name="id" value="<?=$id?>" readonly><br>
 					 	<label>Tên Phim</label>
 					 	<input type="text" name="namefilm" value="<?=$list['name']?>" readonly><br>
-					 	<label>Mùa</label>
-					 	<select name="season" class="row" required>
-					 		<option value="0">Mùa Xuân</option>
-					 		<option value="1">Mùa Hè</option>
-					 		<option value="2">Mùa Thu</option>
-					 		<option value="3">Mùa Đông</option>
-					 	</select><br>
+					 	<label>Tác giả</label>
+					 	<input type="text" name="namefilm" value="<?=$list['author']?>" readonly><br>
 					 	<label>Tên tập</label>
 					 	<input type="text" name="namepart" placeholder="tên tập" required><br>
 					 	<label>Player</label>

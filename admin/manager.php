@@ -1,47 +1,47 @@
 <?php
-require("../config.php");
 session_start();
-if (isset($_SESSION['admin'])==false) {
-	header("location: index.php");
-}
-?>
-<?php
-$select = "SELECT * FROM films_db";
-$stmt 	= $conn->prepare($select);
-$stmt->execute();
-$lists	= $stmt->fetchALL(PDO::FETCH_ASSOC);
+require_once("../commons/constants.php");
+require_once("../commons/db.php");
+require_once("../commons/helpers.php");
 
+$session = isset($_SESSION[AUTH_YF]) ? $_SESSION[AUTH_YF] : "";
+if (empty($_SESSION[AUTH_YF]) || $session['role_id'] != 1) {
+	header("location:".BASE_URL."/admin/");
+}
+
+$select = "SELECT * FROM films";
+ $lists = executeQuery($select, true);
 ?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
 	<meta charset="UTF-8">
 	<title>Quản lý</title>
-	<link rel="icon"href="../images/logo.png">
+	<link rel="icon"href="../assets/ico.png">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script type="text/javascript" src="js/vue.js"></script>
-	<link rel="stylesheet" href="../font-awesome/css/svg-with-js.css">
-	<link rel="stylesheet" href="../font-awesome/css/all.min.css">
-	<link rel="stylesheet" href="../font-awesome/css/brands.min.css">
-	<link rel="stylesheet" href="../font-awesome/css/regular.min.css">
-	<link rel="stylesheet" href="../font-awesome/css/svg-with-js.css">
-	<link rel="stylesheet" href="../font-awesome/css/solid.min.css">
-	<link rel="stylesheet" href="../font-awesome/css/v4-shims.min.css">
+	<link rel="stylesheet" href="../public/font-awesome/css/svg-with-js.css">
+	<link rel="stylesheet" href="../public/font-awesome/css/all.min.css">
+	<link rel="stylesheet" href="../public/font-awesome/css/brands.min.css">
+	<link rel="stylesheet" href="../public/font-awesome/css/regular.min.css">
+	<link rel="stylesheet" href="../public/font-awesome/css/svg-with-js.css">
+	<link rel="stylesheet" href="../public/font-awesome/css/solid.min.css">
+	<link rel="stylesheet" href="../public/font-awesome/css/v4-shims.min.css">
+	
 </head>
 <body>
 	<div id="wrap">
 			<div class="head">
-				<img src="../images/logo.png">
-				<a href="logout.php">logout</a>
+				<img src="../assets/logo.png">
+				<a href="../user/logout.php"><i class="fas fa-sign-out-alt"></i></a>
 				<ul>
 					<li>
 						<i class="far fa-bell"></i>
 						<span id="notification">0</span>
 					</li>
 					<li>
-						<img class="avatar" src="../images/avatar.jpg">
+						<img class="avatar" src="../assets/avatars/avatar.jpg">
 						<span>xin chào</span>
-						<b><?php echo $_SESSION['admin'];?></b>
+						<b>- <?php echo $_SESSION[AUTH_YF]['name'];?></b>
 					</li>
 				</ul>
 			</div>
@@ -49,7 +49,7 @@ $lists	= $stmt->fetchALL(PDO::FETCH_ASSOC);
 			<div class="sidebar">
 				<ul>
 					<li>
-						<a href="quanly.php"><i class="fas fa-home"></i>Dashboard</a>
+						<a href="dashboard.php"><i class="fas fa-home"></i>Dashboard</a>
 					</li>
 					<li>
 						<a href="addfilms.php"><i class="fas fa-plus"></i>Thêm Phim</a>
@@ -61,35 +61,33 @@ $lists	= $stmt->fetchALL(PDO::FETCH_ASSOC);
 			</div>
 			<section class="content">
 				
-				<table>
+				<table border="1">
 					<tr style="border-bottom: 1px solid #328">
-						<td>ID</td>
-						<td>TÊN</td>
-						<td>NỘI DUNG</td>
-						<td>THỂ LOẠI</td>
-						<td>NĂM</td>
-						<td>THỜI LƯỢNG</td>
-						<td>PHẦN</td>
-						<td>SÔ TẬP</td>
-						<td>LƯỢT XEM</td>
-						<td>TÙY CHỈNH</td>
+						<th>ID</th>
+						<th>TÊN</th>
+						<th>NỘI DUNG</th>
+						<th>THỂ LOẠI</th>
+						<th>NĂM</th>
+						<th>THỜI LƯỢNG</th>
+						<th>PHẦN</th>
+						<th>SÔ TẬP</th>
+						<th>LƯỢT XEM</th>
+						<th>TÙY CHỈNH</th>
 					</tr>
 					<?php
 						foreach ($lists as $value) {
-							$stmt=$conn->prepare("SELECT COUNT(*) FROM part_films_db WHERE id_film = :id");
-							$stmt->bindParam('id',$value["id"]);
-							$stmt->execute();
-							$count = $stmt->fetch();
-							$counts = $count[0];
+							$id 	= $value['id'];
+							$count 	= "SELECT COUNT(*) FROM parts WHERE film_id = '$id'";
+							$counts = executeQuery($count)[0];
 					?>
 					<tr>
 						<td><?=$value["id"]?></td>
-						<td><input type="text" value="<?=$value["name"]?>"></td>
-						<td><textarea readonly style="border: none; width: 100%"><?=$value["content"]?></textarea></td>
-						<td><input type="text" value="<?=$value["kind"]?>"></td>
+						<td><?=$value["name"]?></td>
+						<td><?=$value["content"]?></td>
+						<td><?=$value["categories"]?></td>
 						<td><?=$value["year"]?></td>
-						<td><?=$value["time"]?></td>
-						<td><?=$value["parts"]?></td>
+						<td><?=$value["author"]?></td>
+						<td><?=$value["quantity"]?></td>
 						<td><?=$counts?></td>
 						<td><?=$value["views"]?></td>
 						<td>
