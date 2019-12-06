@@ -61,15 +61,13 @@ $select = "SELECT * FROM films";
 			</div>
 			<section class="content">
 				
-				<table border="1">
+				<table>
 					<tr style="border-bottom: 1px solid #328">
 						<th>ID</th>
 						<th>TÊN</th>
-						<th>NỘI DUNG</th>
 						<th>THỂ LOẠI</th>
 						<th>NĂM</th>
 						<th>THỜI LƯỢNG</th>
-						<th>PHẦN</th>
 						<th>SÔ TẬP</th>
 						<th>LƯỢT XEM</th>
 						<th>TÙY CHỈNH</th>
@@ -82,13 +80,11 @@ $select = "SELECT * FROM films";
 					?>
 					<tr>
 						<td><?=$value["id"]?></td>
-						<td><?=$value["name"]?></td>
-						<td><textarea value="<?=$value["content"]?>"></textarea></td>
+						<td><?=$value["name"]?> </td>
 						<td><?=$value["categories"]?></td>
 						<td><?=$value["year"]?></td>
 						<td><?=$value["author"]?></td>
-						<td><?=$value["quantity"]?></td>
-						<td><?=$counts?></td>
+						<td><?=$counts?>/<?=$value["quantity"]?></td>
 						<td><?=$value["views"]?></td>
 						<td>
 							<a href="addpart.php?id=<?=$value['id']?>"><i class="fas fa-plus"></i></a>

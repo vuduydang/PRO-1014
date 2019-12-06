@@ -83,23 +83,45 @@ if (isset($_POST['addpart'])) {
 				</ul>
 			</div>
 			<section class="content">
-				
-				<article class="addpart">
-					<form action="" method="post" enctype="multipart/form-data">
-					 	<legend>Thêm Tập</legend>
-					 	<input type="hidden" name="id" value="<?=$id?>" readonly><br>
-					 	<label>Tên Phim</label>
-					 	<input type="text" name="namefilm" value="<?=$list['name']?>" readonly><br>
-					 	<label>Tác giả</label>
-					 	<input type="text" name="namefilm" value="<?=$list['author']?>" readonly><br>
-					 	<label>Tên tập</label>
-					 	<input type="text" name="namepart" placeholder="tên tập" required><br>
-					 	<label>Player</label>
-					 	<textarea name="player" cols="60" rows="12"></textarea><br>
 
-					 	<input type="submit" name="addpart" value="Thêm Tập" style="width: 100px; padding:0; background-color: #328; color: #fff; margin: 16px 200px;">
-						</form>
-				</article>
+				<div class="addfilms">
+					<h2>Thêm phim</h2>
+					<form action="./push-films.php" method="post" enctype="multipart/form-data">
+						<div class="left">
+					 		<input type="hidden" name="film_id" value="<?=$id?>" readonly><br>
+							<div><p>Tên Phim : </p><input type="text" name="name" readonly value="<?=$list['name']?>"></div>
+							<div><p>Tác Giả : </p><input type="text" name="author" readonly value="<?=$list['author']?>"></div>
+								<p>Tên Tập : </p><input type="number" name="quantity" placeholder="ahihi">
+							<div class="col-2">
+								<p>Trạng thái: </p>
+								<select name="status">
+									<option value="Hoàn thành">Hoàn Thành</option>
+									<option value="Đang chiếu">Đang Chiếu</option>
+									<option value="Sắp chiếu">Sắp Chiếu</option>
+								</select>
+							</div>
+							<div class="col-2">
+								<div class="browser-upload">
+									<i class="title-browser-upload">Thumbnail</i>
+									<input type="file" class="file" name="thumbnail">
+									<span class="browser"><i class="fas fa-cloud-upload-alt"></i></span>
+								</div>
+								<div class="browser-upload">
+									<i class="title-browser-upload">Banner</i>
+									<input type="file" class="file" name="banner">
+									<span class="browser"><i class="fas fa-cloud-upload-alt"></i></span>
+								</div>
+							</div>
+						</div>
+						<div class="right">
+							<p>Nội Dung</p>
+							<textarea name="content" placeholder="Contnets"></textarea>
+						</div>
+						<div class="button">
+							<button>SUBMIT</button>
+						</div>
+					</form>
+				</div>
 
 
 			</section> <!-- section content -->
