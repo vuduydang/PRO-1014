@@ -55,6 +55,28 @@ ul li,h1:hover{
 }
 .head a{position: absolute; font-size:22px; color: #328;right: 2px;bottom: 2px;}
 
+/*loader*/
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 /*container*/
 .container{
 	float: left;
@@ -142,7 +164,7 @@ ul li,h1:hover{
 }
 .addfilms .left{
 	width: 460px;
-	height: 480px;
+	height: 420px;
 	margin-top: 40px;
 	float: left;
 	text-align: right;
@@ -230,7 +252,7 @@ ul li,h1:hover{
 	display: block;
 	float: left;
 	position: sticky;
-	left: 50%;
+	left: 35%;
 	clear: both;
 	
 }
