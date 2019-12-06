@@ -277,7 +277,7 @@
       <div class="tray-content">
         <div class="video-item">
           <a href="video/176994.html">
-            <img class="video-item-thumbnail" src="./assets/img/<?php echo $film['thumbnail']?>" data-src="https://i.imacdn.com/ca/2019/06/23/3c2294ad27249435_76fc90c131fea8a4_15937156124805933.jpg" alt="">
+            <img class="video-item-thumbnail" src="./assets/thumbnails/<?php echo $film['thumbnail']?>" data-src="https://i.imacdn.com/ca/2019/06/23/3c2294ad27249435_76fc90c131fea8a4_15937156124805933.jpg" alt="">
             <div class="video-item-title"><a><?php echo $film['name']?></a></div>
             <div class="video-item-duration"><?php echo $film['author']?></div>
             <div class="video-item-play-button">

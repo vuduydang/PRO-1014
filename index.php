@@ -65,7 +65,7 @@
             <div class="tray-content index">
                   <div class="tray-item">
                         <a href="info.php?id=<?=$value['id']?>">
-                            <img class="tray-item-thumbnail" src="<?php echo $value['thumbnail'] ?>" >
+                            <img class="tray-item-thumbnail" src="./assets/thumbnails/<?php echo $value['thumbnail'] ?>" >
                             <div class="tray-item-description">
                                 <div class="tray-item-title"><?php echo $value['name'] ?></div>
                                 <div class="tray-item-meta-info">
@@ -94,7 +94,7 @@
               <?php foreach ($films as $value) : ?>
                 <div class="video-item">
                     <a href="info.php?id=<?=$value['id']?>">
-                      <img class="video-item-thumbnail" src="<?php echo $value['thumbnail'] ?>" >
+                      <img class="video-item-thumbnail" src="./assets/thumbnails/<?php echo $value['thumbnail'] ?>" >
                         <div class="video-item-title"><?php echo $value['name'] ?></div>
                         <div class="video-item-duration"><?php echo $value['name'] ?></div>
                         <div class="video-item-play-button">
@@ -126,7 +126,7 @@
             <div class="tray-content">
                 <div class="tray-item">
                   <a href="info.php?id=<?=$value['id']?>">
-                      <img class="tray-item-thumbnail" src="<?php echo $value['thumbnail'] ?>" alt="">
+                      <img class="tray-item-thumbnail" src="./assets/thumbnails/<?php echo $value['thumbnail'] ?>" alt="">
                       <div class="tray-item-description">
                         <div class="tray-item-title"><?php echo $value['name'] ?></div>
                           <div class="tray-item-meta-info">
