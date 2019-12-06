@@ -86,7 +86,7 @@
                 <p>Thể loại: <span><?php echo $films['categories'] ?></span></p>
                 <p>Đạo diễn: <span><?php echo $films['author'] ?></span></p>
                 <p>Năm xuất bản: <span><?php echo $films['year'] ?></span></p>
-                <p>Thời lượng: <span><?php echo $films['quantity'] ?></span></p>
+                <p>Số tập: <span><?php echo $films['quantity'] ?></span></p>
                 <p>Lượt xem: <span><?php echo $films['views'] ?></span></p>
                 <p>Trạng thái <span><?php echo $films['status'] ?></span></p>
                 <a class="click-view" href="./xemphim.php">Xem phim</a>

@@ -83,7 +83,7 @@ $select = "SELECT * FROM films";
 					<tr>
 						<td><?=$value["id"]?></td>
 						<td><?=$value["name"]?></td>
-						<td><?=$value["content"]?></td>
+						<td><textarea value="<?=$value["content"]?>"></textarea></td>
 						<td><?=$value["categories"]?></td>
 						<td><?=$value["year"]?></td>
 						<td><?=$value["author"]?></td>
