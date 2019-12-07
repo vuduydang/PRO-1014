@@ -71,7 +71,7 @@
          
          data-name="Doraemon" data-episode-min="1" data-episode-max="505">
         <div class="banner">
-            <img src="<?php echo $films['banner'] ?>" alt="" style="width: 100%; height: 100%">
+            <img src="./assets/thumbnails/<?php echo $films['banner'] ?>" alt="" style="width: 100%; height: 100%">
         </div>
                                                 
 
@@ -79,14 +79,14 @@
          
         <div id="infomation" class="player-wrapper">
             <div class="img-thumbnail">
-                <img width="310" height="410" src="<?php echo $films['thumbnail'] ?>">
+                <img width="310" height="410" src="./assets/thumbnails/<?php echo $films['thumbnail'] ?>">
             </div>
             <div class="info">
                 <h1 class="film-info-title"><?php echo $films['name'] ?> - <?php echo $films['series'] ?></h1>
                 <p>Thể loại: <span><?php echo $films['categories'] ?></span></p>
                 <p>Đạo diễn: <span><?php echo $films['author'] ?></span></p>
                 <p>Năm xuất bản: <span><?php echo $films['year'] ?></span></p>
-                <p>Số tập: <span><?php echo $films['quantity'] ?></span></p>
+                <p>Thời lượng: <span><?php echo $films['quantity'] ?></span></p>
                 <p>Lượt xem: <span><?php echo $films['views'] ?></span></p>
                 <p>Trạng thái <span><?php echo $films['status'] ?></span></p>
                 <a class="click-view" href="./xemphim.php">Xem phim</a>

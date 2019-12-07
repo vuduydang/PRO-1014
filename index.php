@@ -2,9 +2,17 @@
     require_once './commons/constants.php';
     require_once './commons/db.php';
     require_once './commons/helpers.php';
-    $sqlQuery = "select * from films  limit 6";
-    $films = executeQuery($sqlQuery, true);
-    
+    $sqlQuery_new= "select * from films order by id desc limit 6 ";
+    $films_new = executeQuery($sqlQuery_new, true);
+
+    $sqlQuery_all = "SELECT * FROM films limit 12";
+    $films_all= executeQuery($sqlQuery_all, true);
+
+    $sqlQuery_hot="SELECT * FROM films order by views desc limit 6";
+    $films_hot= executeQuery($sqlQuery_hot, true);
+
+    $sqlQuery_part_new ="SELECT * FROM parts order by id desc limit 6";
+    $films_part_new= executeQuery($sqlQuery_part_new, true);
 
  ?>
 
@@ -61,7 +69,7 @@
               <a href="tap-moi-nhat.php">Phim mới <i class="icon icon-right"></i></a>
             </div>
 
-            <?php foreach ($films as $value): ?>
+            <?php foreach ($films_new as $value): ?>
             <div class="tray-content index">
                   <div class="tray-item">
                         <a href="info.php?id=<?=$value['id']?>">
@@ -91,7 +99,7 @@
             </div>
             <div class="tray-content">
 
-              <?php foreach ($films as $value) : ?>
+              <?php foreach ($films_part_new as $value) : ?>
                 <div class="video-item">
                     <a href="info.php?id=<?=$value['id']?>">
                       <img class="video-item-thumbnail" src="./assets/thumbnails/<?php echo $value['thumbnail'] ?>" >
@@ -122,7 +130,7 @@
             <div class="tray-title">
               <a href="anime.php">TẤT CẢ ANIME<i class="icon icon-right"></i></a>
             </div>
-            <?php foreach ($films as $value) : ?>
+            <?php foreach ($films_all as $value) : ?>
             <div class="tray-content">
                 <div class="tray-item">
                   <a href="info.php?id=<?=$value['id']?>">
@@ -131,7 +139,7 @@
                         <div class="tray-item-title"><?php echo $value['name'] ?></div>
                           <div class="tray-item-meta-info">
                               <div class="tray-film-views"><?php echo $value['views'] ?> lượt xem</div>
-                              <div class="tray-film-likes">1,807 thích</div>
+                              <!-- <div class="tray-film-likes">1,807 thích</div> -->
                           </div>
                         </div>
                   </a>
@@ -152,67 +160,17 @@
 
         <div class="anime-hot">
           <div class="tray-title">Anime HOT</div>
-                    <div class="anime-hot-item">
-            <a href="boruto-naruto-next-generations.php">
-              <img class="anime-hot-thumbnail" src="assets/img/3.jpg">
-              <div class="video-hot-title">Tom & jerry</div>
+            <?php foreach ($films_hot as $value): ?>
+              <div class="anime-hot-item">
+              <a href="boruto-naruto-next-generations.php">
+              <img class="anime-hot-thumbnail"  src="./assets/thumbnails/<?php echo $value['thumbnail'] ?>">
+              <div class="video-hot-title"><?php echo $value['name'] ?></div>
             </a>
-            <span class="anime-hot-views">30,471,788 lượt xem</span>
-            <span class="anime-hot-update">
-                                131 / 999 tập
-                          </span>
+            <span class="anime-hot-views"><?php echo $value['views'] ?> lượt xem</span>
+            <span class="anime-hot-update">131 / 999 tập</span>
           </div>
-                    <div class="anime-hot-item">
-            <a href="one-piece.php">
-              <img class="anime-hot-thumbnail" src="assets/img/7.png">
-              <div class="anime-hot-title">Vua Hải Tặc</div>
-            </a>
-            <span class="anime-hot-views">146,046,125 lượt xem</span>
-            <span class="anime-hot-update">
-                                817 / 6969 tập
-                          </span>
-          </div>
-                    <div class="anime-hot-item">
-            <a href="pokemon.php">
-              <img class="anime-hot-thumbnail" src="assets/img/1.jpg">
-              <div class="anime-hot-title">Pokemon</div>
-            </a>
-            <span class="anime-hot-views">3,335,900 lượt xem</span>
-            <span class="anime-hot-update">
-                                847 / 6969 tập
-                          </span>
-          </div>
-                    <div class="anime-hot-item">
-            <a href="naruto-shippuuden.php">
-              <img class="anime-hot-thumbnail" src="assets/img/1.jpg">
-              <div class="video-hot-title">Tom & jerry</div>
-            </a>
-            <span class="anime-hot-views">60,276,036 lượt xem</span>
-            <span class="anime-hot-update">
-                                500 / 500 tập
-                          </span>
-          </div>
-                    <div class="anime-hot-item">
-            <a href="tham-tu-lung-danh-conan.php">
-              <img class="anime-hot-thumbnail" src="assets/img/1.jpg">
-              <div class="anime-hot-title">Thám Tử Lừng Danh Conan</div>
-            </a>
-            <span class="anime-hot-views">12,593,581 lượt xem</span>
-            <span class="anime-hot-update">
-                                956 / ??? tập
-                          </span>
-          </div>
-                    <div class="anime-hot-item">
-            <a href="doraemon.php">
-              <img class="anime-hot-thumbnail" src="assets/img/1.jpg">
-              <div class="anime-hot-title">Doraemon</div>
-            </a>
-            <span class="anime-hot-views">2,705,001 lượt xem</span>
-            <span class="anime-hot-update">
-                                505 / ??? tập
-                          </span>
-          </div>
-                  </div>
+            <?php endforeach ?>
+        </div>
       </div>
       
     </div> <!-- /container -->

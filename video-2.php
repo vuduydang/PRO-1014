@@ -10,6 +10,8 @@
                 $films = executeQuery($sqlQuery_films, true);
                 // $films=$connect->prepare($films);
                 // $films=$connect->query($films);
+                $values = $_POST['search-box'];
+                $search = " SELECT * FROM films WHERE name like '%values%' or series like '%values%' or year like '%values%' or categories like '%values%' or author like '%values%'";
 }
             ?>
 <!DOCTYPE html>
@@ -63,37 +65,7 @@
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-           <div class="navbar-container">
-             <div class="navbar-header">
-                <div class="navbar-brand">
-                   <a class="logo" href="index.html">
-                      <img src="assets/img/logo.png" alt="ClipAnime.Com">
-                  </a>
-              </div>
-              <div class="navbar-menu-toggle" id="navbar-toggle">
-               <i class="icon-menu"></i>
-           </div>
-           <div class="navbar-header-user">
-               <div class="user-login user-avatar" id="user-avatar">
-                   <i class="icon-person"></i>
-               </div>
-           </div>
-       </div>
-       <div class="navbar-left" id="navbar-left">
-
-        <div class="navbar-search">
-           <div class="search-box">
-              <input type="text" name="search-box" placeholder="Tìm kiếm anime/video">
-              <i class="icon icon-search"></i>
-          </div>
-          <div class="search-result" id="search-result">
-              <div class="result-body"></div>
-              <div class="result-noitem hidden"></div>
-              <div class="loading hidden"></div>
-          </div>
-      </div>
+    
 
       <!--  MENU -->
 <!-- <div class="navbar-menu">
