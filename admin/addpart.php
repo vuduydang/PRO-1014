@@ -14,26 +14,7 @@ if (isset($_GET['id'])) {
 	$select = "SELECT * FROM films WHERE id='$id'";
 	$list 	= executeQuery($select);
 }
-if (isset($_POST['addpart'])) {
-	extract($_REQUEST);
 
-	$link =preg_replace('([\s]+)', '-', strip_tags($namefilm));
-	$url		= $link."/$namepart".$id.".html";
-
-	$insert = "INSERT INTO part_films_db VALUES (NULL,:id,:namepart,:season,:player,:url,'0')";
-	$stmt	= $conn->prepare($insert);
-	$stmt->bindParam(':id',$id);
-	$stmt->bindParam(':namepart',$namepart);
-	$stmt->bindParam(':season',$season);
-	$stmt->bindParam(':player',$player);
-	$stmt->bindParam(':url',$url);
-	$stmt->execute();
-	if ($stmt->rowCount()>0) {
-		header("location:manager.php");
-	}else {
-		echo '<script>alert("Thêm Thất bại")</script>';
-	}
-}
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -49,6 +30,9 @@ if (isset($_POST['addpart'])) {
 	<link rel="stylesheet" href="../public/font-awesome/css/svg-with-js.css">
 	<link rel="stylesheet" href="../public/font-awesome/css/solid.min.css">
 	<link rel="stylesheet" href="../public/font-awesome/css/v4-shims.min.css">
+
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
 	
 </head>
 <body>
@@ -83,23 +67,38 @@ if (isset($_POST['addpart'])) {
 				</ul>
 			</div>
 			<section class="content">
-				
-				<article class="addpart">
-					<form action="" method="post" enctype="multipart/form-data">
-					 	<legend>Thêm Tập</legend>
-					 	<input type="hidden" name="id" value="<?=$id?>" readonly><br>
-					 	<label>Tên Phim</label>
-					 	<input type="text" name="namefilm" value="<?=$list['name']?>" readonly><br>
-					 	<label>Tác giả</label>
-					 	<input type="text" name="namefilm" value="<?=$list['author']?>" readonly><br>
-					 	<label>Tên tập</label>
-					 	<input type="text" name="namepart" placeholder="tên tập" required><br>
-					 	<label>Player</label>
-					 	<textarea name="player" cols="60" rows="12"></textarea><br>
 
-					 	<input type="submit" name="addpart" value="Thêm Tập" style="width: 100px; padding:0; background-color: #328; color: #fff; margin: 16px 200px;">
-						</form>
-				</article>
+				<div class="addfilms">
+					<h2>Thêm Tập</h2>
+						<div class="left">
+					 		<input type="hidden" name="film_id" value="<?=$id?>" readonly><br>
+							<div><p>Tên Phim : </p><input type="text" name="name" readonly value="<?=$list['name']?>"></div>
+							<div><p>Tác Giả : </p><input type="text" name="author" readonly value="<?=$list['author']?>"></div>
+								<p>Tên Tập : </p><input type="text" name="name_part" placeholder="vd: Tập 1 ahihi">
+							<div class="col-2">
+								<!-- <p>Player : </p><input type="text" name="player" placeholder="vd: Tập 1 ahihi"> -->
+								<p>Trạngthái:</p>
+								<select name="status">
+									<option value="Hoàn thành">Hoàn Thành</option>
+									<option value="Đang chiếu">Đang Chiếu</option>
+									<option value="Sắp chiếu">Sắp Chiếu</option>
+								</select>
+							</div>
+							<div class="col-2">
+								<div class="browser-upload" style="left: 220px;">
+									<i class="title-browser-upload">Tải phim lên</i>
+									<input type="file" class="file" name="file_film">
+									<span class="browser"><i class="fas fa-cloud-upload-alt"></i></span>
+								</div>
+							</div>
+						</div>
+						<div class="right">
+							<div class="loader"></div>
+						</div>
+						<div class="button" id="push-part">
+							<button>SUBMIT</button>
+						</div>
+				</div>
 
 
 			</section> <!-- section content -->

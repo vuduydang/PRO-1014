@@ -55,13 +55,34 @@ ul li,h1:hover{
 }
 .head a{position: absolute; font-size:22px; color: #328;right: 2px;bottom: 2px;}
 
+/*loader*/
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 /*container*/
 .container{
 	float: left;
 	width: 100%;
 	height: 100%;
 	position: relative;
-	background-color: #e8e8e8;
 	padding: 20px;
 }
 .container .sidebar{
@@ -93,7 +114,8 @@ ul li,h1:hover{
 	float: right;
 	margin-top: 70px;
 	border-radius: 4px;
-	width: 86%;
+	width: 85%;
+	max-width: 1160px;
 	background-color: #fff;
 }
 
@@ -142,7 +164,7 @@ ul li,h1:hover{
 }
 .addfilms .left{
 	width: 460px;
-	height: 480px;
+	height: 420px;
 	margin-top: 40px;
 	float: left;
 	text-align: right;
@@ -230,7 +252,7 @@ ul li,h1:hover{
 	display: block;
 	float: left;
 	position: sticky;
-	left: 50%;
+	left: 35%;
 	clear: both;
 	
 }
@@ -243,3 +265,9 @@ ul li,h1:hover{
 	color: #fff;
 	margin-top: 20px;
 }
+
+/*Quản lý phim*/
+.content table{border: 1px solid #666}
+.content table tr:nth-child(even){background-color: #efecec}
+.content table th{border-bottom: 1px solid #328}
+.content table td{padding: 10px;}
