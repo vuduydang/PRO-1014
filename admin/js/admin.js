@@ -22,16 +22,18 @@ $(document).ready(function(){
 
 // push-parts-films
 $(document).ready(function(){
+	$("button").click(function(){
+	    	$(".addfilms").css('display','none');
+	    	$(".loader").css('display','block');
+	  	});
 	$(document).on('click', '#push-part', function() {
-		var file_data = $("input[name*='file_film']")[0].files[0];
-		var film_id   = $("input[name*='film_id']").val();
-		var name	  = $("input[name*='name_part']").val();
 		// var player	  = $("input[name*='player']").val();
 		var formData = new FormData();
 			// formData.append('file', $("input[name*='file_film']")[0].files[0]);
 			formData.append('file', $("input[name*='file_film']").prop('files')[0]);
 			formData.append('film_id', $("input[name*='film_id']").val());
 			formData.append('name', $("input[name*='name_part']").val());
+			formData.append('status', $("select[name*='status']").val());
 
         $.ajax({
                 url: "push-parts.php",
@@ -43,10 +45,15 @@ $(document).ready(function(){
 		       	async:true,
                 data: formData,
                 success: function (msg) {
-                    alert(msg + 'hihi');
+                	if (msg == 'error') {
+                    	alert('thiếu thông tin rồi !');
+                    	location.reload();
+		            }else{
+		            	location.assign("./manager.php");
+		            }
                 },
                 error: function(){
-                	alert("sai !");
+                	alert("Uplaod thất bại. Cần check lại !");
                 }
             })
 	});

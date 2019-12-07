@@ -92,14 +92,13 @@ if (isset($_GET['id'])) {
 								</div>
 							</div>
 						</div>
-						<div class="right">
-							<div class="loader"></div>
-						</div>
+						<div class="right"></div>
 						<div class="button" id="push-part">
 							<button>SUBMIT</button>
 						</div>
 				</div>
-
+			
+				<div class="loader"></div>
 
 			</section> <!-- section content -->
 		</section> <!--section container-->

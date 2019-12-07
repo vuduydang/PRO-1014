@@ -14,10 +14,19 @@ $film_id	= isset($_POST['film_id']) ? $_POST['film_id'] : "";
 $name 		= isset($_POST['name']) ? $_POST['name'] : "";
 $player 	= isset($_POST['player']) ? $_POST['player'] : "";
 $file_film 	= isset($_FILES['file']) ? $_FILES['file'] : "";
- dv($file_film); die();
+$status 	= isset($_POST['status']) ? $_POST['status'] : "";
+
+// validate
+if ($film_id == "" || $name == "" || $file_film == "" || $status == "") {
+	echo 'error';
+		die();
+}
+
+
+// start
 	$type = ["video/mp4"];
-	if ($file_film['name'] != "" || in_array($file_film['type'], $type)) {
-		move_uploaded_file($file_film['tmp_name'], "../videos/". $name);
+	if (in_array($file_film['type'], $type)) {
+		move_uploaded_file($file_film['tmp_name'], "../videos/". $film_id.'-'.time().'.mp4');
 	}
 
 $link 		= preg_replace('([\s]+)', '-', strip_tags($name));
@@ -26,5 +35,7 @@ $url		= $link.$film_id.".html";
 $insert = "INSERT INTO parts VALUES (NULL,'$film_id','$name','$player','$url')";
 executeQuery($insert);
 
+$upload = "UPDATE films SET status = '$status' WHERE id = '$film_id'";
+executeQuery($upload);
 echo 'Thành công !';
 die();
