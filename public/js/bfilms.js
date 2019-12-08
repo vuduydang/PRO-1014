@@ -3,7 +3,8 @@
 // if (typeof loginYF != "undefined") {
 //     const LoginSuccess = loginYF;
 // }
-const LoginSuccess = 1;
+var base_url = 'Git/PRO-1014';
+const LoginSuccess = 0;
 
 function iOSversion() {
     if (/iP(hone|od|ad)/.test(navigator.platform)) {
@@ -201,19 +202,19 @@ function validateLoginUsername() {
     return loginUsername.value.length < 5 || loginUsername.value.length > 20 ? (t.innerText = "từ 6 - 20 kí tự", e.classList.add("warning"), !1) : (t.innerText = "", e.classList.remove("warning"), !0)
 }
 
-function validateSignupUsername() {
-    var e = signupUsername.parentNode,
-        t = e.querySelector(".tip");
-    if (signupUsername.value.length < 6 || signupUsername.value.length > 20) return validated.username = !1, t.innerText = "từ 6 - 20 kí tự", void e.classList.add("warning");
-    if (!validated.username || cachedValidate.username != signupUsername.value) {
-        validated.username = !1, t.innerText = "";
-        var a = sendAjax("GET", _GLOBAL._API + "/users/validate?username=" + signupUsername.value);
-        a.onload = function() {
-            if (200 == a.status || 304 == a.status) return cachedValidate.username = signupUsername.value, e.classList.remove("warning"), void(validated.username = !0);
-            400 == a.status ? t.innerText = "không hợp lệ (bị cấm)" : 409 == a.status && (t.innerText = "đã tồn tại trong hệ thống"), validated.username = !1, cachedValidate.username = null, e.classList.add("warning")
-        }
-    }
-}
+// function validateSignupUsername() {
+//     var e = signupUsername.parentNode,
+//         t = e.querySelector(".tip");
+//     if (signupUsername.value.length < 6 || signupUsername.value.length > 20) return validated.username = !1, t.innerText = "từ 6 - 20 kí tự", void e.classList.add("warning");
+//     if (!validated.username || cachedValidate.username != signupUsername.value) {
+//         validated.username = !1, t.innerText = "";
+//         var a = sendAjax("GET", _GLOBAL._API + "/users/validate?username=" + signupUsername.value);
+//         a.onload = function() {
+//             if (200 == a.status || 304 == a.status) return cachedValidate.username = signupUsername.value, e.classList.remove("warning"), void(validated.username = !0);
+//             400 == a.status ? t.innerText = "không hợp lệ (bị cấm)" : 409 == a.status && (t.innerText = "đã tồn tại trong hệ thống"), validated.username = !1, cachedValidate.username = null, e.classList.add("warning")
+//         }
+//     }
+// }
 
 function validatePassword(e) {
     var t = e.querySelector('input[name="password"]'),
@@ -229,68 +230,68 @@ function validatePasswordConfirm() {
     validated.passwordConfirm = !0, t.innerText = "", e.classList.remove("warning")
 }
 
-function validateFullName() {
-    var e = fullName.parentNode,
-        t = e.querySelector(".tip");
-    if (fullName.value.length < 5 || fullName.value.length > 40) return validated.fullName = !1, t.innerText = "từ 8 - 40 kí tự", void e.classList.add("warning");
-    if (!validated.fullName || cachedValidate.fullName != fullName.value) {
-        validated.fullName = !1, t.innerText = "";
-        var a = sendAjax("GET", _GLOBAL._API + "/users/validate?full_name=" + fullName.value);
-        a.onload = function() {
-            if (200 == a.status || 304 == a.status) return cachedValidate.fullName = fullName.value, e.classList.remove("warning"), void(validated.fullName = !0);
-            400 == a.status ? t.innerText = "không hợp lệ (bị cấm)" : t.innerText = "hãy thử lại", validated.fullName = !1, cachedValidate.fullName = null, e.classList.add("warning")
-        }
-    }
-}
+// function validateFullName() {
+//     var e = fullName.parentNode,
+//         t = e.querySelector(".tip");
+//     if (fullName.value.length < 5 || fullName.value.length > 40) return validated.fullName = !1, t.innerText = "từ 8 - 40 kí tự", void e.classList.add("warning");
+//     if (!validated.fullName || cachedValidate.fullName != fullName.value) {
+//         validated.fullName = !1, t.innerText = "";
+//         var a = sendAjax("GET", _GLOBAL._API + "/users/validate?full_name=" + fullName.value);
+//         a.onload = function() {
+//             if (200 == a.status || 304 == a.status) return cachedValidate.fullName = fullName.value, e.classList.remove("warning"), void(validated.fullName = !0);
+//             400 == a.status ? t.innerText = "không hợp lệ (bị cấm)" : t.innerText = "hãy thử lại", validated.fullName = !1, cachedValidate.fullName = null, e.classList.add("warning")
+//         }
+//     }
+// }
 
-function validateEmail() {
-    var e = email.parentNode,
-        t = e.querySelector(".tip");
-    if (email.value.length < 8) return validated.email = !1, t.innerText = "email không hợp lệ", void e.classList.add("warning");
-    if (!validated.email || cachedValidate.email != email.value) {
-        validated.email = !1, t.innerText = "";
-        var a = sendAjax("GET", _GLOBAL._API + "/users/validate?email=" + email.value);
-        a.onload = function() {
-            if (200 == a.status || 304 == a.status) return validated.email = !0, cachedValidate.email = email.value, void e.classList.remove("warning");
-            400 == a.status ? t.innerText = "email không hợp lệ" : 409 == a.status && (t.innerText = "email đã tồn tại"), validated.email = !1, cachedValidate.email = null, e.classList.add("warning")
-        }
-    }
-}
+// function validateEmail() {
+//     var e = email.parentNode,
+//         t = e.querySelector(".tip");
+//     if (email.value.length < 8) return validated.email = !1, t.innerText = "email không hợp lệ", void e.classList.add("warning");
+//     if (!validated.email || cachedValidate.email != email.value) {
+//         validated.email = !1, t.innerText = "";
+//         var a = sendAjax("GET", _GLOBAL._API + "/users/validate?email=" + email.value);
+//         a.onload = function() {
+//             if (200 == a.status || 304 == a.status) return validated.email = !0, cachedValidate.email = email.value, void e.classList.remove("warning");
+//             400 == a.status ? t.innerText = "email không hợp lệ" : 409 == a.status && (t.innerText = "email đã tồn tại"), validated.email = !1, cachedValidate.email = null, e.classList.add("warning")
+//         }
+//     }
+// }
 
 function validateBirthDate(e) {
     var t = formGroupBirthday.querySelector(".tip");
-    return birthDate.value < 1 || birthDate.value > 31 ? (validated.birthDate = !1, t.innerText = "chọn ngày sinh từ 1 - 31", formGroupBirthday.classList.add("warning"), !1) : (validated.birthDate = !0, t.innerText = "", formGroupBirthday.classList.remove("warning"), !e && validated.birthMonth && validated.birthYear && validateBirthday(!0), !0)
+    return birthDate.value < 1 || birthDate.value > 31 ? (validated.birthDate = !1, t.innerText = "chọn ngày sinh từ 1 - 31", formGroupBirthday.classList.add("warning"), !1) : (validated.birthDate = !0, t.innerText = "", formGroupBirthday.classList.remove("warning"), !e && validated.birthMonth && validated.birthYear, !0)
 }
 
 function validateBirthMonth(e) {
     var t = formGroupBirthday.querySelector(".tip");
-    return birthMonth.value < 1 || birthMonth.value > 12 ? (validated.birthMonth = !1, t.innerText = "chọn tháng sinh từ 1 - 12", formGroupBirthday.classList.add("warning"), !1) : (validated.birthMonth = !0, t.innerText = "", formGroupBirthday.classList.remove("warning"), !e && validated.birthDate && validated.birthYear && validateBirthday(!0), !0)
+    return birthMonth.value < 1 || birthMonth.value > 12 ? (validated.birthMonth = !1, t.innerText = "chọn tháng sinh từ 1 - 12", formGroupBirthday.classList.add("warning"), !1) : (validated.birthMonth = !0, t.innerText = "", formGroupBirthday.classList.remove("warning"), !e && validated.birthDate && validated.birthYear , !0)
 }
 
 function validateBirthYear(e) {
     var t = formGroupBirthday.querySelector(".tip");
-    return birthYear.value < 1970 || birthYear.value > 2010 ? (validated.birthYear = !1, t.innerText = "chọn năm sinh từ 1970 - 2010", formGroupBirthday.classList.add("warning"), !1) : (validated.birthYear = !0, t.innerText = "", formGroupBirthday.classList.remove("warning"), !e && validated.birthDate && validated.birthMonth && validateBirthday(!0), !0)
+    return birthYear.value < 1970 || birthYear.value > 2010 ? (validated.birthYear = !1, t.innerText = "chọn năm sinh từ 1970 - 2010", formGroupBirthday.classList.add("warning"), !1) : (validated.birthYear = !0, t.innerText = "", formGroupBirthday.classList.remove("warning"), !e && validated.birthDate && validated.birthMonth, !0)
 }
 
-function validateBirthday(e) {
-    if (e || validateBirthDate(!0) && validateBirthMonth(!0) && validateBirthYear(!0)) {
-        var t = formGroupBirthday.querySelector(".tip"),
-            a = birthDate.value + "-" + birthMonth.value + "-" + birthYear.value,
-            i = new Date(birthYear.value + "-" + birthMonth.value + "-" + birthDate.value);
-        try {
-            if (i.getDate() != birthDate.value || i.getMonth() + 1 != birthMonth.value || i.getFullYear() != birthYear.value) return validated.birthday = !1, cachedValidate.birthday = null, t.innerText = "ngày " + a + " không hợp lệ", void formGroupBirthday.classList.add("warning");
-            validated.birthday = !0, cachedValidate.birthday = a
-        } catch (e) {
-            if (validated.birthday && cachedValidate.birthday == a) return;
-            t.innerText = "", validated.birthday = !1;
-            var o = sendAjax("GET", _GLOBAL._API + "/users/validate?birthday=" + a);
-            o.onload = function() {
-                if (200 == o.status || 304 == o.status) return validated.birthday = !0, cachedValidate.birthday = a, void formGroupBirthday.classList.remove("warning");
-                validated.birthday = !1, cachedValidate.birthday = null, t.innerText = "ngày " + a + " không hợp lệ", formGroupBirthday.classList.add("warning")
-            }
-        }
-    }
-}
+// function validateBirthday(e) {
+//     if (e || validateBirthDate(!0) && validateBirthMonth(!0) && validateBirthYear(!0)) {
+//         var t = formGroupBirthday.querySelector(".tip"),
+//             a = birthDate.value + "-" + birthMonth.value + "-" + birthYear.value,
+//             i = new Date(birthYear.value + "-" + birthMonth.value + "-" + birthDate.value);
+//         try {
+//             if (i.getDate() != birthDate.value || i.getMonth() + 1 != birthMonth.value || i.getFullYear() != birthYear.value) return validated.birthday = !1, cachedValidate.birthday = null, t.innerText = "ngày " + a + " không hợp lệ", void formGroupBirthday.classList.add("warning");
+//             validated.birthday = !0, cachedValidate.birthday = a
+//         } catch (e) {
+//             if (validated.birthday && cachedValidate.birthday == a) return;
+//             t.innerText = "", validated.birthday = !1;
+//             var o = sendAjax("GET", _GLOBAL._API + "/users/validate?birthday=" + a);
+//             o.onload = function() {
+//                 return validated.birthday = !0, cachedValidate.birthday = a, void formGroupBirthday.classList.remove("warning");
+//                 validated.birthday = !1, cachedValidate.birthday = null, t.innerText = "ngày " + a + " không hợp lệ", formGroupBirthday.classList.add("warning")
+//             }
+//         }
+//     }
+// }
 
 function getNotifications(e) {
     var t = getAllElements(".notification-item"),
@@ -341,25 +342,40 @@ function clearSignupForm() {
 
 function signup() {
     var e = document.querySelector("#form-signup-warning");
-    if (e.parentNode.classList.add("hidden"), e.innerHTML = "", navbarLoading.classList.remove("hidden"), signupButton.classList.add("disabled"), validateSignupUsername(), validatePassword(signupTab), validatePasswordConfirm(), validateFullName(), validateEmail(), validateBirthday(), !(validated.username && validated.password && validated.passwordConfirm && validated.fullName && validated.email && validated.birthday)) return signupButton.classList.remove("disabled"), void navbarLoading.classList.add("hidden");
-    var t = {
-            username: cachedValidate.username,
-            password: signupPassword.value,
-            password_confirmation: passwordConfirm.value,
-            full_name: cachedValidate.fullName,
-            email: cachedValidate.email,
-            birthday: cachedValidate.birthday,
-            gender: parseInt(document.querySelector('input[name="gender"]:checked').value)
-        },
-        a = sendAjax("POST", _GLOBAL._API + "/users", t);
-    a.onload = function() {
-        if (signupButton.classList.remove("disabled"), 201 == a.status) return document.querySelector(".navbar-tab-login").click(), clearSignupForm(), loginUsername.value = t.username, loginPassword.value = t.password, void setTimeout(function() {
-            loginButton.click()
-        }, 1e3);
-        e.innerHTML = "<li>Đăng ký thất bại, vui lòng thử lại</li>", e.parentNode.classList.remove("hidden"), navbarLoading.classList.add("hidden")
-    }, a.onerror = function(t) {
-        e.innerHTML = "<li>Lỗi kết nối, vui lòng thử lại</li>", e.parentNode.classList.remove("hidden"), signupButton.classList.remove("disabled"), navbarLoading.classList.add("hidden")
-    }
+    if (e.parentNode.classList.add("hidden"), e.innerHTML = "", navbarLoading.classList.remove("hidden"), signupButton.classList.add("disabled"), validatePassword(signupTab), validatePasswordConfirm(), validateBirthDate(), validateBirthMonth(), validateBirthYear(), !(validated.password && validated.passwordConfirm)) return signupButton.classList.remove("disabled"), void navbarLoading.classList.add("hidden");
+    var t = document.querySelector('input[name="username"]').value,
+        a = document.querySelector('input[name="password"]').value,
+        i = document.querySelector('input[name="remember"]').checked;
+        
+        $.ajax({
+            url: "http://localhost/Git/PRO-1014/user/login.php",
+            type: "POST",
+            dataType: 'text',
+            data: {
+                'username' : t,
+                'password' : a,
+                'checked'  : i
+            },
+            success : function(msg){
+                if (msg == 'true') {
+                    const LoginSuccess = 1;
+                    location.reload();
+                }else{
+                    e.innerHTML = "<li>Thông tin đăng nhập không chính xác</li>", e.parentNode.classList.remove("hidden"), loginButton.classList.remove("disabled"), navbarLoading.classList.add("hidden");
+                }
+            },
+            error : function(){
+                e.innerHTML = "<li>Lỗi kết nối, vui lòng thử lại</li>", e.parentNode.classList.remove("hidden"), loginButton.classList.remove("disabled"), navbarLoading.classList.add("hidden");
+            }
+        })
+    // a.onload = function() {
+    //     if (signupButton.classList.remove("disabled"), 201 == a.status) return document.querySelector(".navbar-tab-login").click(), clearSignupForm(), loginUsername.value = t.username, loginPassword.value = t.password, void setTimeout(function() {
+    //         loginButton.click()
+    //     }, 1e3);
+    //     e.innerHTML = "<li>Đăng ký thất bại, vui lòng thử lại</li>", e.parentNode.classList.remove("hidden"), navbarLoading.classList.add("hidden")
+    // }, a.onerror = function(t) {
+    //     e.innerHTML = "<li>Lỗi kết nối, vui lòng thử lại</li>", e.parentNode.classList.remove("hidden"), signupButton.classList.remove("disabled"), navbarLoading.classList.add("hidden")
+    // }
 }
 
 function login() {
@@ -606,13 +622,13 @@ function increaseViews(e, t) {
     var a = 5e3;
     "episodes" != e && (a = 10), setTimeout(function() {
         var a;
-        if (a = "episodes" != e ? film.id : player.episode.id, t == a) {
-            var i = sendAjax("POST", _GLOBAL._API + "/" + e + "/" + t + "/views");
-            i.onload = function() {
-                JSON.parse(i.responseText);
-                i.status
-            }, addHistory(e, t)
-        }
+        // if (a = "episodes" != e ? film.id : player.episode.id, t == a) {
+        //     var i = sendAjax("POST", _GLOBAL._API + "/" + e + "/" + t + "/views");
+        //     i.onload = function() {
+        //         JSON.parse(i.responseText);
+        //         i.status
+        //     }, addHistory(e, t)
+        // }
     }, a)
 }
 
@@ -1708,7 +1724,7 @@ function countdownTimer(e, t, a) {
             options: {},
             properties: [{
                 identity: "src",
-                value: "/assets/img/countdown-bg.png"
+                value: "/assets/payo.jpg"
             }]
         }, {
             identity: "content",
@@ -3934,7 +3950,7 @@ var navbar = getElement("nav"),
 cssTheme.id = "dark-theme", cssTheme.rel = "stylesheet", cssTheme.type = "text/css", cssTheme.href = "/css/dark.css?v=" + (new Date).getTime(), window.addEventListener("resize", navbarOnload), window.addEventListener("scroll", hideFloatingAction), window.addEventListener("load", navbarOnload);
 for (var i = navbarTab.children.length - 1; i >= 0; i--) clickOnTab(navbarTab.children[i]);
 var navbarLeftBrand = document.createElement("div");
-navbarLeftBrand.className = "navbar-brand", navbarLeftBrand.innerHTML = '<a class="logo" href="/"><img src="/assets/img/logo.png" alt="VuiGhe.Net"></a>', navbarLeft.appendChild(navbarLeftBrand), userAvatar.onclick = function() {
+navbarLeftBrand.className = "navbar-brand", navbarLeftBrand.innerHTML = '<a class="logo" href="/"><img src="./assets/logo.png" alt="YFilms"></a>', navbarLeft.appendChild(navbarLeftBrand), userAvatar.onclick = function() {
     activeNavbarRight()
 }, navbarToggle.onclick = function() {
     activeNavbarLeft()
@@ -4000,16 +4016,18 @@ if (loginButton) {
         validateLoginUsername()
     }), loginPassword.addEventListener("focusout", function() {
         validatePassword(loginTab)
-    }), signupUsername.addEventListener("focusout", function() {
-        validateSignupUsername()
-    }), signupPassword.addEventListener("focusout", function() {
+    }), 
+    // signupUsername.addEventListener("focusout", function() {
+    //     validateSignupUsername()
+    // }), 
+    signupPassword.addEventListener("focusout", function() {
         validatePassword(signupTab)
     }), passwordConfirm.addEventListener("focusout", function() {
         validatePasswordConfirm()
-    }), fullName.addEventListener("focusout", function() {
-        validateFullName()
-    }), email.addEventListener("focusout", function() {
-        validateEmail()
+    // }), fullName.addEventListener("focusout", function() {
+    //     validateFullName()
+    // }), email.addEventListener("focusout", function() {
+    //     validateEmail()
     }), birthDate.addEventListener("focusout", function() {
         validateBirthDate()
     }), birthMonth.addEventListener("focusout", function() {
