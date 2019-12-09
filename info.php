@@ -120,7 +120,7 @@
                     <div class="film-related-item">
                         <div class="film-related-thumbnail">
                             <a href="xemphim.php">
-                                <img src="assets/img/1.jpg">
+                                <video class="video-item-thumbnail" src="./videos/video1.mp4#t=0.1"></video>
                             </a>
                         </div>
                         <div class="film-related-meta">
