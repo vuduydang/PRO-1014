@@ -5,8 +5,6 @@
         session_start();
             $sqlQuery ="SELECT * from categories ORDER BY id limit 5";
             $categories=executeQuery($sqlQuery, true);
-            // dV($_SESSION[AUTH_YF]);
-            // die();
 ?>
 
 <head>
@@ -14,40 +12,41 @@
     <script type="text/javascript" src="./public/js/jquery.min.js"></script>
     <script type="text/javascript" src="./public/js/jquery-ui.min.js"></script>
 </head>
+<?php if (empty($_SESSION[AUTH_YF])) { ?>
 <header>
     <nav class="navbar">
-    	<div class="navbar-container">
-			<div class="navbar-header">
-				<div class="navbar-brand">
-					<a class="logo" href="index.php">
-						<img src="assets/logo.png" alt="YFilms.Com">
-					</a>
-				</div>
-				<div class="navbar-menu-toggle" id="navbar-toggle">
-					<i class="icon-menu"></i>
-				</div>
-				<div class="navbar-header-user">
-						<div class="user-login user-avatar" id="user-avatar">
-	        				<i class="icon-person"></i>
-	        			</div>
-	        	</div>
-			</div>
-			<div class="navbar-left" id="navbar-left">
-				
-				<div class="navbar-search">
-					<div class="search-box">
-						<input type="text" name="search-box" placeholder="Tìm kiếm anime/video">
-						<i class="icon icon-search"></i>
-					</div>
-					<div class="search-result" id="search-result">
-						<div class="result-body"></div>
-						<div class="result-noitem hidden"></div>
-						<div class="loading hidden"></div>
-					</div>
-				</div>
+        <div class="navbar-container">
+            <div class="navbar-header">
+                <div class="navbar-brand">
+                    <a class="logo" href="index.php">
+                        <img src="assets/logo.png" alt="YFilms.Com">
+                    </a>
+                </div>
+                <div class="navbar-menu-toggle" id="navbar-toggle">
+                    <i class="icon-menu"></i>
+                </div>
+                <div class="navbar-header-user">
+                        <div class="user-login user-avatar" id="user-avatar">
+                            <i class="icon-person"></i>
+                        </div>
+                </div>
+            </div>
+            <div class="navbar-left" id="navbar-left">
+                
+                <div class="navbar-search">
+                    <div class="search-box">
+                        <input type="text" name="search-box" placeholder="Tìm kiếm anime/video">
+                        <i class="icon icon-search"></i>
+                    </div>
+                    <div class="search-result" id="search-result">
+                        <div class="result-body"></div>
+                        <div class="result-noitem hidden"></div>
+                        <div class="loading hidden"></div>
+                    </div>
+                </div>
 
                 <!--  MENU -->
-        		<div class="navbar-menu">
+                <div class="navbar-menu">
                   <ul class="nav">
                     <li class="dropdown navbar-menu-item">
                       <a class="menu-item" href="index.php">Trang chủ</a>
@@ -75,25 +74,13 @@
                     <?php endforeach ?>
                 </li>
                   </ul>
-        		</div>
+                </div>
 
-            	<div class="navbar-close">
-            		<i class="icon-close"></i>
-            	</div>
-			</div>
-			<div class="navbar-right" id="navbar-right">
-				<!-- <div class="navbar-user navbar-user-header">
-                <div class="user-avatar big-avatar">
-                    <i class="icon-person"></i>
+                <div class="navbar-close">
+                    <i class="icon-close"></i>
                 </div>
-                <div class="navbar-user-welcome">
-                    <span>Chào khách!</span>
-                </div>
-                <div class="navbar-user-tab">
-                    <div class="navbar-user-tab-item navbar-tab-login activated" data-tab="login">Đăng nhập</div>
-                    <div class="navbar-user-tab-item navbar-tab-signup" data-tab="signup">Đăng ký</div>
-                </div>
-            </div> -->
+            </div>
+            <div class="navbar-right" id="navbar-right">
             <div class="navbar-user navbar-user-header">
             <?php
             if (isset($_SESSION['username'])) {
@@ -221,9 +208,151 @@
                         <i class="icon-close"></i>
                     </div>
             </form>
-			</div>
-		</div>
-    	
+            </div>
+        </div>
+        
 
     </nav>
 </header>
+
+<?php  }else { ?>
+
+<header>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-header">
+                <div class="navbar-brand">
+                    <a class="logo" href="index.php">
+                        <img src="assets/logo.png" alt="YFilms.Com">
+                    </a>
+                </div>
+                <div class="navbar-menu-toggle" id="navbar-toggle">
+                    <i class="icon-menu"></i>
+                </div>
+                <div class="navbar-header-user">
+                    <img class="user-avatar" id="user-avatar" src="https://graph.facebook.com/v3.0/961524600880279/picture?width=130&amp;height=130"></img>
+
+                    <div class="user-theme" id="user-theme">
+                        <i class="icon-sunny"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-left" id="navbar-left">
+
+                <div class="navbar-search" style="display: none;">
+                    <div class="search-box">
+                        <input type="text" name="search-box" placeholder="Tìm kiếm anime/video">
+                        <i class="icon icon-search"></i>
+                    </div>
+                    <div class="search-result" id="search-result">
+                        <div class="result-body"></div>
+                        <div class="result-noitem hidden"></div>
+                        <div class="loading hidden"></div>
+                    </div>
+                </div>
+                
+                <!--  MENU -->
+                <div class="navbar-menu">
+                  <ul class="nav">
+                    <li class="dropdown navbar-menu-item">
+                      <a class="menu-item" href="index.php">Trang chủ</a>
+                    </li>
+                    <li class="dropdown navbar-menu-item">
+                      <a class="menu-item" href="?">Phim Mới</a>
+                      <ul class="toggle">
+                        <li><a class="menu-item" href="video-2.php">Anime Mới</a></li>
+                        <li><a class="menu-item" href="video-2.php">Video Mới</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown navbar-menu-item">
+                      <a class="navbar-menu-item" href="?">Năm</a>
+                      <ul class="toggle">
+                        <li><a class="menu-item" href="#">2018</a></li>
+                        <li><a class="menu-item" href="#">2019</a></li>
+                      </ul>
+                    </li>
+                <li class="dropdown navbar-menu-item">
+                        <a class="menu-item" href="?">Thể loại</a>
+                    <?php foreach ($categories as $categorie): ?>
+                      <ul class="toggle">
+                        <li><a class="menu-item" href="video-2.php?categories=<?=$categorie['categories']?>"><?php echo $categorie['categories']?></a></li>
+                      </ul>
+                    <?php endforeach ?>
+                </li>
+                  </ul>
+                </div>
+
+                <div class="navbar-close">
+                    <i class="icon-close"></i>
+                </div>
+            </div>
+            <div class="navbar-right" id="navbar-right">
+                <div class="navbar-user navbar-user-header">
+                    <div class="user-avatar big-avatar">
+                        <img src="https://graph.facebook.com/v3.0/961524600880279/picture?width=130&amp;height=130"></img>
+                        <div class="user-avatar-update"><i class="icon-images"></i></div>
+                        <input class="user-avatar-file" id="avatar-upload" type="file" name="avatar_file" accept="image/*">
+                    </div>
+                    <div class="navbar-user-welcome">
+                        <span>Chào Vũ Duy Đăng!</span>
+                        <input id="user-id" type="hidden" value="550373">
+                        <input id="user-v" type="hidden" value="10">
+                        <input id="user-date" type="hidden" value="2019-11-06 23:31:44">
+                    </div>
+                    <div class="navbar-user-tab">
+                        <div class="navbar-user-tab-item navbar-tab-information activated" data-tab="information">Thông tin</div>
+                        <div class="navbar-user-tab-item navbar-tab-notification hidden" data-tab="notification">Thông báo</div>
+
+                    </div>
+                </div>
+                <div class="navbar-user-body tab-information">
+                    <div class="navbar-user-content">
+
+                        <div class="user-item">
+                            <a href="/sua-thong-tin">
+                                <i class="icon icon-edit"></i>
+                                Sửa thông tin
+                            </a>
+                        </div>
+                        <div class="user-item">
+                            <a href="/doi-mat-khau">
+                                <i class="icon icon-unlock"></i>
+                                Đổi mật khẩu
+                            </a>
+                        </div>
+                        <hr>
+
+
+
+                        <div class="logout user-item" id="logout">
+                            <i class="icon icon-power"></i>
+                            Đăng xuất
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="navbar-user-body tab-notification">
+                    <div class="notification-list"></div>
+                    <div class="notification-none hidden"></div>
+                    <div class="notification-more hidden">xem thêm</div>
+
+                </div>
+
+
+
+                <div class="loading hidden"></div>
+                <div class="navbar-close">
+                    <i class="icon-close"></i>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        
+    </nav>
+</header>
+
+<?php } ?>
