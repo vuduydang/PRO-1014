@@ -17,7 +17,7 @@
 			<div class="navbar-header">
 				<div class="navbar-brand">
 					<a class="logo" href="index.php">
-						<img src="assets/logo.png" alt="ClipAnime.Com">
+						<img src="assets/logo.png" alt="YFilms.Com">
 					</a>
 				</div>
 				<div class="navbar-menu-toggle" id="navbar-toggle">
@@ -124,7 +124,7 @@
                 <div class="navbar-user-body tab-signup">
                     <div class="navbar-form-group">
                         <label>Tên đăng nhập</label>
-                        <input type="text" name="username">
+                        <input type="text" name="username-1">
                         <i class="icon icon-person"></i>
                         <span class="tip"></span>
                     </div>

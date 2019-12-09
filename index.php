@@ -101,8 +101,8 @@
 
               <?php foreach ($films_part_new as $value) : ?>
                 <div class="video-item">
-                    <a href="info.php?id=<?=$value['id']?>">
-                      <img class="video-item-thumbnail" src="./assets/thumbnails/<?php echo $value['thumbnail'] ?>" >
+                    <a href="xemphim.php?id=<?=$value['id']?>">
+                      <video class="video-item-thumbnail" src="./videos/video1.mp4#t=0.1"></video>
                         <div class="video-item-title"><?php echo $value['name'] ?></div>
                         <div class="video-item-duration"><?php echo $value['name'] ?></div>
                         <div class="video-item-play-button">
@@ -162,7 +162,7 @@
           <div class="tray-title">Anime HOT</div>
             <?php foreach ($films_hot as $value): ?>
               <div class="anime-hot-item">
-              <a href="boruto-naruto-next-generations.php">
+              <a href="info.php?<?=$value['id']?>">
               <img class="anime-hot-thumbnail"  src="./assets/thumbnails/<?php echo $value['thumbnail'] ?>">
               <div class="video-hot-title"><?php echo $value['name'] ?></div>
             </a>

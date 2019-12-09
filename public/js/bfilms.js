@@ -343,7 +343,7 @@ function clearSignupForm() {
 function signup() {
     var e = document.querySelector("#form-signup-warning");
     if (e.parentNode.classList.add("hidden"), e.innerHTML = "", navbarLoading.classList.remove("hidden"), signupButton.classList.add("disabled"), validatePassword(signupTab), validatePasswordConfirm(), validateBirthDate(), validateBirthMonth(), validateBirthYear(), !(validated.password && validated.passwordConfirm)) return signupButton.classList.remove("disabled"), void navbarLoading.classList.add("hidden");
-    var t = document.querySelector('input[name="username"]').value,
+    var t = document.querySelector('input[name="username-1"]').value,
         a = document.querySelector('input[name="password"]').value,
         i = document.querySelector('input[name="full_name"]').value;
         f = document.querySelector('input[name="email"]').value;
@@ -351,9 +351,8 @@ function signup() {
         day = document.querySelector('input[name="birthday"]').value;
         month = document.querySelector('input[name="birthmonth"]').value;
         year = document.querySelector('input[name="birthyear"]').value;
+        birthdays = year + '-' + month + '-' + day;
 
-        
-                alert(g);
         $.ajax({
             url: "http://localhost/Git/PRO-1014/user/signup.php",
             type: "POST",
@@ -361,14 +360,20 @@ function signup() {
             data: {
                 'username' : t,
                 'password' : a,
-                'full_name'  : i
+                'full_name'  : i,
+                'email'  : f,
+                'gender'  : g,
+                'birthdays'  : birthdays
             },
             success : function(msg){
+                console.log(msg);
                 if (msg == 'true') {
                     const LoginSuccess = 1;
+                    alert('Đăng Ký Thành Công !');
                     location.reload();
+
                 }else{
-                    e.innerHTML = "<li>Thông tin đăng nhập không chính xác</li>", e.parentNode.classList.remove("hidden"), loginButton.classList.remove("disabled"), navbarLoading.classList.add("hidden");
+                    e.innerHTML = "<li>Thông tin đăng ký không chính xác</li>", e.parentNode.classList.remove("hidden"), loginButton.classList.remove("disabled"), navbarLoading.classList.add("hidden");
                 }
             },
             error : function(){
