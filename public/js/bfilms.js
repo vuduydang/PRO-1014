@@ -345,16 +345,23 @@ function signup() {
     if (e.parentNode.classList.add("hidden"), e.innerHTML = "", navbarLoading.classList.remove("hidden"), signupButton.classList.add("disabled"), validatePassword(signupTab), validatePasswordConfirm(), validateBirthDate(), validateBirthMonth(), validateBirthYear(), !(validated.password && validated.passwordConfirm)) return signupButton.classList.remove("disabled"), void navbarLoading.classList.add("hidden");
     var t = document.querySelector('input[name="username"]').value,
         a = document.querySelector('input[name="password"]').value,
-        i = document.querySelector('input[name="remember"]').checked;
+        i = document.querySelector('input[name="full_name"]').value;
+        f = document.querySelector('input[name="email"]').value;
+        g = parseInt(document.querySelector('input[name="gender"]:checked').value);
+        day = document.querySelector('input[name="birthday"]').value;
+        month = document.querySelector('input[name="birthmonth"]').value;
+        year = document.querySelector('input[name="birthyear"]').value;
+
         
+                alert(g);
         $.ajax({
-            url: "http://localhost/Git/PRO-1014/user/login.php",
+            url: "http://localhost/Git/PRO-1014/user/signup.php",
             type: "POST",
             dataType: 'text',
             data: {
                 'username' : t,
                 'password' : a,
-                'checked'  : i
+                'full_name'  : i
             },
             success : function(msg){
                 if (msg == 'true') {
