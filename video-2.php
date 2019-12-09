@@ -241,22 +241,22 @@
 </header>
 
 <div class="container">
-  <?php foreach ($films as $film): ?>
     <section class="tray video-page">
-      <div class="tray-title">
+        <div class="tray-title">
         <a href="javascript:void(0)"><i class="icon icon-right"></i></a>
       </div>
+  <?php foreach ($films as $film): ?>
       <div class="tray-content">
         <div class="video-item">
           <a href="video/176994.html">
             <img class="video-item-thumbnail" src="./assets/thumbnails/<?php echo $film['thumbnail']?>" data-src="https://i.imacdn.com/ca/2019/06/23/3c2294ad27249435_76fc90c131fea8a4_15937156124805933.jpg" alt="">
-            <div class="video-item-title"><a><?php echo $film['name']?></a></div>
+            <div class="video-item-title"><a>Tên phim : <?php echo $film['name']?></a></div>
             <div class="video-item-duration"><?php echo $film['author']?></div>
             <div class="video-item-play-button">
               <i class="icon-play"></i>
             </div>
           </a>
-          <div class="video-item-views"><?php echo $film['views'] ?></div>
+          <div class="video-item-views"> Số lượt view : <?php echo $film['views'] ?></div>
         </div>  
       </div>
     <?php endforeach ?>
