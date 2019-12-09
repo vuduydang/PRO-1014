@@ -2,9 +2,12 @@
         require_once './commons/constants.php';
         require_once './commons/db.php';
         require_once './commons/helpers.php';
+        session_start();
             $sqlQuery ="SELECT * from categories ORDER BY id limit 5";
             $categories=executeQuery($sqlQuery, true);
-            ?>
+            // dV($_SESSION[AUTH_YF]);
+            // die();
+?>
 
 <head>
     <link rel="stylesheet" href="./public/css/style.css">
@@ -79,7 +82,7 @@
             	</div>
 			</div>
 			<div class="navbar-right" id="navbar-right">
-					    			<div class="navbar-user navbar-user-header">
+				<!-- <div class="navbar-user navbar-user-header">
                 <div class="user-avatar big-avatar">
                     <i class="icon-person"></i>
                 </div>
@@ -90,6 +93,34 @@
                     <div class="navbar-user-tab-item navbar-tab-login activated" data-tab="login">Đăng nhập</div>
                     <div class="navbar-user-tab-item navbar-tab-signup" data-tab="signup">Đăng ký</div>
                 </div>
+            </div> -->
+            <div class="navbar-user navbar-user-header">
+            <?php
+            if (isset($_SESSION['username'])) {
+                $user=$_SESSION('username');
+            ?>
+            <div class="user-avatar big-avatar">
+                        <i class="icon-person"></i>
+                    </div>
+            <div class="navbar-user-welcome">
+                        <span><?php echo $user?></span>
+            </div>
+            <?php
+            }else{
+            ?>
+            <div class="user-avatar big-avatar">
+                        <i class="icon-person"></i>
+                    </div>
+                    <div class="navbar-user-welcome">
+                        <span>Chào khách!</span>
+                    </div>
+             <div class="navbar-user-tab">
+                        <div class="navbar-user-tab-item navbar-tab-login activated" data-tab="login">Đăng nhập</div>
+                        <div class="navbar-user-tab-item navbar-tab-signup" data-tab="signup">Đăng ký</div>
+                    </div>
+            <?php
+            }
+            ?>
             </div>
 
             <div class="navbar-user-body tab-login">
