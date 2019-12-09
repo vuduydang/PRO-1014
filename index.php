@@ -162,7 +162,7 @@
           <div class="tray-title">Anime HOT</div>
             <?php foreach ($films_hot as $value): ?>
               <div class="anime-hot-item">
-              <a href="info.php?<?=$value['id']?>">
+              <a href="info.php?id=<?=$value['id']?>">
               <img class="anime-hot-thumbnail"  src="./assets/thumbnails/<?php echo $value['thumbnail'] ?>">
               <div class="video-hot-title"><?php echo $value['name'] ?></div>
             </a>
