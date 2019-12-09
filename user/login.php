@@ -9,11 +9,11 @@ require_once"../commons/helpers.php";
 
 	$user = isset($_POST['username']) ? $_POST['username'] : "";
     $password = isset($_POST['password']) ? $_POST['password'] : "";
-
     if($user != "" && $password != ""){
     	// lấy dữ liệu từ csdl bảng users dựa vào email
     	$sqlUserQuery = "SELECT * FROM users WHERE username = '$user'";
     	$user = executeQuery($sqlUserQuery);
+        //dv($user); die();
     	if($user && password_verify($password, $user['password'])){
     		$_SESSION[AUTH_YF] = [
     			"id" => $user['id'],

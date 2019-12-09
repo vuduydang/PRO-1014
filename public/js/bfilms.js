@@ -407,6 +407,7 @@ function login() {
                 'checked'  : i
             },
             success : function(msg){
+                console.log(msg);
                 if (msg == 'true') {
                     const LoginSuccess = 1;
                     location.reload();
