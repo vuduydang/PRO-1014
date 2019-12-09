@@ -1,10 +1,10 @@
 <?php
-        require_once './commons/constants.php';
-        require_once './commons/db.php';
-        require_once './commons/helpers.php';
-        session_start();
-            $sqlQuery ="SELECT * from categories ORDER BY id limit 5";
-            $categories=executeQuery($sqlQuery, true);
+session_start();
+    $sqlQuery ="SELECT * from categories";
+    $categories = executeQuery($sqlQuery, true);
+
+    $sqlQuery ="SELECT * from years";
+    $years=executeQuery($sqlQuery, true);
 ?>
 
 <head>
@@ -34,10 +34,12 @@
             <div class="navbar-left" id="navbar-left">
                 
                 <div class="navbar-search">
-                    <div class="search-box">
-                        <input type="text" name="search-box" placeholder="Tìm kiếm anime/video">
-                        <i class="icon icon-search"></i>
-                    </div>
+                    <form action="video.php">
+                        <div class="search-box">
+                            <input type="text" name="search-box" placeholder="Tìm kiếm anime/video">
+                            <button><i class="icon icon-search"></i></button>
+                        </div>
+                    </form>
                     <div class="search-result" id="search-result">
                         <div class="result-body"></div>
                         <div class="result-noitem hidden"></div>
@@ -52,26 +54,20 @@
                       <a class="menu-item" href="index.php">Trang chủ</a>
                     </li>
                     <li class="dropdown navbar-menu-item">
-                      <a class="menu-item" href="?">Phim Mới</a>
-                      <ul class="toggle">
-                        <li><a class="menu-item" href="video-2.php">Anime Mới</a></li>
-                        <li><a class="menu-item" href="video-2.php">Video Mới</a></li>
-                      </ul>
-                    </li>
-                    <li class="dropdown navbar-menu-item">
                       <a class="navbar-menu-item" href="?">Năm</a>
-                      <ul class="toggle">
-                        <li><a class="menu-item" href="#">2018</a></li>
-                        <li><a class="menu-item" href="#">2019</a></li>
-                      </ul>
+                        <ul class="toggle">
+                        <?php foreach ($years as $value) : ?>
+                            <li><a class="menu-item" href="video.php?search-box=<?=$value['name']?>"><?=$value['name']?></a></li>
+                        <?php endforeach ?>
+                        </ul>
                     </li>
                 <li class="dropdown navbar-menu-item">
                         <a class="menu-item" href="?">Thể loại</a>
-                    <?php foreach ($categories as $categorie): ?>
-                      <ul class="toggle">
-                        <li><a class="menu-item" href="video-2.php?categories=<?=$categorie['categories']?>"><?php echo $categorie['categories']?></a></li>
-                      </ul>
-                    <?php endforeach ?>
+                        <ul class="toggle">
+                        <?php foreach ($categories as $value): ?>
+                            <li><a class="menu-item" href="video.php?search-box=<?=$value['categories']?>"><?php echo $value['categories']?></a></li>
+                        <?php endforeach ?>
+                        </ul>
                 </li>
                   </ul>
                 </div>
@@ -82,19 +78,6 @@
             </div>
             <div class="navbar-right" id="navbar-right">
             <div class="navbar-user navbar-user-header">
-            <?php
-            if (isset($_SESSION['username'])) {
-                $user=$_SESSION('username');
-            ?>
-            <div class="user-avatar big-avatar">
-                        <i class="icon-person"></i>
-                    </div>
-            <div class="navbar-user-welcome">
-                        <span><?php echo $user?></span>
-            </div>
-            <?php
-            }else{
-            ?>
             <div class="user-avatar big-avatar">
                         <i class="icon-person"></i>
                     </div>
@@ -105,9 +88,6 @@
                         <div class="navbar-user-tab-item navbar-tab-login activated" data-tab="login">Đăng nhập</div>
                         <div class="navbar-user-tab-item navbar-tab-signup" data-tab="signup">Đăng ký</div>
                     </div>
-            <?php
-            }
-            ?>
             </div>
 
             <div class="navbar-user-body tab-login">
@@ -215,7 +195,11 @@
     </nav>
 </header>
 
-<?php  }else { ?>
+<?php  }else { 
+
+$auth_yf = $_SESSION[AUTH_YF];
+
+?>
 
 <header>
     <nav class="navbar">
@@ -230,7 +214,7 @@
                     <i class="icon-menu"></i>
                 </div>
                 <div class="navbar-header-user">
-                    <img class="user-avatar" id="user-avatar" src="https://graph.facebook.com/v3.0/961524600880279/picture?width=130&amp;height=130"></img>
+                    <img class="user-avatar" id="user-avatar" src="./assets/avatars/<?=$auth_yf['avatar']?>"></img>
 
                     <div class="user-theme" id="user-theme">
                         <i class="icon-sunny"></i>
@@ -239,11 +223,13 @@
             </div>
             <div class="navbar-left" id="navbar-left">
 
-                <div class="navbar-search" style="display: none;">
-                    <div class="search-box">
-                        <input type="text" name="search-box" placeholder="Tìm kiếm anime/video">
-                        <i class="icon icon-search"></i>
-                    </div>
+                <div class="navbar-search">
+                    <form action="video.php">
+                        <div class="search-box">
+                            <input type="text" name="search-box" placeholder="Tìm kiếm anime/video">
+                            <button><i class="icon icon-search"></i></button>
+                        </div>
+                    </form>
                     <div class="search-result" id="search-result">
                         <div class="result-body"></div>
                         <div class="result-noitem hidden"></div>
@@ -258,26 +244,20 @@
                       <a class="menu-item" href="index.php">Trang chủ</a>
                     </li>
                     <li class="dropdown navbar-menu-item">
-                      <a class="menu-item" href="?">Phim Mới</a>
-                      <ul class="toggle">
-                        <li><a class="menu-item" href="video-2.php">Anime Mới</a></li>
-                        <li><a class="menu-item" href="video-2.php">Video Mới</a></li>
-                      </ul>
-                    </li>
-                    <li class="dropdown navbar-menu-item">
                       <a class="navbar-menu-item" href="?">Năm</a>
-                      <ul class="toggle">
-                        <li><a class="menu-item" href="#">2018</a></li>
-                        <li><a class="menu-item" href="#">2019</a></li>
-                      </ul>
+                        <ul class="toggle">
+                        <?php foreach ($years as $value) : ?>
+                            <li><a class="menu-item" href="video.php?search-box=<?=$value['name']?>"><?=$value['name']?></a></li>
+                        <?php endforeach ?>
+                        </ul>
                     </li>
                 <li class="dropdown navbar-menu-item">
                         <a class="menu-item" href="?">Thể loại</a>
-                    <?php foreach ($categories as $categorie): ?>
-                      <ul class="toggle">
-                        <li><a class="menu-item" href="video-2.php?categories=<?=$categorie['categories']?>"><?php echo $categorie['categories']?></a></li>
-                      </ul>
-                    <?php endforeach ?>
+                        <ul class="toggle">
+                        <?php foreach ($categories as $value): ?>
+                            <li><a class="menu-item" href="video.php?search-box=<?=$value['categories']?>"><?php echo $value['categories']?></a></li>
+                        <?php endforeach ?>
+                        </ul>
                 </li>
                   </ul>
                 </div>
@@ -289,7 +269,7 @@
             <div class="navbar-right" id="navbar-right">
                 <div class="navbar-user navbar-user-header">
                     <div class="user-avatar big-avatar">
-                        <img src="https://graph.facebook.com/v3.0/961524600880279/picture?width=130&amp;height=130"></img>
+                        <img src="./assets/avatars/<?=$auth_yf['avatar']?>"></img>
                         <div class="user-avatar-update"><i class="icon-images"></i></div>
                         <input class="user-avatar-file" id="avatar-upload" type="file" name="avatar_file" accept="image/*">
                     </div>

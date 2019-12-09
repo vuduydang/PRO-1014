@@ -28,7 +28,7 @@ if (empty($_SESSION[AUTH_YF]) || $session['role_id'] != 1) {
 	<!-- <script src="js/jquery-ui.min.js" type="text/javascript"></script> -->
 	<script src="js/jquery.min.js" type="text/javascript"></script>
 	<script src="js/nicEdit-latest.js" type="text/javascript"></script>
-	<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+	<!-- <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script> -->
 						
 </head>
 <body>
@@ -70,13 +70,12 @@ if (empty($_SESSION[AUTH_YF]) || $session['role_id'] != 1) {
 						<div class="left">
 							<div><p>Tên Phim : </p><input type="text" name="name" placeholder="HARRY POTTER VÀ HÒN ĐÁ PHÙ THỦY"></div>
 							<div><p>Thể Loại : </p><input type="text" name="categories" placeholder="Hành Động, Viễn Tưởng, ..."></div>
-							<div><p>Tác Giả : </p><input type="text" name="author" placeholder="Steve Kloves"></div>
+							<div><p>Đạo diễn : </p><input type="text" name="author" placeholder="Steve Kloves"></div>
 							<div class="col-2">
 								<p>Series : </p><input type="text" name="series" placeholder="Harry Potter">
 								<p>Năm : </p><input type="text" name="year" placeholder="2001">
 							</div>
 							<div class="col-2">
-								<p>Số Tập : </p><input type="number" name="quantity" placeholder="1">
 								<p>Trạng thái : </p>
 								<select name="status">
 									<option value="Hoàn thành">Hoàn Thành</option>

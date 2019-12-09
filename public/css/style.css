@@ -45,7 +45,7 @@ a{
 .nav .toggle{
 	display: none;
 	clear: both;
-	background-color: #C2DAE4;
+	background-color: #ffffffab;
 }
 .nav .toggle li{
 	clear: both;
@@ -70,7 +70,9 @@ a{
 }
 .info{
 	position: relative;
-	display: block;
+	overflow: hidden;
+	width: 540px;
+	height: 410px;
 	float: left;
 }
 .info>h1{margin-bottom: 20px}
@@ -78,9 +80,9 @@ a{
 .info span{color: #5c00ef}
 .info .click-view, .info .click-follow{
 	display: inline-block;
+	position: absolute;
 	width: 92px;
 	height: 35px;
-	position: absolute;
 	top: 360px;
 	border: 1px #666 solid;
 	border-radius: 10px;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 04, 2019 lúc 11:59 AM
+-- Thời gian đã tạo: Th12 09, 2019 lúc 05:30 PM
 -- Phiên bản máy phục vụ: 10.3.16-MariaDB
 -- Phiên bản PHP: 7.3.6
 
@@ -42,7 +42,12 @@ INSERT INTO `categories` (`id`, `categories`) VALUES
 (2, 'Hài hước'),
 (3, 'Kinh dị'),
 (4, 'Viễn tưởng'),
-(5, 'Tâm lý');
+(5, 'Tâm lý'),
+(6, 'Drama'),
+(7, 'Kids'),
+(8, 'Phiêu lưu'),
+(9, 'Học Đường'),
+(10, 'Harem');
 
 -- --------------------------------------------------------
 
@@ -60,7 +65,6 @@ CREATE TABLE `films` (
   `banner` varchar(255) NOT NULL,
   `thumbnail` varchar(255) NOT NULL,
   `content` text NOT NULL,
-  `quantity` int(11) NOT NULL,
   `status` varchar(255) NOT NULL,
   `views` int(11) NOT NULL,
   `url` varchar(255) NOT NULL,
@@ -71,13 +75,9 @@ CREATE TABLE `films` (
 -- Đang đổ dữ liệu cho bảng `films`
 --
 
-INSERT INTO `films` (`id`, `name`, `series`, `year`, `categories`, `author`, `banner`, `thumbnail`, `content`, `quantity`, `status`, `views`, `url`, `active`) VALUES
-(12, 'Biệt đội titan', 'Phim hành động', 2010, 'Hành động', 'Greg Berlanti, Akiva Goldsman, Geoff Johns, Carol Banker', '4.jpg', 'tom&jerry.jpg', '<strong style=\"color: rgb(187, 187, 187); font-family: arial; font-size: 13px; background-color: rgb(34, 34, 34);\">Biệt Đội Titan</strong><span style=\"color: rgb(187, 187, 187); font-family: arial; font-size: 13px; background-color: rgb(34, 34, 34);\">&nbsp;do lo sợ một thế lực ma quái đang cố gắng chiếm lấy bản thân mình, nữ phù thủy trẻ tuổi Raven (Teagan Croft) liền tìm gặp chàng thanh tra Dick Grayson/Robin (Brenton Thwaites) để cầu xin sự giúp đỡ. Sử dụng năng lực tâm linh, cô nàng đã thuyết phục được Grayson nhờ nói trúng kí ức đau buồn nhất đời anh: mất bố mẹ trong một vụ tai nạn nghề xiếc thương tâm. Ngoài hai nhân vật này, hai thành viên khác là Beast Boy (Ryan Potter), Star Fire “phiên bản gây tranh cãi” (Anna Diop) cùng cặp đôi phản anh hùng Hawk và Dove.</span><br>', 12, 'Hoàn thành', 0, 'Biệt-đội-titanhtml', 1),
-(13, 'Giải mã bí ẩn ngân hà', 'Phim viễn tưởng', 2017, 'Viễn tưởng', 'James Gray', 'navbar-user-header.jpg', '3.jpg', '<strong style=\"color: rgb(187, 187, 187); font-family: arial; font-size: 13px; background-color: rgb(34, 34, 34);\">Ad Astra</strong><span style=\"color: rgb(187, 187, 187); font-family: arial; font-size: 13px; background-color: rgb(34, 34, 34);\">&nbsp;là câu chuyện viễn tưởng về phi hành gia&nbsp;</span><strong style=\"color: rgb(187, 187, 187); font-family: arial; font-size: 13px; background-color: rgb(34, 34, 34);\">Roy McBride</strong><span style=\"color: rgb(187, 187, 187); font-family: arial; font-size: 13px; background-color: rgb(34, 34, 34);\">&nbsp;(Brad Pitt) và hành trình đến rìa Hệ Mặt Trời để tìm người cha mất tích. Tại đây, Roy khám phá mối hiểm họa đe dọa sự tồn vong của nhân loại. Tác phẩm mới của đạo diễn James Gray thu hút nhờ cốt truyện hấp dẫn và sự tham gia của tài tử Brad Pitt trong vai chính. Bên cạnh đó, phim cũng hứa hẹn mang đến những trải nghiệm choáng ngợp về mặt thị giác - được phụ trách bởi Hoyte Van Hoytema, đạo diễn hình ảnh từng gây tiếng vang với Interstellar.</span><br>', 1, 'Hoàn thành', 0, 'Giải-mã-bí-ẩn-ngân-hàhtml', 1),
-(14, 'Chú hề ma quái 2', 'Phim kinh dị', 2019, 'Kinh dị', 'Andy Muschietti', 'banner.png', '7.jpg', '<strong style=\"color: rgb(187, 187, 187); font-family: arial; font-size: 13px; background-color: rgb(34, 34, 34);\">It Chapter Two (Gã Hề Ma Quái 2)</strong><span style=\"color: rgb(187, 187, 187); font-family: arial; font-size: 13px; background-color: rgb(34, 34, 34);\">&nbsp;vẫn là câu chuyện về những cô cậu bé của nhóm The Losers Club, lúc này đã trưởng thành và đối mặt với vô số vấn đề trong cuộc sống. Chưa dừng lại ở đó, ám ảnh ma hề Pennywise cứ 27 năm lại xuất hiện một lần tại thị trấn Derry buộc 7 cô cậu bé ngày nào phải tiếp tục cuốn vào cuộc chạm trán tiếp theo giữa hai bên thiện và ác.</span><br style=\"color: rgb(187, 187, 187); font-family: arial; font-size: 13px; background-color: rgb(34, 34, 34);\"><br style=\"color: rgb(187, 187, 187); font-family: arial; font-size: 13px; background-color: rgb(34, 34, 34);\"><span style=\"color: rgb(187, 187, 187); font-family: arial; font-size: 13px; background-color: rgb(34, 34, 34);\">Mặc dù có thể cả nhóm đã trưởng thành và khôn ngoan hơn, cuộc chiến của họ với Pennywise vẫn còn đó những hậu quả bất ngờ, thậm chí khiến một số thành viên phải trải qua đau đớn đến tột cùng.</span><br>', 1, 'Hoàn thành', 0, 'Chú-hề-ma-quái-html', 1),
-(15, 'Những chú chim giận dữ 2', 'Phim hài hước', 2019, 'Hài hước', 'John Rice, Thurop Van Orman', 'banner.jpg', '7.png', '<span style=\"color: rgb(187, 187, 187); font-family: arial; font-size: 13px; background-color: rgb(34, 34, 34);\">Trong Angry Birds Movie 2,&nbsp;</span><strong style=\"color: rgb(187, 187, 187); font-family: arial; font-size: 13px; background-color: rgb(34, 34, 34);\">Red</strong><span style=\"color: rgb(187, 187, 187); font-family: arial; font-size: 13px; background-color: rgb(34, 34, 34);\">&nbsp;(Jason Sudeikis) đã trở thành người hùng của đảo Chim và đang giao chiến cùng đảo Heo với sự giúp sức của người anh em&nbsp;</span><strong style=\"color: rgb(187, 187, 187); font-family: arial; font-size: 13px; background-color: rgb(34, 34, 34);\">Chuck</strong><span style=\"color: rgb(187, 187, 187); font-family: arial; font-size: 13px; background-color: rgb(34, 34, 34);\">&nbsp;(Josh Gad) và&nbsp;</span><strong style=\"color: rgb(187, 187, 187); font-family: arial; font-size: 13px; background-color: rgb(34, 34, 34);\">Bomb</strong><span style=\"color: rgb(187, 187, 187); font-family: arial; font-size: 13px; background-color: rgb(34, 34, 34);\">&nbsp;(Danny McBride). Khi cả bầy chim và heo cùng bị tấn công bởi loạt băng khổng lồ của Nữ hoàng băng giá&nbsp;</span><strong style=\"color: rgb(187, 187, 187); font-family: arial; font-size: 13px; background-color: rgb(34, 34, 34);\">Zeta</strong><span style=\"color: rgb(187, 187, 187); font-family: arial; font-size: 13px; background-color: rgb(34, 34, 34);\">&nbsp;(Leslie Jones) từ đảo Đại Bàng, Red và&nbsp;</span><strong style=\"color: rgb(187, 187, 187); font-family: arial; font-size: 13px; background-color: rgb(34, 34, 34);\">King Leonard Mudbeard</strong><span style=\"color: rgb(187, 187, 187); font-family: arial; font-size: 13px; background-color: rgb(34, 34, 34);\">&nbsp;(Bill Hader) đã đồng ý cùng liên minh để chống lại kẻ thù chung, với sự trợ lực từ&nbsp;</span><strong style=\"color: rgb(187, 187, 187); font-family: arial; font-size: 13px; background-color: rgb(34, 34, 34);\">Silver</strong><span style=\"color: rgb(187, 187, 187); font-family: arial; font-size: 13px; background-color: rgb(34, 34, 34);\">&nbsp;(Rachel Bloom), một sinh viên kỹ thuật xuất sắc.</span><br style=\"color: rgb(187, 187, 187); font-family: arial; font-size: 13px; background-color: rgb(34, 34, 34);\">', 1, 'Hoàn thành', 0, 'Những-chú-chim-giận-dữ-html', 1),
-(16, 'Bên em chọn đời', 'Phim tâm lý', 2017, 'Tâm lý', 'Andy Muschietti', 'banner.png', 'onion.gif', '<span style=\"color: rgb(187, 187, 187); font-family: arial; font-size: 13px; background-color: rgb(34, 34, 34);\">Forever My Girl kể về một anh chàng ngôi sao nhạc đồng quê trở về quê nhà tìm lại tình yêu của cuộc đời.</span><br>', 1, 'Hoàn thành', 0, 'Bên-em-chọn-đờihtml', 1),
-(17, 'Pokemon', 'Phim hành động', 2019, 'Hành động, Viễn tưởng, Kinh dị', 'Greg Berlanti, Akiva Goldsman, Geoff Johns, Carol Banker', 'panda.gif', '10.jpg', 'ngjfkagjhfdsklgjkfldsghjfah', 1, 'Hoàn thành', 0, 'Pokemonhtml', 1);
+INSERT INTO `films` (`id`, `name`, `series`, `year`, `categories`, `author`, `banner`, `thumbnail`, `content`, `status`, `views`, `url`, `active`) VALUES
+(18, 'Boruto: Naruto Next Generations', 'Boruto', 2017, 'Action, Adventure, Martial Arts, Shounen, Super Power', 'Đang cập nhật', 'Boruto-Naruto-Next-Generations-hq720.jpg', 'MzExMzk5MTQ@._V1_.jpg', '<span style=\"color: rgb(34, 34, 34); font-family: sans-serif; font-size: 14px;\">Mặc dù các thiết kế về ngoại hình của Boruto giống với Naruto khi anh còn nhỏ, tính cách của họ được phát triển khác nhau. Mối quan hệ của Boruto với cha phản ánh mối quan hệ của Kishimoto với các con. Trong phiên bản tiếng Nhật, Boruto được Kokoro Kikuchi lồng tiếng trong&nbsp;</span><i style=\"color: rgb(34, 34, 34); font-family: sans-serif; font-size: 14px;\"><a href=\"https://vi.wikipedia.org/wiki/Naruto:_Tr%E1%BA%ADn_chi%E1%BA%BFn_cu%E1%BB%91i_c%C3%B9ng\" title=\"Naruto: Trận chiến cuối cùng\" style=\"color: rgb(11, 0, 128); background: none;\">The Last: Naruto the Movie</a></i><span style=\"color: rgb(34, 34, 34); font-family: sans-serif; font-size: 14px;\">&nbsp;và bởi Yūko Sanpei trong tất cả các lần xuất hiện tiếp theo. Sanpei rất thích làm công việc diễn xuất của Boruto, thấy cậu ta thật đáng mến. Trong phiên bản tiếng Anh, anh được lồng tiếng bởi Amanda C. Miller.</span><div><span style=\"color: rgb(34, 34, 34); font-family: sans-serif; font-size: 14px;\"><br></span></div><div><span style=\"color: rgb(34, 34, 34); font-family: sans-serif; font-size: 14px;\">Nhân vật của Boruto đã nhận được những phản hồi gay gắt. Mối quan hệ của anh với cha mình đã bị chỉ trích do các nhà phê bình tìm thấy khái niệm bị lạm dụng trong truyện tranh&nbsp;</span><i style=\"color: rgb(34, 34, 34); font-family: sans-serif; font-size: 14px;\">Naruto</i><span style=\"color: rgb(34, 34, 34); font-family: sans-serif; font-size: 14px;\">. Trong&nbsp;</span><i style=\"color: rgb(34, 34, 34); font-family: sans-serif; font-size: 14px;\">Boruto: Naruto the Movie</i><span style=\"color: rgb(34, 34, 34); font-family: sans-serif; font-size: 14px;\">, sự phát triển của anh được ca ngợi nhờ những cảnh hành động và cách anh hiểu hành động của cha mình.</span><span style=\"color: rgb(34, 34, 34); font-family: sans-serif; font-size: 14px;\"><br></span></div>', 'Đang chiếu', 0, 'Boruto-Naruto-Next-Generations.html', 1),
+(19, 'Sword Art Online: Alicization - War of Underworld', 'SAO', 2019, 'Action, Adventure, Fantasy, Game, Romance', 'Ono Manabu,Tomatsu Haruka,Adachi Shingo, ...', 'sword-art-online-alicization-war-of-underworld25-09-2019_16g07-31.jpg', '102165l.jpg', 'Phần 2 của SAO: Alicization', 'Đang chiếu', 0, 'Sword-Art-Online-Alicization-War-of-Underworld.html', 1);
 
 -- --------------------------------------------------------
 
@@ -114,8 +114,17 @@ CREATE TABLE `parts` (
   `film_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `player` varchar(255) NOT NULL,
+  `views` int(11) NOT NULL,
   `url` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `parts`
+--
+
+INSERT INTO `parts` (`id`, `film_id`, `name`, `player`, `views`, `url`) VALUES
+(3, 19, 'Tập 1', '', 0, 'Tap-.html19.html'),
+(4, 19, 'tập 2', '', 0, 'tap-.html19.html');
 
 -- --------------------------------------------------------
 
@@ -177,10 +186,11 @@ CREATE TABLE `systems` (
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
+  `password` varchar(500) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `avatar` varchar(255) NOT NULL,
+  `gender` int(11) NOT NULL COMMENT '0=nu/1=nam',
   `age` varchar(50) NOT NULL,
   `role_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -189,10 +199,11 @@ CREATE TABLE `users` (
 -- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `name`, `email`, `avatar`, `age`, `role_id`) VALUES
-(1, 'nguyenvana', '123456', 'nguyễn văn a', 'haivdph@gmail.com', '', '19', 0),
-(2, 'nguyenvanb', '123123', 'nguyễn văn b', 'bbb@gmail.com', '', '19', 0),
-(3, 'admin', '$2y$10$QYr7SvXdOguZz3dlnPxO.u0Y0Ffj6nNErwm168unZkzPoWRxR7..e', 'admin', 'haivdph07968@gmail.com', '', '', 10);
+INSERT INTO `users` (`id`, `username`, `password`, `name`, `email`, `avatar`, `gender`, `age`, `role_id`) VALUES
+(3, 'admin', '$2y$10$QYr7SvXdOguZz3dlnPxO.u0Y0Ffj6nNErwm168unZkzPoWRxR7..e', 'admin', 'haivdph07968@gmail.com', 'null.png', 0, '', 1),
+(19, 'vudang123', '$2y$10$29Q.4qUYKUfr9wfH8skyEenJep7UWBfIYP5DsDzregNccQNhY7HRi', 'Vũ Duy Đăng', 'vuduydang2000@gmail.com', 'null.png', 1, '1971-2-2', 1),
+(27, 'vudang12', '$2y$10$cy3.6fUlMVGkzn.x70zcYuj8HTswBNbFS42Zl3s1NXnNzKENMqEGm', 'Vũ Duy Đăng', 'vuduydang2000hb@gmail.com', 'null.png', 1, '2000-11-1', 0),
+(28, 'vudang', '$2y$10$aM8D2NtstuPjdU9m1fGJUeI39227IbTs0vY3unjzIsSZUM7ybyKHO', 'Vũ Duy Đăng', 'vuduydangs2@gmail.com', 'null.png', 1, '2000-11-11', 0);
 
 -- --------------------------------------------------------
 
@@ -204,6 +215,23 @@ CREATE TABLE `years` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `years`
+--
+
+INSERT INTO `years` (`id`, `name`) VALUES
+(1, '2009'),
+(2, '2010'),
+(3, '2011'),
+(4, '2012'),
+(5, '2013'),
+(6, '2014'),
+(7, '2015'),
+(8, '2016'),
+(9, '2017'),
+(10, '2018'),
+(11, '2019');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -273,13 +301,13 @@ ALTER TABLE `years`
 -- AUTO_INCREMENT cho bảng `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `films`
 --
 ALTER TABLE `films`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT cho bảng `follows`
@@ -297,7 +325,7 @@ ALTER TABLE `historys`
 -- AUTO_INCREMENT cho bảng `parts`
 --
 ALTER TABLE `parts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `reviews`
@@ -315,13 +343,13 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT cho bảng `years`
 --
 ALTER TABLE `years`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

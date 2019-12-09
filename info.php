@@ -2,14 +2,19 @@
     require_once './commons/constants.php';
     require_once './commons/db.php';
     require_once './commons/helpers.php';
+
     $id = isset($_GET['id']) ? $_GET['id'] : "";
-    $sqlQuery = "select * from films  where id = $id";
-    $films = executeQuery($sqlQuery);
+    $sqlQuery   = "select * from films  where id = $id";
+    $films      = executeQuery($sqlQuery);
 
-    $sqlQuery = "select * from parts  where film_id = $id";
-    $parts = executeQuery($sqlQuery, true);
+    $sr         = $films['series'];
+    $sqlQuery   = "SELECT * FROM films WHERE series LIKE '%$sr%'";
+    $series     = executeQuery($sqlQuery, true);
+
+    $sqlQuery   = "select * from parts  where film_id = $id";
+    $parts      = executeQuery($sqlQuery, true);
     
-
+    $quantity   = count($parts);
  ?>
 
 <!DOCTYPE html>
@@ -17,7 +22,7 @@
 
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
-	<title>Doraemon Tập 1 - Tập đặc biệt: Ao cá trong phòng học &amp; Cỗ máy thời gian đâu mất rồi &amp; Nhớ lại! ấn tượng ngày đầu tiên</title>
+	<title><?=$films['name']?> - YFilms</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta name="_token" id="token" value="">
@@ -71,7 +76,7 @@
          
          data-name="Doraemon" data-episode-min="1" data-episode-max="505">
         <div class="banner">
-            <img src="./assets/thumbnails/<?php echo $films['banner'] ?>" alt="" style="width: 100%; height: 100%">
+            <img src="./assets/banners/<?=$films['banner'] ?>" alt="" style="width: 100%; height: 100%">
         </div>
                                                 
 
@@ -84,12 +89,12 @@
             <div class="info">
                 <h1 class="film-info-title"><?php echo $films['name'] ?> - <?php echo $films['series'] ?></h1>
                 <p>Thể loại: <span><?php echo $films['categories'] ?></span></p>
-                <p>Đạo diễn: <span><?php echo $films['author'] ?></span></p>
+                <p>Đạo Diễn: <span><?php echo $films['author'] ?></span></p>
                 <p>Năm xuất bản: <span><?php echo $films['year'] ?></span></p>
-                <p>Thời lượng: <span><?php echo $films['quantity'] ?></span></p>
+                <p>Tập: <span><?=$quantity?>/??</span></p>
                 <p>Lượt xem: <span><?php echo $films['views'] ?></span></p>
                 <p>Trạng thái <span><?php echo $films['status'] ?></span></p>
-                <a class="click-view" href="./xemphim.php">Xem phim</a>
+                <a class="click-view" href="./xemphim.php?url=<?=$films['url']?>">Xem phim</a>
                 <a class="click-follow" href="#follows">Theo dõi</a>
             </div>
             <!-- <div id="player" class="player"></div> -->
@@ -139,8 +144,16 @@
             
                 <div class="film-info"><hr>
                     <div class="film-info-subteam">
-                        <div class="film-related-title"><h3>Series Phim DORAEMON</h3></div>
-                        ///
+                        <div class="film-related-title"><h3>Series <?=$films['series']?></h3></div>
+                        <ul>
+                            <?php foreach ($series as $value) : 
+                                    if ($value['id']==$id) {
+                                        continue;   
+                                    }
+                                ?>
+                                <li> - <a href="info.php?id=<?=$value['id']?>"><?=$value['name']?></a></li>
+                            <?php endforeach ?>
+                        </ul>
                 </div>
                 <hr>
                 <div class="film-info-description">

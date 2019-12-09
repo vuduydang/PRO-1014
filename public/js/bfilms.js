@@ -367,14 +367,7 @@ function signup() {
             },
             success : function(msg){
                 console.log(msg);
-                if (msg == 'true') {
-                    const LoginSuccess = 1;
-                    alert('Đăng Ký Thành Công !');
-                    location.reload();
-
-                }else{
-                    e.innerHTML = "<li>Thông tin đăng ký không chính xác</li>", e.parentNode.classList.remove("hidden"), loginButton.classList.remove("disabled"), navbarLoading.classList.add("hidden");
-                }
+                    e.innerHTML = "<li>"+msg+"</li>", e.parentNode.classList.remove("hidden"), loginButton.classList.remove("disabled"), navbarLoading.classList.add("hidden");
             },
             error : function(){
                 e.innerHTML = "<li>Lỗi kết nối, vui lòng thử lại</li>", e.parentNode.classList.remove("hidden"), loginButton.classList.remove("disabled"), navbarLoading.classList.add("hidden");

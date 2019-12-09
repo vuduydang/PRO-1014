@@ -29,10 +29,12 @@ if ($film_id == "" || $name == "" || $file_film == "" || $status == "") {
 		move_uploaded_file($file_film['tmp_name'], "../videos/". $film_id.'-'.time().'.mp4');
 	}
 
-$link 		= preg_replace('([\s]+)', '-', strip_tags($name));
-$url		= $link.$film_id.".html";
+$url_1 	= preg_replace('/([^\pL\.\ ]+)/u', '', strip_tags($name)); //xóa kí tự đặc biệt trong chuỗi
+$url_0 	= preg_replace('([\s]+)', '-', strip_tags($url_1)).'.html'; //xóa khoảng trắng
+$url 	= strUnicode($url_0); //xóa dấu
+$link	= $url.$film_id.".html";
 
-$insert = "INSERT INTO parts VALUES (NULL,'$film_id','$name','$player','$url')";
+$insert = "INSERT INTO parts VALUES (NULL,'$film_id','$name','$player','0','$link')";
 executeQuery($insert);
 
 $upload = "UPDATE films SET status = '$status' WHERE id = '$film_id'";

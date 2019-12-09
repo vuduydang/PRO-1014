@@ -17,31 +17,25 @@ require_once("../commons/helpers.php");
 	$author 	= isset($_POST['author']) ? $_POST['author'] : "";
 	$series 	= isset($_POST['series']) ? $_POST['series'] : "";
 	$year 		= isset($_POST['year']) ? $_POST['year'] : "";
-	$quantity 	= isset($_POST['quantity']) ? $_POST['quantity'] : "";
 	$status 	= isset($_POST['status']) ? $_POST['status'] : "";
 	$content 	= isset($_POST['content']) ? $_POST['content'] : "";
 	$thumbnail 	= isset($_FILES['thumbnail']) ? $_FILES['thumbnail'] : "";
 	$banner 	= isset($_FILES['banner']) ? $_FILES['banner'] : "";
 
-	if ($name=="" || $categories=="" || $author=="" || $year=="" || $quantity=="" || $content=="" || $thumbnail=="" || $banner=="") {
+	if ($name=="" || $categories=="" || $author=="" || $year=="" || $content=="" || $thumbnail=="" || $banner=="") {
 		echo "<script>alert('Thiếu thông tin phim rồi, chú ý vào !')</script>";
 		echo "<script>window.history.back()</script>";
 		die();
 	}
 	
-	if ($thumbnail['name'] != "") {
-		$thumbnailName = $thumbnail['name'];
-		move_uploaded_file($thumbnail['tmp_name'], "../assets/thumbnails/".$thumbnailName);
-	}
-	if ($banner['name'] != "") {
-		$bannerName = $banner['name'];
-		move_uploaded_file($banner['tmp_name'], "../assets/banners/". $bannerName);
-	}
+	move_uploaded_file($thumbnail['tmp_name'], "../assets/thumbnails/".time());
+	move_uploaded_file($banner['tmp_name'], "../assets/banners/". time());
 
 	$url_1 	= preg_replace('/([^\pL\.\ ]+)/u', '', strip_tags($name)); //xóa kí tự đặc biệt trong chuỗi
-	$url 	= preg_replace('([\s]+)', '-', strip_tags($url_1)).'html'; //xóa khoảng trắng
+	$url_0 	= preg_replace('([\s]+)', '-', strip_tags($url_1)).'.html'; //xóa khoảng trắng
+	$url 	= strUnicode($url_0); //xóa dấu
 
-	$sqlInsert = "INSERT INTO films VALUES ('null','$name','$series','$year','$categories','$author','$bannerName','$thumbnailName','$content','$quantity','$status','0','$url','1')"; 
+	$sqlInsert = "INSERT INTO films VALUES ('null','$name','$series','$year','$categories','$author','$bannerName','$thumbnailName','$content','$status','0','$url','1')"; 
 	executeQuery($sqlInsert);
 
 	header("location: dashboard.php");

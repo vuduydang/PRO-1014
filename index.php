@@ -27,11 +27,11 @@
     <meta name="_token" id="token" value="">
     <meta name="_socket" id="socket" value="6001">
 
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta http-equiv="cache-control" content="max-age=0" />
     <meta http-equiv="cache-control" content="no-cache" />
     <meta name="robots" content="index, follow" />
-    <meta name="language" content="Vietnamese, English" /> -->
+    <meta name="language" content="Vietnamese, English" />
     
 
     
@@ -40,7 +40,7 @@
       <link rel="stylesheet" href="./public/css/home9039.css?id=0cadef886044cb02b356">
   
       <link rel="stylesheet" href="./public/css/style.css">
-    </head>
+</head>
 <body>
 
     <?php include_once"./_share/header.php"; ?>
@@ -95,7 +95,7 @@
                           
         <section class="tray">
             <div class="tray-title">
-              <a href="video-2.php">Tập mới <i class="icon icon-right"></i></a>
+              <a href="video.php">Tập mới <i class="icon icon-right"></i></a>
             </div>
             <div class="tray-content">
 
@@ -183,28 +183,18 @@
 </div>    
 
     
-    <script type="text/javascript" src="./public/js/bfilms.js"></script>
-              
+<script type="text/javascript" src="./public/js/bfilms.js"></script>
 
-            <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-81129102-2"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
 
-          gtag('config', 'UA-81129102-2');
-        </script>
-                                <div id="balloon">
-                
-                
-                <script type="text/javascript">
-                    var _avlVar = _avlVar || [];
-                _avlVar.push(["844e3b44c6ca44368dd07b5871b5dea9","[yo_page_url]","[width]","[height]"]);
-                </script>
-                <script type="text/javascript" src="../ss.yomedia.vn/js/yomedia-sdk30f4.js?v=3" id="s-844e3b44c6ca44368dd07b5871b5dea9"></script>
-            </div>
-                        <script type="text/javascript" async defer src="../ss.yomedia.vn/js/ads.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-81129102-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-81129102-2');
+</script>
             
 </body>
 
