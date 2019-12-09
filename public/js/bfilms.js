@@ -428,19 +428,33 @@ function login() {
 }
 
 function logout() {
-    var e = sendAjax("POST", _GLOBAL._API + "/users/logout");
-    navbarLoading.classList.remove("hidden"), e.onload = function() {
-        if (200 == e.status) {
-            try {
-                store.forEach(function(e, t) {
-                    "episode" == e.substring(0, 7) && store.remove(e)
-                }), store.remove("notifications")
-            } catch (e) {}
-            window.location.reload()
-        }
-    }, e.onerror = function(e) {
-        navbarLoading.classList.add("hidden")
-    }
+    $.ajax({
+            url: "http://localhost/Git/PRO-1014/user/logout.php",
+            type: "POST",
+            dataType: 'text',
+            data: {
+                'status' : 'logout'
+            },
+            success : function(msg){
+                    location.reload();
+            },
+            error : function(){
+                //e.innerHTML = "<li>Lỗi kết nối, vui lòng thử lại</li>", e.parentNode.classList.remove("hidden"), loginButton.classList.remove("disabled"), navbarLoading.classList.add("hidden");
+            }
+        })
+    // var e = sendAjax("POST", _GLOBAL._API + "/user/logout");
+    // navbarLoading.classList.remove("hidden"), e.onload = function() {
+    //     if (200 == e.status) {
+    //         try {
+    //             store.forEach(function(e, t) {
+    //                 "episode" == e.substring(0, 7) && store.remove(e)
+    //             }), store.remove("notifications")
+    //         } catch (e) {}
+    //         window.location.reload()
+    //     }
+    // }, e.onerror = function(e) {
+    //     navbarLoading.classList.add("hidden")
+    // }
 }
 
 function windowOnClick(e) {
