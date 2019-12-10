@@ -68,7 +68,6 @@ require_once './commons/helpers.php';
             <?php endforeach ?>
         </div>
 <div class="loading hidden"></div>
-<div class="tray-more">xem thêm</div>
 </section>
       
     </div> <!-- /container -->
