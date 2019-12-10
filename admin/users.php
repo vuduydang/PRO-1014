@@ -67,12 +67,12 @@ $lists = executeQuery($select, true);
 				<table>
 					<tr style="border-bottom: 1px solid #328">
 						<th>ID</th>
-						<th>USERNAME</th>
-						<th>NAME</th>
+						<th>TÊN ĐĂNG NHẬP</th>
+						<th>HỌ VÀ TÊN</th>
 						<th>EMAIL</th>
-						<th>AVATAR</th>
-						<th>AGE</th>
-						<th>ROLE_ID</th>
+						<th>GIỚI TÍNH</th>
+						<th>TUỔI</th>
+						<th>QUYỀN</th>
 						<th>TÙY CHỈNH</th>
 					</tr>
 					<?php
@@ -80,15 +80,25 @@ $lists = executeQuery($select, true);
 							$id 	= $value['id'];
 							$count 	= "SELECT * FROM user WHERE id = '$id'";
 							$counts = executeQuery($count,true);
+
+							$role_id = $value["role_id"];
+							$select = "SELECT * FROM roles WHERE status = '$role_id'";
+							$role 	= executeQuery($select)['name'];
+
+							if ($value["gender"]==0) {
+								$gender = 'nữ';
+							}else {
+								$gender = 'nam';
+							}
 					?>
 					<tr>
 						<td><?=$value["id"]?></td>
 						<td><?=$value["username"]?> </td>
 						<td><?=$value["name"]?></td>
 						<td><?=$value["email"]?></td>
-						<td><img src="../assets/avatars/<?=$value['avatar']?>" alt=""></td>
-						<td><?=$value["age"]?></td>
-						<td><?=$value["role_id"]?></td>
+						<td><?=$gender?></td>
+						<td><?=getAge($value["age"])?></td>
+						<td><?=$role?></td>
 						<td>
 							<!-- <a href="addpart.php?id=<?=$value['id']?>"><i class="fas fa-plus"></i></a> -->
 							<a href="edit_user.php?id=<?=$value['id']?>" target=""><i class="fas fa-edit"></i></a>

@@ -17,5 +17,25 @@ function strUnicode($str){
 	foreach($unicode as $nonUnicode=>$uni) $str = preg_replace("/($uni)/i",$nonUnicode,$str);
 	return $str;
 }
+function getAge($birthdate = '0000-00-00') {
+    if ($birthdate == '0000-00-00') return 'Unknown';
+ 
+    $bits = explode('-', $birthdate);
+    $age = date('Y') - $bits[0] - 1;
+ 
+    $arr[1] = 'm';
+    $arr[2] = 'd';
+ 
+    for ($i = 1; $arr[$i]; $i++) {
+        $n = date($arr[$i]);
+        if ($n < $bits[$i])
+            break;
+        if ($n > $bits[$i]) {
+            ++$age;
+            break;
+        }
+    }
+    return $age;
+}
 
  ?>
