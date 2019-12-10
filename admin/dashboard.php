@@ -65,6 +65,9 @@ $countParts = executeQuery($sqlQuery);
 					<li>
 						<a href="manager.php"><i class="fas fa-chart-line"></i>Quản lý phim</a>
 					</li>
+					<li>
+						<a href="users.php"><i class="fas fa-chart-line"></i>Quản lý thành viên</a>
+					</li>
 				</ul>
 			</div>
 			<section class="content">
