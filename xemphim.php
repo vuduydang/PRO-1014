@@ -3,6 +3,10 @@
     require_once './commons/db.php';
     require_once './commons/helpers.php';
 
+    $url = $_GET['url'];
+    $select = "SELECT * FROM parts WHERE url = '$url'";
+    $infoP  = executeQuery($select);
+
 
 ?>
 <!DOCTYPE html>
@@ -83,85 +87,23 @@
         
          <div class="film-related video" style="margin-top: -16px;">
             <hr>
-            <h3 class="dsp">Liên quan</h3>
-                <div class="film-related-item">
-                    <div class="film-related-thumbnail">
-                        <a href="xemphim.php">
-                            <img src="assets/img/1.jpg">
-                        </a>
+            <h3 class="dsp">Tập</h3>
+                <?php foreach ($parts as  $value) : ?>
+                    <div class="film-related-item">
+                        <div class="film-related-thumbnail">
+                            <a href="xemphim.php">
+                                <video class="video-item-thumbnail" src="./videos/video1.mp4#t=0.1"></video>
+                            </a>
+                        </div>
+                        <div class="film-related-meta">
+                            <a href="xemphim.php">
+                                <div class="film-related-title"><?php echo $value['name'] ?></div>
+                            </a>
+                            <div class="film-related-views">725 lượt xem</div>
+                        </div>
                     </div>
-                    <div class="film-related-meta">
-                        <a href="xemphim.php">
-                            <div class="film-related-title">Erza vS her mom&#039;s Dragon Form - Fairy Tail Final Season  AMV</div>
-                        </a>
-                        <div class="film-related-views">725 lượt xem</div>
-                    </div>
-                </div>
-                                <div class="film-related-item">
-                    <div class="film-related-thumbnail">
-                        <a href="xemphim.php">
-                           <img src="assets/img/4.jpg">
-                        </a>
-                    </div>
-                    <div class="film-related-meta">
-                        <a href="xemphim.php">
-                            <div class="film-related-title">Kimetsu no Yaiba「 AMV 」- Louder</div>
-                        </a>
-                        <div class="film-related-views">1,537 lượt xem</div>
-                    </div>
-                </div>
-                <div class="film-related-item">
-                    <div class="film-related-thumbnail">
-                        <a href="xemphim.php">
-                           <img src="assets/img/4.jpg">
-                        </a>
-                    </div>
-                    <div class="film-related-meta">
-                        <a href="xemphim.php">
-                            <div class="film-related-title">Kimetsu no Yaiba「 AMV 」- Louder</div>
-                        </a>
-                        <div class="film-related-views">1,537 lượt xem</div>
-                    </div>
-                </div>
-                <div class="film-related-item">
-                    <div class="film-related-thumbnail">
-                        <a href="xemphim.php">
-                           <img src="assets/img/4.jpg">
-                        </a>
-                    </div>
-                    <div class="film-related-meta">
-                        <a href="xemphim.php">
-                            <div class="film-related-title">Kimetsu no Yaiba「 AMV 」- Louder</div>
-                        </a>
-                        <div class="film-related-views">1,537 lượt xem</div>
-                    </div>
-                </div>
-
-                                <div class="film-related-item">
-                    <div class="film-related-thumbnail">
-                        <a href="xemphim.php">
-                            <img src="assets/img/3.jpg">
-                        </a>
-                    </div>
-                    <div class="film-related-meta">
-                        <a href="xemphim.php">
-                            <div class="film-related-title">Bungou Stray Dogs Season 3 「 AMV 」- Antidote</div>
-                        </a>
-                        <div class="film-related-views">432 lượt xem</div>
-                    </div>
-                </div>
-                                <div class="film-related-item">
-                    <div class="film-related-thumbnail">
-                        <a href="xemphim.php">
-                            <img src="assets/img/2.jpg">
-                        </a>
-                    </div>
-                    <div class="film-related-meta">
-                        <a href="xemphim.php">
-                            <div class="film-related-title">Ｄｒ．ＳＴＯＮＥ「AMV」- Can&#039;t Stop Me Now</div>
-                        </a>
-                        <div class="film-related-views">476 lượt xem</div>
-                    </div>
+                <?php endforeach ?>
+                                
                 </div>
                                 
             </div>

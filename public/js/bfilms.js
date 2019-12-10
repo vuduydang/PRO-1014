@@ -1,10 +1,10 @@
-// var loginYF = sessionStorage.getItem('loginYF');
-// alert(loginYF);
-// if (typeof loginYF != "undefined") {
-//     const LoginSuccess = loginYF;
-// }
-var base_url = 'Git/PRO-1014';
-const LoginSuccess = 0;
+
+//var base_url = 'Git/PRO-1014';
+// const LoginSuccess = 1;
+
+                        
+// Lấy dữ liệu
+var LoginSuccess = sessionStorage.getItem('login');
 
 function iOSversion() {
     if (/iP(hone|od|ad)/.test(navigator.platform)) {
@@ -402,7 +402,12 @@ function login() {
             success : function(msg){
                 console.log(msg);
                 if (msg == 'true') {
-                    const LoginSuccess = 1;
+                    if (typeof(Storage) !== "undefined") {
+                        // Gán dữ liệu
+                        sessionStorage.setItem('login', '1');
+                    } else {
+                        alert('Trình duyệt của bạn không hỗ trợ local storage');
+                    }
                     location.reload();
                 }else{
                     e.innerHTML = "<li>Thông tin đăng nhập không chính xác</li>", e.parentNode.classList.remove("hidden"), loginButton.classList.remove("disabled"), navbarLoading.classList.add("hidden");
@@ -429,6 +434,7 @@ function logout() {
                 'status' : 'logout'
             },
             success : function(msg){
+                    sessionStorage.removeItem('login');
                     location.reload();
             },
             error : function(){
@@ -4860,3 +4866,16 @@ window.onpopstate = function(e) {
         window.innerWidth >= 1024 ? (player.vast.video.style.left = e + "px", player.vast.container.style.left = e + "px") : (player.vast.video.style = "", player.vast.container.style = "")
     }
 });
+
+function setComment(){
+    $(document).keypress(function (e) {
+        if (e.which == 13) {
+            var i = $("#comment-input").val();
+            if (i.length < 2) return void alertify.error("Bình luận của bạn quá ngắn");
+            if (i.length > 200) return void alertify.error("Bình luận chỉ được dài tối đa 200 kí tự, bạn đã gõ " + i.length + " kí tự.");
+            
+        }
+    });
+}
+
+setComment();

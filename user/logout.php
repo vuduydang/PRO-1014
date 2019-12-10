@@ -9,3 +9,5 @@ unset($_SESSION[AUTH_YF]);
 // echo "<script>sessionStorage.clear();</script>";
 
 header("location: ../index.php");
+
+?>

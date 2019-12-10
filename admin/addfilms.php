@@ -60,6 +60,9 @@ if (empty($_SESSION[AUTH_YF]) || $session['role_id'] != 1) {
 					<li>
 						<a href="manager.php"><i class="fas fa-chart-line"></i>Quản lý phim</a>
 					</li>
+					<li>
+						<a href="manager.php"><i class="fas fa-chart-line"></i>Quản thành viên</a>
+					</li>
 				</ul>
 			</div>
 			<section class="content">

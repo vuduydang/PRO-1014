@@ -64,6 +64,9 @@ if (isset($_GET['id'])) {
 					<li class="active">
 						<a href="manager.php"><i class="fas fa-chart-line"></i>Quản lý phim</a>
 					</li>
+					<li>
+						<a href="manager.php"><i class="fas fa-chart-line"></i>Quản thành viên</a>
+					</li>
 				</ul>
 			</div>
 			<section class="content">

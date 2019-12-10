@@ -54,7 +54,7 @@ $lists = executeQuery($select, true);
 					<li>
 						<a href="addfilms.php"><i class="fas fa-plus"></i>Thêm Phim</a>
 					</li>
-					<li class="active">
+					<li>
 						<a href="manager.php"><i class="fas fa-chart-line"></i>Quản lý phim</a>
 					</li>
 					<li class="active">

@@ -58,7 +58,7 @@
 		<!-- Bing verification -->
 		<meta name="msvalidate.01" content="C21FDE84CE65ABA807746F89A0D2964C" />
 	
-        <link rel="stylesheet" href="./public/css/film99f8.css?id=57f035621535aaa1179c">
+        <link rel="stylesheet" href="./public/css/film99f8.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 
     <link rel="stylesheet" href="./public/css/style.css">
@@ -94,7 +94,7 @@
                 <p>Tập: <span><?=$quantity?>/??</span></p>
                 <p>Lượt xem: <span><?php echo $films['views'] ?></span></p>
                 <p>Trạng thái <span><?php echo $films['status'] ?></span></p>
-                <a class="click-view" href="./xemphim.php?url=<?=$films['url']?>">Xem phim</a>
+                <a class="click-view" href="./xemphim.php?url=<?=$parts[0]['url']?>">Xem phim</a>
                 <a class="click-follow" href="#follows">Theo dõi</a>
             </div>
             <!-- <div id="player" class="player"></div> -->

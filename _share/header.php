@@ -11,6 +11,7 @@ session_start();
     <link rel="stylesheet" href="./public/css/style.css">
     <script type="text/javascript" src="./public/js/jquery.min.js"></script>
     <script type="text/javascript" src="./public/js/jquery-ui.min.js"></script>
+    <!-- <script type="text/javascript">const LoginSuccess = 0;</script> -->
 </head>
 <?php if (empty($_SESSION[AUTH_YF])) { ?>
 <header>
@@ -200,7 +201,6 @@ session_start();
 $auth_yf = $_SESSION[AUTH_YF];
 
 ?>
-
 <header>
     <nav class="navbar">
         <div class="navbar-container">
