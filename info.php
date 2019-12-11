@@ -94,7 +94,9 @@
                 <p>Tập: <span><?=$quantity?>/??</span></p>
                 <p>Lượt xem: <span><?php echo $films['views'] ?></span></p>
                 <p>Trạng thái <span><?php echo $films['status'] ?></span></p>
-                <a class="click-view" href="./xemphim.php?url=<?=$parts[0]['url']?>">Xem phim</a>
+                <?php foreach ($parts as $value): ?>
+                    <a class="click-view" href="./xemphim.php?id=<?=$value['film_id']?>">Xem phim</a>
+                <?php endforeach ?>
                 <a class="click-follow" href="#follows">Theo dõi</a>
             </div>
             
@@ -115,15 +117,15 @@
                 <?php foreach ($parts as  $value) : ?>
                     <div class="film-related-item">
                         <div class="film-related-thumbnail">
-                            <a href="xemphim.php">
+                            <a href="xemphim.php?id=<?=$value['film_id']?>">
                                 <video class="video-item-thumbnail" src="./videos/video1.mp4#t=0.1"></video>
                             </a>
                         </div>
                         <div class="film-related-meta">
-                            <a href="xemphim.php">
+                            <a href="xemphim.php?id=<?=$value['film_id']?>">
                                 <div class="film-related-title"><?php echo $value['name'] ?></div>
                             </a>
-                            <div class="film-related-views">725 lượt xem</div>
+                            <div class="film-related-views">Lượt xem : <?php echo $value['views'] ?></div>
                         </div>
                     </div>
                 <?php endforeach ?>

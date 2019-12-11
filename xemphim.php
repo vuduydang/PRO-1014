@@ -3,22 +3,20 @@
     require_once './commons/db.php';
     require_once './commons/helpers.php';
 
-    $url = $_GET['url'];
-    $select = "SELECT * FROM parts WHERE url = '$url'";
-    $infoP  = executeQuery($select);
+    $id = $_GET['id'];
+    $select = "SELECT * FROM parts WHERE film_id = '$id'";
+    $infoP  = executeQuery($select,true);
 
-    $id_film = $infoP['film_id'];
-    $select = "SELECT * FROM films WHERE id = '$id_films'";
-    $infoF = executeQuery($select);
-
-
+    // $id_film = $infoP['film_id'];
+    // $select = "SELECT * FROM films WHERE id = '$id_films'";
+    // $infoF = executeQuery($select);
 ?>
 <!DOCTYPE html>
 <html lang="vi">
 
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
-	<title><?=$infoP['name']?></title>
+	<title></title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta name="_token" id="token" value="">
@@ -91,23 +89,22 @@
         
         <div class="film-related video" style="margin-top: -16px;">
             <hr>
-            <h3 class="dsp">Tập</h3>
-            <?php foreach ($parts as  $value) : ?>
+            <h3 class="dsp">Tập phim liên quan</h3>
+            <?php foreach ($infoP as  $value) : ?>
                 <div class="film-related-item">
                     <div class="film-related-thumbnail">
-                        <a href="xemphim.php">
+                        <a href="xemphim.php?id=<?=$value['film_id']?>">
                             <video class="video-item-thumbnail" src="./videos/video1.mp4#t=0.1"></video>
                         </a>
                     </div>
                     <div class="film-related-meta">
-                        <a href="xemphim.php">
+                        <a href="xemphim.php?id=<?=$value['film_id']?>">
                             <div class="film-related-title"><?php echo $value['name'] ?></div>
                         </a>
-                        <div class="film-related-views">725 lượt xem</div>
+                        <div class="film-related-views">Lượt xem : <?php echo $value['views']?></div>
                     </div>
                 </div>
             <?php endforeach ?>
-
         </div>
                 
         
@@ -115,13 +112,13 @@
 
         <div class="film-info"><hr>
             <div class="film-info-subteam">
-                <div class="film-related-title"><h3><?=$infoP['name']?></h3></div>
+                <div class="film-related-title"><h3><!-- <?=$infoF['name']?> --></h3></div>
             </div>
             <hr>
             <div class="film-info-description">
                 <h4><i class="fas fa-film"></i> VuiGhe Sub</h4><br>
                 <h5>Mô Tả</h5>
-                <?=$infoF['content']?>
+                <!-- <?=$infoF['content']?> -->
             </div>
             <hr>
 
@@ -147,7 +144,7 @@
                     <input type="button" class="comment-more hidden" value="Xem thêm">
                     <input type="text" name="reply-input" id="reply-input" class="reply-input hidden">
                 </div>
-                <div class="loading"></div>
+                <!-- <div class="loading"></div> -->
             </div>
         </div>
     </div>
