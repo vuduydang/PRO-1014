@@ -35,6 +35,7 @@ require_once("../commons/helpers.php");
 	}else {
 		echo "<script>alert('Yêu cầu nhập đúng định dạnh ảnh PNG hoặc JPG !')</script>";
 		echo "<script>window.history.back()</script>";
+		die();
 	}
 
 
