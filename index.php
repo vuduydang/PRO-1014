@@ -109,7 +109,7 @@
                           <i class="icon-play"></i>
                         </div>
                     </a>
-                    <div class="video-item-views">2 ngày trước - 724 lượt xem</div>
+                    <div class="video-item-views">Lượt xem : <?php echo $value['views'] ?></div>
                 </div>
               <?php endforeach?>
             </div>
