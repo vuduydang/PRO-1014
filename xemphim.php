@@ -105,7 +105,6 @@
                     </div>
                 </div>
             <?php endforeach ?>
-
         </div>
                 
         
@@ -113,7 +112,7 @@
 
         <div class="film-info"><hr>
             <div class="film-info-subteam">
-                <div class="film-related-title"><h3><?=$infoP['name']?></h3></div>
+                <div class="film-related-title"><h3><?=$infoF['name']?></h3></div>
             </div>
             <hr>
             <div class="film-info-description">
