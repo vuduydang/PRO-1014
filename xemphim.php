@@ -16,7 +16,7 @@
 
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
-	<title><?=$infoP['name']?></title>
+	<title></title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta name="_token" id="token" value="">
@@ -112,13 +112,13 @@
 
         <div class="film-info"><hr>
             <div class="film-info-subteam">
-                <div class="film-related-title"><h3><?=$infoF['name']?></h3></div>
+                <div class="film-related-title"><h3><!-- <?=$infoF['name']?> --></h3></div>
             </div>
             <hr>
             <div class="film-info-description">
                 <h4><i class="fas fa-film"></i> VuiGhe Sub</h4><br>
                 <h5>Mô Tả</h5>
-                <?=$infoF['content']?>
+                <!-- <?=$infoF['content']?> -->
             </div>
             <hr>
 
@@ -144,7 +144,7 @@
                     <input type="button" class="comment-more hidden" value="Xem thêm">
                     <input type="text" name="reply-input" id="reply-input" class="reply-input hidden">
                 </div>
-                <div class="loading"></div>
+                <!-- <div class="loading"></div> -->
             </div>
         </div>
     </div>
