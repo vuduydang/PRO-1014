@@ -7,6 +7,10 @@
     $select = "SELECT * FROM parts WHERE url = '$url'";
     $infoP  = executeQuery($select);
 
+    $id_film = $infoP['film_id'];
+    $select = "SELECT * FROM films WHERE id = '$id_films'";
+    $infoF = executeQuery($select);
+
 
 ?>
 <!DOCTYPE html>
@@ -14,7 +18,7 @@
 
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
-	<title>Doraemon Tập 1 - Tập đặc biệt: Ao cá trong phòng học &amp; Cỗ máy thời gian đâu mất rồi &amp; Nhớ lại! ấn tượng ngày đầu tiên</title>
+	<title><?=$infoP['name']?></title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta name="_token" id="token" value="">
@@ -85,50 +89,46 @@
 
         
         
-         <div class="film-related video" style="margin-top: -16px;">
+        <div class="film-related video" style="margin-top: -16px;">
             <hr>
             <h3 class="dsp">Tập</h3>
-                <?php foreach ($parts as  $value) : ?>
-                    <div class="film-related-item">
-                        <div class="film-related-thumbnail">
-                            <a href="xemphim.php">
-                                <video class="video-item-thumbnail" src="./videos/video1.mp4#t=0.1"></video>
-                            </a>
-                        </div>
-                        <div class="film-related-meta">
-                            <a href="xemphim.php">
-                                <div class="film-related-title"><?php echo $value['name'] ?></div>
-                            </a>
-                            <div class="film-related-views">725 lượt xem</div>
-                        </div>
+            <?php foreach ($parts as  $value) : ?>
+                <div class="film-related-item">
+                    <div class="film-related-thumbnail">
+                        <a href="xemphim.php">
+                            <video class="video-item-thumbnail" src="./videos/video1.mp4#t=0.1"></video>
+                        </a>
                     </div>
-                <?php endforeach ?>
-                                
+                    <div class="film-related-meta">
+                        <a href="xemphim.php">
+                            <div class="film-related-title"><?php echo $value['name'] ?></div>
+                        </a>
+                        <div class="film-related-views">725 lượt xem</div>
+                    </div>
                 </div>
-                                
-            </div>
+            <?php endforeach ?>
+
+        </div>
                 
         
-                    <!-- INFO -->
-            
-                <div class="film-info"><hr>
-                    <div class="film-info-subteam">
-                        <div class="film-related-title"><h3>DORAEMON MOVIE 36: SHIN NOBITA NO NIPPON TANJOU</h3></div>
-                	</div>
-                <hr>
-                <div class="film-info-description">
-                    <!-- teamsubs -->
-                    <h4><i class="fas fa-film"></i> VuiGhe Sub</h4></br>
-                    <h5>Mô Tả</h5>
-                    Bộ phim kể về một chú mèo máy tên là Doraemon đến từ thế kỉ 22 để giúp một cậu bé lớp 4 hậu đậu tên là Nobi Nobita. Các câu chuyện của Doraemon thường ngắn gọn, dễ hiểu, dí dỏm và mang cái nhìn lạc quan về cuộc sống tương lai cũng như sự phát triển của khoa học - kĩ thuật.
-                </div>
+        <!-- INFO -->
 
-                <hr>
+        <div class="film-info"><hr>
+            <div class="film-info-subteam">
+                <div class="film-related-title"><h3><?=$infoP['name']?></h3></div>
+            </div>
+            <hr>
+            <div class="film-info-description">
+                <h4><i class="fas fa-film"></i> VuiGhe Sub</h4><br>
+                <h5>Mô Tả</h5>
+                <?=$infoF['content']?>
+            </div>
+            <hr>
 
-                <!-- BÌNH LUẬN -->
-                <div class="player-sidebar-body body-comment hidde">
-                    <h3><i class="fas fa-film"></i> BÌNH LUẬN PHIM</h3>
-                    <div class="comment-input">
+            <!-- BÌNH LUẬN -->
+            <div class="player-sidebar-body body-comment hidde">
+                <h3><i class="fas fa-film"></i> BÌNH LUẬN PHIM</h3>
+                <div class="comment-input">
                     <input type="text" name="comment-input" value="" id="comment-input">
                     <span id="comment-emoticon" class="comment-emoticon icon-smile"></span>
                     <div id="emoji-picker" class="emoji-picker hidden">
@@ -147,12 +147,9 @@
                     <input type="button" class="comment-more hidden" value="Xem thêm">
                     <input type="text" name="reply-input" id="reply-input" class="reply-input hidden">
                 </div>
-                <!-- <div class="loading"></div> -->
-                </div>
+                <div class="loading"></div>
             </div>
-
-
-
+        </div>
     </div>
 
     <div class="floating-action">

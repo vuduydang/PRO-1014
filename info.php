@@ -97,15 +97,6 @@
                 <a class="click-view" href="./xemphim.php?url=<?=$parts[0]['url']?>">Xem phim</a>
                 <a class="click-follow" href="#follows">Theo dõi</a>
             </div>
-            <!-- <div id="player" class="player"></div> -->
-            <!-- <iframe width="860" height="475" src="https://www.youtube.com/embed/WBYdp2sOut0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <div class="yt">
-                <i class="far fa-thumbs-up"></i>78K
-                <i style="margin-left: 15px;" class="far fa-thumbs-down"></i>35k
-                <i style="margin-left: 15px;" class="fas fa-share-alt"></i>
-                <i style="margin:0 40px 0 15px;" class="fas fa-heart"></i>
-            </div> -->
             
         </div>
         
@@ -140,34 +131,34 @@
         </div>
                 
         
-                    <!-- INFO -->
-            
-                <div class="film-info"><hr>
-                    <div class="film-info-subteam">
-                        <div class="film-related-title"><h3>Series <?=$films['series']?></h3></div>
-                        <ul>
-                            <?php foreach ($series as $value) : 
-                                    if ($value['id']==$id) {
-                                        continue;   
-                                    }
-                                ?>
-                                <li> - <a href="info.php?id=<?=$value['id']?>"><?=$value['name']?></a></li>
-                            <?php endforeach ?>
-                        </ul>
-                </div>
-                <hr>
-                <div class="film-info-description">
-                    <!--  -->
-                    <h3><i class="fas fa-film"></i> GIỚI THIỆU PHIM</h3>
-                    <?php echo $films['content'] ?>
-                </div>
+            <!-- INFO -->
+    
+        <div class="film-info"><hr>
+            <div class="film-info-subteam">
+                <div class="film-related-title"><h3>Series <?=$films['series']?></h3></div>
+                <ul>
+                    <?php foreach ($series as $value) : 
+                            if ($value['id']==$id) {
+                                continue;   
+                            }
+                        ?>
+                        <li> - <a href="info.php?id=<?=$value['id']?>"><?=$value['name']?></a></li>
+                    <?php endforeach ?>
+                </ul>
+            </div>
+            <hr>
+            <div class="film-info-description">
+                <!--  -->
+                <h3><i class="fas fa-film"></i> GIỚI THIỆU PHIM</h3>
+                <?php echo $films['content'] ?>
+            </div>
 
-                <hr>
+            <hr>
 
-                <!-- BÌNH LUẬN -->
-                <div class="player-sidebar-body body-comment hidde">
-                    <h3><i class="fas fa-film"></i> BÌNH LUẬN PHIM</h3>
-                    <div class="comment-input">
+            <!-- BÌNH LUẬN -->
+            <div class="player-sidebar-body body-comment hidde">
+                <h3><i class="fas fa-film"></i> BÌNH LUẬN PHIM</h3>
+                <div class="comment-input">
                     <input type="text" name="comment-input" value="" id="comment-input">
                     <span id="comment-emoticon" class="comment-emoticon icon-smile"></span>
                     <div id="emoji-picker" class="emoji-picker hidden">
@@ -186,18 +177,15 @@
                     <input type="button" class="comment-more hidden" value="Xem thêm">
                     <input type="text" name="reply-input" id="reply-input" class="reply-input hidden">
                 </div>
-                <!-- <div class="loading"></div> -->
-                </div>
+                <div class="loading"></div>
             </div>
-
-
-
+        </div>
     </div>
 
     <div class="floating-action">
 	<div class="action-item action-toggle"><i class="icon-up"></i></div>
 	
-</div>    
+    </div>    
 
         
         
