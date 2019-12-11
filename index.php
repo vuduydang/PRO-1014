@@ -11,9 +11,9 @@
     $sqlQuery_hot="SELECT * FROM films order by views desc limit 6";
     $films_hot= executeQuery($sqlQuery_hot, true);
 
-    $sqlQuery_part_new ="SELECT * FROM parts order by id desc limit 6";
+    $sqlQuery_part_new ="SELECT * FROM parts order by film_id desc limit 6";
     $films_part_new= executeQuery($sqlQuery_part_new, true);
-    
+
  ?>
 
 <!DOCTYPE html>
