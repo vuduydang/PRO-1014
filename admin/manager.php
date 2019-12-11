@@ -58,7 +58,7 @@ $select = "SELECT * FROM films";
 						<a href="manager.php"><i class="fas fa-chart-line"></i>Quản lý phim</a>
 					</li>
 					<li>
-						<a href="manager.php"><i class="fas fa-chart-line"></i>Quản thành viên</a>
+						<a href="users.php"><i class="fas fa-chart-line"></i>Quản thành viên</a>
 					</li>
 				</ul>
 			</div>
