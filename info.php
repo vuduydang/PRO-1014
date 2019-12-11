@@ -94,7 +94,9 @@
                 <p>Tập: <span><?=$quantity?>/??</span></p>
                 <p>Lượt xem: <span><?php echo $films['views'] ?></span></p>
                 <p>Trạng thái <span><?php echo $films['status'] ?></span></p>
-                <a class="click-view" href="./xemphim.php?url=<?=$parts[0]['url']?>">Xem phim</a>
+                <?php foreach ($parts as $value): ?>
+                    <a class="click-view" href="./xemphim.php?id=<?=$value['film_id']?>">Xem phim</a>
+                <?php endforeach ?>
                 <a class="click-follow" href="#follows">Theo dõi</a>
             </div>
             
