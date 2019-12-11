@@ -115,12 +115,12 @@
                 <?php foreach ($parts as  $value) : ?>
                     <div class="film-related-item">
                         <div class="film-related-thumbnail">
-                            <a href="xemphim.php?url=<?=$parts[0]['url']?>">
+                            <a href="xemphim.php?id=<?=$value['film_id']?>">
                                 <video class="video-item-thumbnail" src="./videos/video1.mp4#t=0.1"></video>
                             </a>
                         </div>
                         <div class="film-related-meta">
-                            <a href="xemphim.php?url=<?=$parts[0]['url']?>">
+                            <a href="xemphim.php?id=<?=$value['film_id']?>">
                                 <div class="film-related-title"><?php echo $value['name'] ?></div>
                             </a>
                             <div class="film-related-views">Lượt xem : <?php echo $value['views'] ?></div>

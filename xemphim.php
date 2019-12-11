@@ -3,8 +3,8 @@
     require_once './commons/db.php';
     require_once './commons/helpers.php';
 
-    $url = $_GET['url'];
-    $select = "SELECT * FROM parts WHERE url = '$url'";
+    $id = $_GET['id'];
+    $select = "SELECT * FROM parts WHERE film_id = '$id'";
     $infoP  = executeQuery($select,true);
 
     // $id_film = $infoP['film_id'];
@@ -93,12 +93,12 @@
             <?php foreach ($infoP as  $value) : ?>
                 <div class="film-related-item">
                     <div class="film-related-thumbnail">
-                        <a href="xemphim.php?url=<?=$infoP[0]['url']?>">
+                        <a href="xemphim.php?id=<?=$value['film_id']?>">
                             <video class="video-item-thumbnail" src="./videos/video1.mp4#t=0.1"></video>
                         </a>
                     </div>
                     <div class="film-related-meta">
-                        <a href="xemphim.php?url=<?=$infoP[0]['url']?>">
+                        <a href="xemphim.php?id=<?=$value['film_id']?>">
                             <div class="film-related-title"><?php echo $value['name'] ?></div>
                         </a>
                         <div class="film-related-views">Lượt xem : <?php echo $value['views']?></div>
