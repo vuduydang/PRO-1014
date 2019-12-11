@@ -71,16 +71,16 @@ if (empty($_SESSION[AUTH_YF]) || $session['role_id'] != 1) {
 					<h2>Thêm phim</h2>
 					<form action="./push-films.php" method="post" enctype="multipart/form-data">
 						<div class="left">
-							<div><p>Tên Phim : </p><input type="text" name="name" placeholder="HARRY POTTER VÀ HÒN ĐÁ PHÙ THỦY"></div>
-							<div><p>Thể Loại : </p><input type="text" name="categories" placeholder="Hành Động, Viễn Tưởng, ..."></div>
-							<div><p>Đạo diễn : </p><input type="text" name="author" placeholder="Steve Kloves"></div>
+							<div><p>Tên Phim : </p><input type="text" name="name" required placeholder="HARRY POTTER VÀ HÒN ĐÁ PHÙ THỦY"></div>
+							<div><p>Thể Loại : </p><input type="text" name="categories" required placeholder="Hành Động, Viễn Tưởng, ..."></div>
+							<div><p>Đạo diễn : </p><input type="text" name="author" required placeholder="Steve Kloves"></div>
 							<div class="col-2">
-								<p>Series : </p><input type="text" name="series" placeholder="Harry Potter">
-								<p>Năm : </p><input type="text" name="year" placeholder="2001">
+								<p>Series : </p><input type="text" name="series" required placeholder="Harry Potter">
+								<p>Năm : </p><input type="number" name="year" required placeholder="2001">
 							</div>
 							<div class="col-2">
 								<p>Trạng thái : </p>
-								<select name="status">
+								<select name="status" required>
 									<option value="Hoàn thành">Hoàn Thành</option>
 									<option value="Đang chiếu">Đang Chiếu</option>
 									<option value="Sắp chiếu">Sắp Chiếu</option>
@@ -101,7 +101,7 @@ if (empty($_SESSION[AUTH_YF]) || $session['role_id'] != 1) {
 						</div>
 						<div class="right">
 							<p>Nội Dung</p>
-							<textarea name="content" placeholder="Contnets"></textarea>
+							<textarea name="content" required placeholder="Contnets"></textarea>
 						</div>
 						<div class="button">
 							<button>SUBMIT</button>

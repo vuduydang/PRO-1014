@@ -22,18 +22,22 @@ if ($film_id == "" || $name == "" || $file_film == "" || $status == "") {
 		die();
 }
 
-
+echo $file_film['type'];
 // start
-$type = ["video/mp4"];
+$type = ["video/mp4", "video/ogg", "video/webm"];
+$nameFilm = time().$file_film['name'];
 if (in_array($file_film['type'], $type)) {
-	move_uploaded_file($file_film['tmp_name'], "../videos/". $film_id.'-'.time().'.mp4');
+	move_uploaded_file($file_film['tmp_name'], "../videos/". $nameFilm);
+}else {
+	echo 'Không đúng định dạng video';
+	die();
 }
 
 $url_0 	= preg_replace('([\s]+)', '-', strip_tags($name)).'.html'; //xóa khoảng trắng
 $url 	= strUnicode($url_0); //xóa dấu
 $link	= $url.$film_id.".html";
 
-$insert = "INSERT INTO parts VALUES (NULL,'$film_id','$name','$player','0','$link')";
+$insert = "INSERT INTO parts VALUES (NULL,'$film_id','$name','$nameFilm','0','$link')";
 executeQuery($insert);
 
 $upload = "UPDATE films SET status = '$status' WHERE id = '$film_id'";

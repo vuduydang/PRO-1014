@@ -167,7 +167,7 @@
               <div class="video-hot-title"><?php echo $value['name'] ?></div>
             </a>
             <span class="anime-hot-views"><?php echo $value['views'] ?> lượt xem</span>
-            <span class="anime-hot-update">131 / 999 tập</span>
+            <span class="anime-hot-update"><?=$value['status']?></span>
           </div>
             <?php endforeach ?>
         </div>

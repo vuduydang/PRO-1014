@@ -23,7 +23,7 @@ $(document).ready(function(){
 // push-parts-films
 $(document).ready(function(){
 	$("button").click(function(){
-	    	$(".addfilms").css('display','none');
+	    	// $(".addfilms").css('display','none');
 	    	$(".loader").css('display','block');
 	  	});
 	$(document).on('click', '#push-part', function() {
@@ -45,12 +45,13 @@ $(document).ready(function(){
 		       	async:true,
                 data: formData,
                 success: function (msg) {
-                	if (msg == 'error') {
-                    	alert('thiếu thông tin rồi !');
-                    	location.reload();
-		            }else{
-		            	location.assign("./manager.php");
-		            }
+                	console.log(msg);
+              //   	if (msg == 'error') {
+              //       	alert('thiếu thông tin rồi !');
+              //       	location.reload();
+		            // }else{
+		            // 	location.assign("./manager.php");
+		            // }
                 },
                 error: function(){
                 	alert("Uplaod thất bại. Cần check lại !");
