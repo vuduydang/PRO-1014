@@ -5,13 +5,11 @@
 
     $url = $_GET['url'];
     $select = "SELECT * FROM parts WHERE url = '$url'";
-    $infoP  = executeQuery($select);
+    $infoP  = executeQuery($select,true);
 
-    $id_film = $infoP['film_id'];
-    $select = "SELECT * FROM films WHERE id = '$id_films'";
-    $infoF = executeQuery($select);
-
-
+    // $id_film = $infoP['film_id'];
+    // $select = "SELECT * FROM films WHERE id = '$id_films'";
+    // $infoF = executeQuery($select);
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -91,19 +89,19 @@
         
         <div class="film-related video" style="margin-top: -16px;">
             <hr>
-            <h3 class="dsp">Tập</h3>
-            <?php foreach ($parts as  $value) : ?>
+            <h3 class="dsp">Tập phim liên quan</h3>
+            <?php foreach ($infoP as  $value) : ?>
                 <div class="film-related-item">
                     <div class="film-related-thumbnail">
-                        <a href="xemphim.php">
+                        <a href="xemphim.php?url=<?=$infoP[0]['url']?>">
                             <video class="video-item-thumbnail" src="./videos/video1.mp4#t=0.1"></video>
                         </a>
                     </div>
                     <div class="film-related-meta">
-                        <a href="xemphim.php">
+                        <a href="xemphim.php?url=<?=$infoP[0]['url']?>">
                             <div class="film-related-title"><?php echo $value['name'] ?></div>
                         </a>
-                        <div class="film-related-views">725 lượt xem</div>
+                        <div class="film-related-views">Lượt xem : <?php echo $value['views']?></div>
                     </div>
                 </div>
             <?php endforeach ?>
