@@ -40,8 +40,8 @@ $(document).ready(function(){
                 type: "post",
                 dataType: "text",
                 cache: false,
-		       	processData: false,  // tell jQuery not to process the data
-		       	contentType: false,  // tell jQuery not to set contentType
+		       	processData: false,  
+		       	contentType: false,  
 		       	async:true,
                 data: formData,
                 success: function (msg) {

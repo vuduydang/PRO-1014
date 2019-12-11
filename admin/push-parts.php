@@ -22,7 +22,7 @@ if ($film_id == "" || $name == "" || $file_film == "" || $status == "") {
 		die();
 }
 
-echo $file_film['type'];
+dv($file_film); die();
 // start
 $type = ["video/mp4", "video/ogg", "video/webm"];
 $nameFilm = time().$file_film['name'];
