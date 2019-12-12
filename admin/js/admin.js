@@ -39,9 +39,9 @@ $(document).ready(function(){
                 url: "push-parts.php",
                 type: "post",
                 dataType: "text",
-                cache: false,
-		       	processData: false,  
-		       	contentType: false,  
+          //       cache: false,
+		       	// processData: false,  
+		       	// contentType: false,  
 		       	async:true,
                 data: formData,
                 success: function (msg) {

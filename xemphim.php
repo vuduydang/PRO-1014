@@ -4,12 +4,16 @@
     require_once './commons/helpers.php';
 
     $id = $_GET['id'];
+
+    $select = "SELECT * FROM films WHERE id = '$id'";
+    $infoF = executeQuery($select);
+
     $select = "SELECT * FROM parts WHERE film_id = '$id'";
     $infoP  = executeQuery($select,true);
 
-    // $id_film = $infoP['film_id'];
-    // $select = "SELECT * FROM films WHERE id = '$id_films'";
-    // $infoF = executeQuery($select);
+
+    $sqlQuery   = "SELECT * FROM reviews WHERE film_id = '$id'";
+    $reviews    = executeQuery($sqlQuery, true);
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -141,6 +145,18 @@
                     </div>
                 </div>
                 <div class="comment-list">
+                    <?php foreach ($reviews as $value) : 
+                            $id   = $value['user_id'];
+                            $user = executeQuery("SELECT * FROM users WHERE id = '$id'");
+                    ?>
+                    <div data-id="981415" class="comment-item">
+                        <div class="author-avatar"><img src="./assets/avatars/<?=$user['avatar']?>"></div>
+                        <div class="comment-item-body">
+                            <div class="author-name"><?=$user['name']?></div>
+                            <div class="comment-content"><?=$value['content']?></div>
+                        </div>
+                    </div>
+                <?php endforeach ?>
                     <input type="button" class="comment-more hidden" value="Xem thêm">
                     <input type="text" name="reply-input" id="reply-input" class="reply-input hidden">
                 </div>

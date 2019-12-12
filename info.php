@@ -7,6 +7,10 @@
     if ($id=="") {
         header("location: ./");
     }
+
+    $sqlQuery   = "SELECT * FROM reviews WHERE film_id = '$id'";
+    $reviews    = executeQuery($sqlQuery, true);
+
     $sqlQuery   = "select * from films  where id = $id";
     $films      = executeQuery($sqlQuery);
 
@@ -180,14 +184,18 @@
                     </div>
                 </div>
                 <div class="comment-list">
-
+                    <?php foreach ($reviews as $value) : 
+                            $id   = $value['user_id'];
+                            $user = executeQuery("SELECT * FROM users WHERE id = '$id'");
+                    ?>
                     <div data-id="981415" class="comment-item">
-                        <div class="author-avatar"><img src="https://graph.facebook.com/v3.0/961524600880279/picture?width=130&amp;height=130"></div>
+                        <div class="author-avatar"><img src="./assets/avatars/<?=$user['avatar']?>"></div>
                         <div class="comment-item-body">
-                            <div class="author-name">Vũ Duy Đăng</div>
-                            <div class="comment-content">hay <img width="25" src="https://i.imacdn.com/emoticon/panda/13.gif"></div>
+                            <div class="author-name"><?=$user['name']?></div>
+                            <div class="comment-content"><?=$value['content']?></div>
                         </div>
                     </div>
+                <?php endforeach ?>
                     <input type="button" class="comment-more hidden" value="Xem thêm">
                     <input type="text" name="reply-input" id="reply-input" class="reply-input hidden">
                 </div>

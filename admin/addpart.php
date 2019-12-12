@@ -73,32 +73,32 @@ if (isset($_GET['id'])) {
 
 				<div class="addfilms">
 					<h2>Thêm Tập</h2>
-						<div class="left">
-					 		<input type="hidden" name="film_id" value="<?=$id?>" readonly><br>
-							<div><p>Tên Phim : </p><input type="text" name="name" readonly value="<?=$list['name']?>"></div>
-							<div><p>Tác Giả : </p><input type="text" name="author" readonly value="<?=$list['author']?>"></div>
-								<p>Tên Tập : </p><input type="text" name="name_part" placeholder="vd: Tập 1 ahihi">
-							<div class="col-2">
-								<!-- <p>Player : </p><input type="text" name="player" placeholder="vd: Tập 1 ahihi"> -->
-								<p>Trạngthái:</p>
-								<select name="status">
-									<option value="Hoàn thành">Hoàn Thành</option>
-									<option value="Đang chiếu">Đang Chiếu</option>
-									<option value="Sắp chiếu">Sắp Chiếu</option>
-								</select>
-							</div>
-							<div class="col-2">
-								<div class="browser-upload" style="left: 220px;">
-									<i class="title-browser-upload">Tải phim lên</i>
-									<input type="file" class="file" name="file_film">
-									<span class="browser"><i class="fas fa-cloud-upload-alt"></i></span>
-								</div>
+					<div class="left">
+				 		<input type="hidden" name="film_id" value="<?=$id?>" readonly><br>
+						<div><p>Tên Phim : </p><input type="text" name="name" readonly value="<?=$list['name']?>"></div>
+						<div><p>Tác Giả : </p><input type="text" name="author" readonly value="<?=$list['author']?>"></div>
+							<p>Tên Tập : </p><input type="text" name="name_part" placeholder="vd: Tập 1 ahihi">
+						<div class="col-2">
+							<!-- <p>Player : </p><input type="text" name="player" placeholder="vd: Tập 1 ahihi"> -->
+							<p>Trạngthái:</p>
+							<select name="status">
+								<option value="Hoàn thành">Hoàn Thành</option>
+								<option value="Đang chiếu">Đang Chiếu</option>
+								<option value="Sắp chiếu">Sắp Chiếu</option>
+							</select>
+						</div>
+						<div class="col-2">
+							<div class="browser-upload" style="left: 220px;">
+								<i class="title-browser-upload">Tải phim lên</i>
+								<input type="file" class="file" accept="video/mp4" name="file_film">
+								<span class="browser"><i class="fas fa-cloud-upload-alt"></i></span>
 							</div>
 						</div>
-						<div class="right"></div>
-						<div class="button" id="push-part">
-							<button>SUBMIT</button>
-						</div>
+					</div>
+					<div class="right"></div>
+					<div class="button" id="push-part">
+						<button>SUBMIT</button>
+					</div>
 				</div>
 			
 				<div class="loader"></div>
