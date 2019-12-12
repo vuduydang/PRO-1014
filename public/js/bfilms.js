@@ -4870,10 +4870,27 @@ window.onpopstate = function(e) {
 function setComment(){
     $(document).keypress(function (e) {
         if (e.which == 13) {
+            var a = $("#id_film").val();
             var i = $("#comment-input").val();
             if (i.length < 2) return void alertify.error("Bình luận của bạn quá ngắn");
             if (i.length > 200) return void alertify.error("Bình luận chỉ được dài tối đa 200 kí tự, bạn đã gõ " + i.length + " kí tự.");
-            
+            $.ajax({
+                url: "http://localhost/Git/PRO-1014/router/add-Comment.php",
+                type: "POST",
+                dataType: 'text',
+                data: {
+                    'id' : a,
+                    'content' : i
+                },
+                success : function(msg){
+                    console.log(msg);
+                    location.reload();
+                },
+                error : function(){
+                    alert('Lỗi kết nối, vui lòng thử lại');
+                    // e.innerHTML = "<li>Lỗi kết nối, vui lòng thử lại</li>", e.parentNode.classList.remove("hidden"), loginButton.classList.remove("disabled"), navbarLoading.classList.add("hidden");
+                }
+            })
         }
     });
 }

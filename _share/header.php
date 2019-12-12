@@ -55,7 +55,7 @@ session_start();
                       <a class="menu-item" href="index.php">Trang chủ</a>
                     </li>
                     <li class="dropdown navbar-menu-item">
-                      <a class="navbar-menu-item" href="?">Năm</a>
+                      <a class="navbar-menu-item" href="#">Năm</a>
                         <ul class="toggle">
                         <?php foreach ($years as $value) : ?>
                             <li><a class="menu-item" href="video.php?search-box=<?=$value['name']?>"><?=$value['name']?></a></li>
@@ -63,7 +63,7 @@ session_start();
                         </ul>
                     </li>
                 <li class="dropdown navbar-menu-item">
-                        <a class="menu-item" href="?">Thể loại</a>
+                        <a class="menu-item" href="#">Thể loại</a>
                         <ul class="toggle">
                         <?php foreach ($categories as $value): ?>
                             <li><a class="menu-item" href="video.php?search-box=<?=$value['categories']?>"><?php echo $value['categories']?></a></li>
@@ -244,7 +244,7 @@ $auth_yf = $_SESSION[AUTH_YF];
                       <a class="menu-item" href="index.php">Trang chủ</a>
                     </li>
                     <li class="dropdown navbar-menu-item">
-                      <a class="navbar-menu-item" href="?">Năm</a>
+                      <a class="navbar-menu-item" href="#">Năm</a>
                         <ul class="toggle">
                         <?php foreach ($years as $value) : ?>
                             <li><a class="menu-item" href="video.php?search-box=<?=$value['name']?>"><?=$value['name']?></a></li>
@@ -252,7 +252,7 @@ $auth_yf = $_SESSION[AUTH_YF];
                         </ul>
                     </li>
                 <li class="dropdown navbar-menu-item">
-                        <a class="menu-item" href="?">Thể loại</a>
+                        <a class="menu-item" href="#">Thể loại</a>
                         <ul class="toggle">
                         <?php foreach ($categories as $value): ?>
                             <li><a class="menu-item" href="video.php?search-box=<?=$value['categories']?>"><?php echo $value['categories']?></a></li>
