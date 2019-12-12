@@ -6,7 +6,7 @@ session_start();
     $sqlQuery ="SELECT * from years";
     $years=executeQuery($sqlQuery, true);
 
-    $sqlUserQuery = "SELECT * FROM users WHERE username = '$user'";
+    $sqlUserQuery = "SELECT * FROM users WHERE id";
     $user = executeQuery($sqlUserQuery);
 ?>
 
