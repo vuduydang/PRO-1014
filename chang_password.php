@@ -2,11 +2,6 @@
 require_once './commons/constants.php';
 require_once './commons/db.php';
 require_once './commons/helpers.php';
-    if(isset($_GET['id'])){
-        $id=$_GET['id'];
-        $sqlQuery="SELECT * from users where id='$id'";
-        $users= executeQuery($sqlQuery, true);
-      }
       $value = isset($_GET['search-box']) ? $_GET['search-box'] : "";
       $sqlQuery_films="SELECT * FROM films 
                         WHERE 
@@ -19,6 +14,11 @@ require_once './commons/helpers.php';
       $films = executeQuery($sqlQuery_films, true);
       if (!$films) {
           header("location: ./error.php");
+      }
+      if(isset($_GET['id'])){
+        $id=$_GET['id'];
+        $sqlQuery="SELECT * from users where id='$id'";
+        $users= executeQuery($sqlQuery, true);
       }
 ?>
 <!DOCTYPE html>
@@ -65,7 +65,7 @@ require_once './commons/helpers.php';
         <div class="user-page-body">
                         <form method="POST" action="update_password.php">
                 <input type="hidden" name="password" value="">
-                                <div class="form-group">
+                    <div class="form-group">
                     <label for="email">Mật khẩu cũ:</label>
                     <input type="password" required name="password" id="password" value=""><br><br>
                     <label for="email">Mật khẩu mới:</label>
@@ -77,7 +77,7 @@ require_once './commons/helpers.php';
                     <button type="submit">Đổi mật khẩu</button>
                 </div>
             </form>
-                    </div>
+        </div>
     </div>
       
     </div> <!-- /container -->
