@@ -5,6 +5,9 @@ session_start();
 
     $sqlQuery ="SELECT * from years";
     $years=executeQuery($sqlQuery, true);
+    
+    $sqlQuery ="SELECT * from users WHERE id";
+    $users=executeQuery($sqlQuery, true);
 ?>
 
 <head>
@@ -289,17 +292,19 @@ $auth_yf = $_SESSION[AUTH_YF];
                     <div class="navbar-user-content">
 
                         <div class="user-item">
-                            <a href="/sua-thong-tin">
+                            <a href="chang_infouser.php">
                                 <i class="icon icon-edit"></i>
                                 Sửa thông tin
                             </a>
                         </div>
-                        <div class="user-item">
-                            <a href="/doi-mat-khau">
+                        <?php foreach ($users as $value): ?>
+                            <div class="user-item">
+                            <a href="chang_password.php?id=<?=$value['id']?>">
                                 <i class="icon icon-unlock"></i>
                                 Đổi mật khẩu
                             </a>
                         </div>
+                        <?php endforeach ?>
                         <hr>
 
 
