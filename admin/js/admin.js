@@ -46,12 +46,12 @@ $(document).ready(function(){
                 data: formData,
                 success: function (msg) {
                 	console.log(msg);
-              //   	if (msg == 'error') {
-              //       	alert('thiếu thông tin rồi !');
-              //       	location.reload();
-		            // }else{
-		            // 	location.assign("./manager.php");
-		            // }
+                	if (msg == 'error') {
+                    	alert('thiếu thông tin rồi !');
+                    	location.reload();
+		            }else{
+		            	location.assign("./manager.php");
+		            }
                 },
                 error: function(){
                 	alert("Uplaod thất bại. Cần check lại !");
