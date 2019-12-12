@@ -4,6 +4,9 @@
     require_once './commons/helpers.php';
 
     $id = isset($_GET['id']) ? $_GET['id'] : "";
+    if ($id=="") {
+        header("location: ./");
+    }
     $sqlQuery   = "select * from films  where id = $id";
     $films      = executeQuery($sqlQuery);
 
@@ -94,7 +97,9 @@
                 <p>Tập: <span><?=$quantity?>/??</span></p>
                 <p>Lượt xem: <span><?php echo $films['views'] ?></span></p>
                 <p>Trạng thái <span><?php echo $films['status'] ?></span></p>
-                <a class="click-view" href="./xemphim.php?url=<?=$parts[0]['url']?>">Xem phim</a>
+                <?php foreach ($parts as $value): ?>
+                    <a class="click-view" href="./xemphim.php?id=<?=$value['film_id']?>">Xem phim</a>
+                <?php endforeach ?>
                 <a class="click-follow" href="#follows">Theo dõi</a>
             </div>
             
@@ -159,6 +164,7 @@
             <div class="player-sidebar-body body-comment hidde">
                 <h3><i class="fas fa-film"></i> BÌNH LUẬN PHIM</h3>
                 <div class="comment-input">
+                    <input type="hidden" name="id" value="<?=$id?>" id="id_film">
                     <input type="text" name="comment-input" value="" id="comment-input">
                     <span id="comment-emoticon" class="comment-emoticon icon-smile"></span>
                     <div id="emoji-picker" class="emoji-picker hidden">
@@ -174,10 +180,18 @@
                     </div>
                 </div>
                 <div class="comment-list">
+
+                    <div data-id="981415" class="comment-item">
+                        <div class="author-avatar"><img src="https://graph.facebook.com/v3.0/961524600880279/picture?width=130&amp;height=130"></div>
+                        <div class="comment-item-body">
+                            <div class="author-name">Vũ Duy Đăng</div>
+                            <div class="comment-content">hay <img width="25" src="https://i.imacdn.com/emoticon/panda/13.gif"></div>
+                        </div>
+                    </div>
                     <input type="button" class="comment-more hidden" value="Xem thêm">
                     <input type="text" name="reply-input" id="reply-input" class="reply-input hidden">
                 </div>
-                <div class="loading"></div>
+                <!-- <div class="loading"></div> -->
             </div>
         </div>
     </div>

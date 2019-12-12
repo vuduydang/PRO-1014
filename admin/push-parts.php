@@ -22,7 +22,6 @@ if ($film_id == "" || $name == "" || $file_film == "" || $status == "") {
 		die();
 }
 
-// start
 $type = ["video/mp4", "video/ogg", "video/webm"];
 $nameFilm = time().$file_film['name'];
 if (in_array($file_film['type'], $type)) {

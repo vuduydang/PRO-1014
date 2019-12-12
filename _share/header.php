@@ -5,6 +5,9 @@ session_start();
 
     $sqlQuery ="SELECT * from years";
     $years=executeQuery($sqlQuery, true);
+
+    $sqlUserQuery = "SELECT * FROM users WHERE id";
+    $user = executeQuery($sqlUserQuery);
 ?>
 
 <head>
@@ -55,7 +58,7 @@ session_start();
                       <a class="menu-item" href="index.php">Trang chủ</a>
                     </li>
                     <li class="dropdown navbar-menu-item">
-                      <a class="navbar-menu-item" href="?">Năm</a>
+                      <a class="navbar-menu-item" href="#">Năm</a>
                         <ul class="toggle">
                         <?php foreach ($years as $value) : ?>
                             <li><a class="menu-item" href="video.php?search-box=<?=$value['name']?>"><?=$value['name']?></a></li>
@@ -63,7 +66,7 @@ session_start();
                         </ul>
                     </li>
                 <li class="dropdown navbar-menu-item">
-                        <a class="menu-item" href="?">Thể loại</a>
+                        <a class="menu-item" href="#">Thể loại</a>
                         <ul class="toggle">
                         <?php foreach ($categories as $value): ?>
                             <li><a class="menu-item" href="video.php?search-box=<?=$value['categories']?>"><?php echo $value['categories']?></a></li>
@@ -244,7 +247,7 @@ $auth_yf = $_SESSION[AUTH_YF];
                       <a class="menu-item" href="index.php">Trang chủ</a>
                     </li>
                     <li class="dropdown navbar-menu-item">
-                      <a class="navbar-menu-item" href="?">Năm</a>
+                      <a class="navbar-menu-item" href="#">Năm</a>
                         <ul class="toggle">
                         <?php foreach ($years as $value) : ?>
                             <li><a class="menu-item" href="video.php?search-box=<?=$value['name']?>"><?=$value['name']?></a></li>
@@ -252,7 +255,7 @@ $auth_yf = $_SESSION[AUTH_YF];
                         </ul>
                     </li>
                 <li class="dropdown navbar-menu-item">
-                        <a class="menu-item" href="?">Thể loại</a>
+                        <a class="menu-item" href="#">Thể loại</a>
                         <ul class="toggle">
                         <?php foreach ($categories as $value): ?>
                             <li><a class="menu-item" href="video.php?search-box=<?=$value['categories']?>"><?php echo $value['categories']?></a></li>
@@ -289,13 +292,13 @@ $auth_yf = $_SESSION[AUTH_YF];
                     <div class="navbar-user-content">
 
                         <div class="user-item">
-                            <a href="/sua-thong-tin">
+                            <a href="chang_infouser.php">
                                 <i class="icon icon-edit"></i>
                                 Sửa thông tin
                             </a>
                         </div>
-                        <div class="user-item">
-                            <a href="/doi-mat-khau">
+                            <div class="user-item">
+                            <a href="chang_password.php?id=<?php echo $user['id'] ?>">
                                 <i class="icon icon-unlock"></i>
                                 Đổi mật khẩu
                             </a>
