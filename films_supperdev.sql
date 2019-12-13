@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 09, 2019 lúc 05:30 PM
+-- Thời gian đã tạo: Th12 13, 2019 lúc 09:42 AM
 -- Phiên bản máy phục vụ: 10.3.16-MariaDB
 -- Phiên bản PHP: 7.3.6
 
@@ -38,14 +38,14 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `categories`) VALUES
-(1, 'Hành động'),
+(1, 'Action'),
 (2, 'Hài hước'),
-(3, 'Kinh dị'),
-(4, 'Viễn tưởng'),
-(5, 'Tâm lý'),
+(3, ' Adventure'),
+(4, 'Shounen'),
+(5, 'Game'),
 (6, 'Drama'),
 (7, 'Kids'),
-(8, 'Phiêu lưu'),
+(8, 'Fantasy'),
 (9, 'Học Đường'),
 (10, 'Harem');
 
@@ -76,8 +76,7 @@ CREATE TABLE `films` (
 --
 
 INSERT INTO `films` (`id`, `name`, `series`, `year`, `categories`, `author`, `banner`, `thumbnail`, `content`, `status`, `views`, `url`, `active`) VALUES
-(18, 'Boruto: Naruto Next Generations', 'Boruto', 2017, 'Action, Adventure, Martial Arts, Shounen, Super Power', 'Đang cập nhật', 'Boruto-Naruto-Next-Generations-hq720.jpg', 'MzExMzk5MTQ@._V1_.jpg', '<span style=\"color: rgb(34, 34, 34); font-family: sans-serif; font-size: 14px;\">Mặc dù các thiết kế về ngoại hình của Boruto giống với Naruto khi anh còn nhỏ, tính cách của họ được phát triển khác nhau. Mối quan hệ của Boruto với cha phản ánh mối quan hệ của Kishimoto với các con. Trong phiên bản tiếng Nhật, Boruto được Kokoro Kikuchi lồng tiếng trong&nbsp;</span><i style=\"color: rgb(34, 34, 34); font-family: sans-serif; font-size: 14px;\"><a href=\"https://vi.wikipedia.org/wiki/Naruto:_Tr%E1%BA%ADn_chi%E1%BA%BFn_cu%E1%BB%91i_c%C3%B9ng\" title=\"Naruto: Trận chiến cuối cùng\" style=\"color: rgb(11, 0, 128); background: none;\">The Last: Naruto the Movie</a></i><span style=\"color: rgb(34, 34, 34); font-family: sans-serif; font-size: 14px;\">&nbsp;và bởi Yūko Sanpei trong tất cả các lần xuất hiện tiếp theo. Sanpei rất thích làm công việc diễn xuất của Boruto, thấy cậu ta thật đáng mến. Trong phiên bản tiếng Anh, anh được lồng tiếng bởi Amanda C. Miller.</span><div><span style=\"color: rgb(34, 34, 34); font-family: sans-serif; font-size: 14px;\"><br></span></div><div><span style=\"color: rgb(34, 34, 34); font-family: sans-serif; font-size: 14px;\">Nhân vật của Boruto đã nhận được những phản hồi gay gắt. Mối quan hệ của anh với cha mình đã bị chỉ trích do các nhà phê bình tìm thấy khái niệm bị lạm dụng trong truyện tranh&nbsp;</span><i style=\"color: rgb(34, 34, 34); font-family: sans-serif; font-size: 14px;\">Naruto</i><span style=\"color: rgb(34, 34, 34); font-family: sans-serif; font-size: 14px;\">. Trong&nbsp;</span><i style=\"color: rgb(34, 34, 34); font-family: sans-serif; font-size: 14px;\">Boruto: Naruto the Movie</i><span style=\"color: rgb(34, 34, 34); font-family: sans-serif; font-size: 14px;\">, sự phát triển của anh được ca ngợi nhờ những cảnh hành động và cách anh hiểu hành động của cha mình.</span><span style=\"color: rgb(34, 34, 34); font-family: sans-serif; font-size: 14px;\"><br></span></div>', 'Đang chiếu', 0, 'Boruto-Naruto-Next-Generations.html', 1),
-(19, 'Sword Art Online: Alicization - War of Underworld', 'SAO', 2019, 'Action, Adventure, Fantasy, Game, Romance', 'Ono Manabu,Tomatsu Haruka,Adachi Shingo, ...', 'sword-art-online-alicization-war-of-underworld25-09-2019_16g07-31.jpg', '102165l.jpg', 'Phần 2 của SAO: Alicization', 'Đang chiếu', 0, 'Sword-Art-Online-Alicization-War-of-Underworld.html', 1);
+(24, 'Sword Art Online', 'SAO', 2019, 'Hành Động,  Khoa Học Viễn Tưởng,  Hài Hước', 'Reki Kawahara', '1576046717sword-art-online-alicization-war-of-underworld25-09-2019_16g07-31.jpg', '1576046717102165l.jpg', 'Sword Art Online là một bộ light novel Nhật Bản được viết bởi Reki Kawahara và được minh họa bởi abec. Bộ truyện lấy bối cảnh tương lai gần và nhiều thế giới VRMMO thực tế ảo. ', 'Hoàn thành', 0, 'Sword-Art-Online.html', 1);
 
 -- --------------------------------------------------------
 
@@ -123,8 +122,9 @@ CREATE TABLE `parts` (
 --
 
 INSERT INTO `parts` (`id`, `film_id`, `name`, `player`, `views`, `url`) VALUES
-(3, 19, 'Tập 1', '', 0, 'Tap-.html19.html'),
-(4, 19, 'tập 2', '', 0, 'tap-.html19.html');
+(9, 24, 'Tập 1', '1576046901CHƠI TUNG HỨNG ĐÚNG CÁCH.mp4', 0, 'Tap-1.html24.html'),
+(10, 24, 'Tập 2', '1576047212CHƠI TUNG HỨNG ĐÚNG CÁCH.mp4', 0, 'Tap-2.html24.html'),
+(11, 24, 'đasadas', '1576047336CHƠI TUNG HỨNG ĐÚNG CÁCH.mp4', 0, 'dasadas.html24.html');
 
 -- --------------------------------------------------------
 
@@ -137,8 +137,18 @@ CREATE TABLE `reviews` (
   `film_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `content` text NOT NULL,
-  `date` date NOT NULL
+  `date` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `reviews`
+--
+
+INSERT INTO `reviews` (`id`, `film_id`, `user_id`, `content`, `date`) VALUES
+(1, 24, 28, 'hyhyhaha', '0000-00-00'),
+(2, 24, 28, 'hyhyhahagg', '00:30 / 2019-12-12'),
+(3, 24, 28, 'vuduyddanwg', '18:45 / 12-12-2019'),
+(4, 24, 28, 'test lại này  :bagia:', '18:46 / 12-12-2019');
 
 -- --------------------------------------------------------
 
@@ -200,7 +210,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `name`, `email`, `avatar`, `gender`, `age`, `role_id`) VALUES
-(3, 'admin', '$2y$10$QYr7SvXdOguZz3dlnPxO.u0Y0Ffj6nNErwm168unZkzPoWRxR7..e', 'admin', 'haivdph07968@gmail.com', 'null.png', 0, '', 1),
+(3, 'admin', '$2y$10$QYr7SvXdOguZz3dlnPxO.u0Y0Ffj6nNErwm168unZkzPoWRxR7..e', 'admin', 'haivdph07968@gmail.com', 'null.png', 0, '2000-11-19', 1),
 (19, 'vudang123', '$2y$10$29Q.4qUYKUfr9wfH8skyEenJep7UWBfIYP5DsDzregNccQNhY7HRi', 'Vũ Duy Đăng', 'vuduydang2000@gmail.com', 'null.png', 1, '1971-2-2', 1),
 (27, 'vudang12', '$2y$10$cy3.6fUlMVGkzn.x70zcYuj8HTswBNbFS42Zl3s1NXnNzKENMqEGm', 'Vũ Duy Đăng', 'vuduydang2000hb@gmail.com', 'null.png', 1, '2000-11-1', 0),
 (28, 'vudang', '$2y$10$aM8D2NtstuPjdU9m1fGJUeI39227IbTs0vY3unjzIsSZUM7ybyKHO', 'Vũ Duy Đăng', 'vuduydangs2@gmail.com', 'null.png', 1, '2000-11-11', 0);
@@ -307,7 +317,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT cho bảng `films`
 --
 ALTER TABLE `films`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT cho bảng `follows`
@@ -325,13 +335,13 @@ ALTER TABLE `historys`
 -- AUTO_INCREMENT cho bảng `parts`
 --
 ALTER TABLE `parts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `roles`
