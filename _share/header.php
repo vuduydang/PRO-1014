@@ -126,13 +126,13 @@ session_start();
                 <div class="navbar-user-body tab-signup">
                     <div class="navbar-form-group">
                         <label>Tên đăng nhập</label>
-                        <input type="text" name="username-1">
+                        <input type="text" name="username" id="username">
                         <i class="icon icon-person"></i>
                         <span class="tip"></span>
                     </div>
                     <div class="navbar-form-group">
                         <label>Mật khẩu</label>
-                        <input type="password" name="password">
+                        <input type="password" name="password" id="password">
                         <i class="icon icon-lock"></i>
                         <span class="tip"></span>
                     </div>
@@ -277,7 +277,7 @@ $auth_yf = $_SESSION[AUTH_YF];
                         <input class="user-avatar-file" id="avatar-upload" type="file" name="avatar_file" accept="image/*">
                     </div>
                     <div class="navbar-user-welcome">
-                        <span>Chào Vũ Duy Đăng!</span>
+                        <span>Chào <?=$auth_yf['name']?>!</span>
                         <input id="user-id" type="hidden" value="550373">
                         <input id="user-v" type="hidden" value="10">
                         <input id="user-date" type="hidden" value="2019-11-06 23:31:44">

@@ -31,7 +31,7 @@ if (in_array($file_film['type'], $type)) {
 	die();
 }
 
-$url_0 	= preg_replace('([\s]+)', '-', strip_tags($name)).'.html'; //xóa khoảng trắng
+$url_0 	= preg_replace('([\s]+)', '-', strip_tags($name)); //xóa khoảng trắng
 $url 	= strUnicode($url_0); //xóa dấu
 $link	= $url.$film_id.".html";
 

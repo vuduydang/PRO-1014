@@ -35,6 +35,15 @@ $countParts = executeQuery($sqlQuery);
 	<link rel="stylesheet" href="../public/font-awesome/css/svg-with-js.css">
 	<link rel="stylesheet" href="../public/font-awesome/css/solid.min.css">
 	<link rel="stylesheet" href="../public/font-awesome/css/v4-shims.min.css">
+	
+	<script type="text/javascript">
+	    if (typeof(Storage) !== "undefined") {
+	        // Gán dữ liệu
+	        sessionStorage.setItem('login', '1');
+	    } else {
+	        document.write('Trình duyệt của bạn không hỗ trợ local storage');
+	    }
+	</script>
 </head>
 <body>
 	<div id="wrap">

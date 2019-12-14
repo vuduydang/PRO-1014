@@ -343,8 +343,8 @@ function clearSignupForm() {
 function signup() {
     var e = document.querySelector("#form-signup-warning");
     if (e.parentNode.classList.add("hidden"), e.innerHTML = "", navbarLoading.classList.remove("hidden"), signupButton.classList.add("disabled"), validatePassword(signupTab), validatePasswordConfirm(), validateBirthDate(), validateBirthMonth(), validateBirthYear(), !(validated.password && validated.passwordConfirm)) return signupButton.classList.remove("disabled"), void navbarLoading.classList.add("hidden");
-    var t = document.querySelector('input[name="username-1"]').value,
-        a = document.querySelector('input[name="password"]').value,
+    var t = document.querySelector('#username').value,
+        a = document.querySelector('#password').value,
         i = document.querySelector('input[name="full_name"]').value;
         f = document.querySelector('input[name="email"]').value;
         g = parseInt(document.querySelector('input[name="gender"]:checked').value);
@@ -366,7 +366,6 @@ function signup() {
                 'birthdays'  : birthdays
             },
             success : function(msg){
-                console.log(msg);
                     e.innerHTML = "<li>"+msg+"</li>", e.parentNode.classList.remove("hidden"), loginButton.classList.remove("disabled"), navbarLoading.classList.add("hidden");
             },
             error : function(){
@@ -400,8 +399,9 @@ function login() {
                 'checked'  : i
             },
             success : function(msg){
-                console.log(msg);
-                if (msg == 'true') {
+                if (msg == 'false') {
+                    e.innerHTML = "<li>Thông tin đăng nhập không chính xác</li>", e.parentNode.classList.remove("hidden"), loginButton.classList.remove("disabled"), navbarLoading.classList.add("hidden");
+                }else{
                     if (typeof(Storage) !== "undefined") {
                         // Gán dữ liệu
                         sessionStorage.setItem('login', '1');
@@ -409,8 +409,6 @@ function login() {
                         alert('Trình duyệt của bạn không hỗ trợ local storage');
                     }
                     location.reload();
-                }else{
-                    e.innerHTML = "<li>Thông tin đăng nhập không chính xác</li>", e.parentNode.classList.remove("hidden"), loginButton.classList.remove("disabled"), navbarLoading.classList.add("hidden");
                 }
             },
             error : function(){
@@ -4883,8 +4881,9 @@ function setComment(){
                     'content' : i
                 },
                 success : function(msg){
-                    console.log(msg);
-                    location.reload();
+                    if (msg == "") {
+                        location.reload();
+                    }else{alert(msg)}
                 },
                 error : function(){
                     alert('Lỗi kết nối, vui lòng thử lại');

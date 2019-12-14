@@ -3,14 +3,17 @@
     require_once './commons/db.php';
     require_once './commons/helpers.php';
 
-    $id = $_GET['id'];
+    $url    = $_GET['url'];
+    $select = "SELECT * FROM parts WHERE url = '$url'";
+    $infoP  = executeQuery($select);
 
+
+    $id     = $infoP['film_id'];
     $select = "SELECT * FROM films WHERE id = '$id'";
-    $infoF = executeQuery($select);
+    $infoF  = executeQuery($select);
 
     $select = "SELECT * FROM parts WHERE film_id = '$id'";
-    $infoP  = executeQuery($select,true);
-
+    $listP  = executeQuery($select, true);
 
     $sqlQuery   = "SELECT * FROM reviews WHERE film_id = '$id'";
     $reviews    = executeQuery($sqlQuery, true);
@@ -94,11 +97,11 @@
         <div class="film-related video" style="margin-top: -16px;">
             <hr>
             <h3 class="dsp">Tập phim liên quan</h3>
-            <?php foreach ($infoP as  $value) : ?>
+            <?php foreach ($listP as  $value) : ?>
                 <div class="film-related-item">
                     <div class="film-related-thumbnail">
-                        <a href="xemphim.php?id=<?=$value['film_id']?>">
-                            <video class="video-item-thumbnail" src="./videos/video1.mp4#t=0.1"></video>
+                        <a href="xemphim.php?url=<?=$value['url']?>">
+                            <video class="video-item-thumbnail" src="./videos/<?=$value['player']?>#t=5"></video>
                         </a>
                     </div>
                     <div class="film-related-meta">
@@ -122,7 +125,7 @@
             <div class="film-info-description">
                 <h4><i class="fas fa-film"></i> VuiGhe Sub</h4><br>
                 <h5>Mô Tả</h5>
-                <!-- <?=$infoF['content']?> -->
+                    <?=$infoF['content']?>
             </div>
             <hr>
 
@@ -130,6 +133,7 @@
             <div class="player-sidebar-body body-comment hidde">
                 <h3><i class="fas fa-film"></i> BÌNH LUẬN PHIM</h3>
                 <div class="comment-input">
+                    <input type="hidden" name="id" value="<?=$id?>" id="id_film">
                     <input type="text" name="comment-input" value="" id="comment-input">
                     <span id="comment-emoticon" class="comment-emoticon icon-smile"></span>
                     <div id="emoji-picker" class="emoji-picker hidden">
@@ -154,6 +158,10 @@
                         <div class="comment-item-body">
                             <div class="author-name"><?=$user['name']?></div>
                             <div class="comment-content"><?=$value['content']?></div>
+                            <div class="comment-action">
+                                <!-- <span class="comment-reply"><i class="icon icon-comment"></i> trả lời</span> -->
+                                <span class="comment-time"><i class="icon icon-time"></i> <?=$value['date']?></span>
+                            </div>
                         </div>
                     </div>
                 <?php endforeach ?>
@@ -194,9 +202,9 @@
         $(document).ready(function(){
             setTimeout(function(){
                 $(".player-video").attr("src",
-                    "./videos/video1.mp4"+"#t=0.1");
+                    "./videos/<?=$infoP['player']?>"+"#t=0.1");
                 
-            }, 2000);
+            }, 1000);
                     });
     </script>
       	

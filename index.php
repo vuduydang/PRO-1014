@@ -103,8 +103,8 @@
 
               <?php foreach ($films_part_new as $value) : ?>
                 <div class="video-item">
-                    <a href="xemphim.php?id=<?=$value['film_id']?>">
-                      <video class="video-item-thumbnail" src="./videos/video1.mp4#t=0.1"></video>
+                    <a href="xemphim.php?url=<?=$value['url']?>">
+                      <video class="video-item-thumbnail" src="./videos/<?=$value['player']?>#t=5"></video>
                         <div class="video-item-title"><?php echo $value['name'] ?></div>
                         <div class="video-item-duration"><?php echo $value['name'] ?></div>
                         <div class="video-item-play-button">

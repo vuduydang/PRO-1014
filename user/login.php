@@ -13,7 +13,7 @@ require_once"../commons/helpers.php";
     	// lấy dữ liệu từ csdl bảng users dựa vào email
     	$sqlUserQuery = "SELECT * FROM users WHERE username = '$user'";
     	$user = executeQuery($sqlUserQuery);
-        //dv($user); die();
+        
     	if($user && password_verify($password, $user['password'])){
     		$_SESSION[AUTH_YF] = [
     			"id" => $user['id'],
@@ -24,20 +24,15 @@ require_once"../commons/helpers.php";
     			"age" => $user['age'],
     			"role_id" => $user['role_id']
     		];
-
             if (isset($_POST['adm'])) {
                 header("location:".BASE_URL."/admin/dashboard.php");
             }
-    		echo 'true';
-    		die;
-    	}
+    	}else{
+            if (isset($_POST['adm'])) {
+                header("location:".BASE_URL."/admin/");
+            }
+            echo "false";
+            die;
+        }
     }
-
-    if (isset($_POST['adm'])) {
-        header("location:".BASE_URL."/admin/");
-    }
-
-    echo "false";
-    die;
-
-	
+?>

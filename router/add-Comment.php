@@ -12,5 +12,4 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
 
     $sql_insert = "INSERT INTO reviews VALUES (null,'$id_film','$user_id','$content','$date')";
     executeQuery($sql_insert);
-
-    echo 'Comment thành công.';die();
+    die();

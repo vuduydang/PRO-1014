@@ -18,7 +18,7 @@
     $sqlQuery   = "SELECT * FROM films WHERE series LIKE '%$sr%'";
     $series     = executeQuery($sqlQuery, true);
 
-    $sqlQuery   = "select * from parts  where film_id = $id";
+    $sqlQuery   = "select * from parts  where film_id = '$id'";
     $parts      = executeQuery($sqlQuery, true);
     
     $quantity   = count($parts);
@@ -84,7 +84,7 @@
                 <p>Tập: <span><?=$quantity?>/??</span></p>
                 <p>Lượt xem: <span><?php echo $films['views'] ?></span></p>
                 <p>Trạng thái <span><?php echo $films['status'] ?></span></p>
-                <a class="click-view" href="./xemphim.php">Xem phim</a>
+                <a class="click-view" href="./xemphim.php?url=<?=$parts[0]['url']?>">Xem phim</a>
                 <a class="click-follow" href="#follows">Theo dõi</a>
             </div>
             

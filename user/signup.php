@@ -6,8 +6,7 @@ require_once"../commons/helpers.php";
 
 
 
-
-	$username 		= isset($_POST['username']) ? $_POST['username'] : "";
+	$username 	= isset($_POST['username']) ? $_POST['username'] : "";
     $password 	= isset($_POST['password']) ? password_hash($_POST['password'], PASSWORD_DEFAULT) : "";
     $full_name 	= isset($_POST['full_name']) ? $_POST['full_name'] : "";
     $email 		= isset($_POST['email']) ? $_POST['email'] : "";
