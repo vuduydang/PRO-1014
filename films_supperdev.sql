@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 13, 2019 lúc 09:42 AM
--- Phiên bản máy phục vụ: 10.3.16-MariaDB
--- Phiên bản PHP: 7.3.6
+-- Máy chủ: localhost
+-- Thời gian đã tạo: Th12 14, 2019 lúc 07:13 AM
+-- Phiên bản máy phục vụ: 10.4.10-MariaDB
+-- Phiên bản PHP: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -76,7 +76,15 @@ CREATE TABLE `films` (
 --
 
 INSERT INTO `films` (`id`, `name`, `series`, `year`, `categories`, `author`, `banner`, `thumbnail`, `content`, `status`, `views`, `url`, `active`) VALUES
-(24, 'Sword Art Online', 'SAO', 2019, 'Hành Động,  Khoa Học Viễn Tưởng,  Hài Hước', 'Reki Kawahara', '1576046717sword-art-online-alicization-war-of-underworld25-09-2019_16g07-31.jpg', '1576046717102165l.jpg', 'Sword Art Online là một bộ light novel Nhật Bản được viết bởi Reki Kawahara và được minh họa bởi abec. Bộ truyện lấy bối cảnh tương lai gần và nhiều thế giới VRMMO thực tế ảo. ', 'Hoàn thành', 0, 'Sword-Art-Online.html', 1);
+(25, 'Sword Art Online', 'SAO', 2019, 'Action, Comedy, Fantasy, Magic, Shounen', 'Reki Kawahara', '1576297082mZ1YbQR.jpg', '1576297082uLaaSM3.jpg', 'Sword art online là một bộ light novel Nhật Bản được viết bởi Tử Linh và được minh họa bởi abec. Bộ truyện lấy bối cảnh tương lai gần và nhiều thế giới VRMMO thực tế ảo.', 'Hoàn thành', 0, 'Sword-Art-Online.html', 1),
+(26, 'RADIANT 2ND SEASON', 'RADIANT', 2019, 'Hành Động, Phiêu Lưu, Phép Thuật, Fantasy', 'Dang cap nhat', '157629733999e3652dd05aa33b241251a51df604cc.jpg', '1576297339mZ1YbQR.jpg', 'Radiant là câu chuyện xoay quanh Seth – một người muốn trở thành một pháp sư vĩ đại và một nhóm phù thủy muốn ...\r\n', 'Đang chiếu', 0, 'RADIANT-2ND-SEASON.html', 1),
+(27, 'NIJIIRO DAYS', 'NIJIIRO DAYS', 2019, 'Hài Hước, Học Đường, Đời Thường, Romance, Shoujo', 'Dang cap nhat', '1576297551dashda.jpeg', '1576297551JQ1LzoC.jpg', 'Được dịch từ tiếng Anh-Rainbow Days là một bộ truyện tranh shoujo của Nhật Bản được viết và minh họa bởi Minami Mizuno, và được xuất bản trên tạp chí Bessatsu Margaret của Shueisha. Một CD drama đã được phát hành với tập thứ bảy của manga vào tháng 10 năm 2014.', 'Đang chiếu', 0, 'NIJIIRO-DAYS.html', 1),
+(28, 'DIABOLIK LOVERS', 'DIABOLIK LOVERS', 2013, 'Học Đường, Harem, Shoujo, Vampire', 'Dang cap nhat', '1576297894diaboliklovers.png', '1576297894dbUtIKc.jpg', 'Diabolik Lovers là một thương hiệu tiểu thuyết hình ảnh Nhật Bản của Rejet. Mục đầu tiên của nó được phát hành vào ngày 11 tháng 10 năm 2012 cho hệ thống PlayStation Portable.', 'Hoàn thành', 0, 'DIABOLIK-LOVERS.html', 1),
+(29, 'DIABOLIK LOVERS SS2', 'DIABOLIK LOVERS', 2015, 'Học Đường, Harem, Shoujo, Vampire', 'Dang cap nhat', '1576298020diaboliklovers.png', '1576298020k6Y2Xli.jpg', 'Diabolik Lovers là một thương hiệu tiểu thuyết hình ảnh Nhật Bản của Rejet. Mục đầu tiên của nó được phát hành vào ngày 11 tháng 10 năm 2012 cho hệ thống PlayStation Portable.', 'Đang chiếu', 0, 'DIABOLIK-LOVERS-SS2.html', 1),
+(30, 'CHAOS HEAD (BD)', 'CHAOS HEAD', 2019, 'Fantasy, Dementia', ' Mages, Nitroplus', '1576298627download.jpeg', '1576298627fFNWEGY.jpg', 'Chaos;Head là một visual novel phát triển bởi 5pb. và Nitroplus. Đây là game đầu tiên trong loạt Science Adventure, và ban đầu được phát hành cho Microsoft Windows năm 2008; bản nới rộng Xbox 360 tên Chaos;Head Noah phát hành 2009, rồi từ đó được chuyển sang nhiều nền tảng khác', 'Đang chiếu', 0, 'CHAOS-HEAD-(BD).html', 1),
+(31, 'SEKAI SEIFUKU: BOURYAKU NO ZVEZDA - SHIN ZVEZDA DAISAKUSEN', 'SEKAI SEIFUKU', 2017, 'Hành Động, Hài Hước, Fantasy', 'Đang cập nhật', '1576299216e431cbb9e37089bb5ae4a212a7e8eda0.jpg', '1576299216eTlex1h.jpg', 'World Conquest Zvezda Plot là một bộ phim truyền hình anime Nhật Bản được sản xuất bởi A-1 Pictures và được đạo diễn bởi Tensai Okamura. Nó được công chiếu trên Tokyo MX, GTV và GYT vào ngày 11 tháng 1 năm 2014.', 'Đang chiếu', 0, 'SEKAI-SEIFUKU:-BOURYAKU-NO-ZVEZDA---SHIN-ZVEZDA-DAISAKUSEN.html', 1),
+(32, 'KEKKAISHI', 'KEKKAISHI', 2006, 'Hài Hước, Phiêu Lưu, Shounen, Fantasy', 'Shogakukan', '1576299593kekkaishi-202-04-2018_11g29-45.jpg', '1576299593RHch6am.jpg', 'Kết giới sư là một bộ truyện tranh siêu nhiên Nhật Bản được viết và minh họa bởi Tanabe Yellow. Truyện được đăng định kì trên tạp chí Shōnen Sunday của Shogakukan từ 2003 đến 2011, và được Nhà xuất bản Kim Đồng phát hành ở Việt Nam.', 'Hoàn thành', 0, 'KEKKAISHI.html', 1),
+(33, 'CHOUJIN KOUKOUSEI-TACHI WA ISEKAI DEMO YOYUU DE IKINUKU YOU DESU!', 'CHOUJIN KOUKOUSEI', 2019, 'Fantasy', 'Misora Riku', '1576299950eLz14GzHdrGIE9dgu8t5SfZeglH.jpg', '1576299950Oz0v376.jpeg', 'Thần đồng trung học có thể dễ dàng ngay cả ở một thế giới khác là một bộ light novel Nhật Bản được viết bởi Riku Misora ​​và được minh họa bởi Sacraneco. SB Creative đã xuất bản tám tập kể từ năm 2015 dưới dấu ấn GA Bunko của họ.', 'Đang chiếu', 0, 'CHOUJIN-KOUKOUSEI-TACHI-WA-ISEKAI-DEMO-YOYUU-DE-IKINUKU-YOU-DESU!.html', 1);
 
 -- --------------------------------------------------------
 
@@ -116,15 +124,6 @@ CREATE TABLE `parts` (
   `views` int(11) NOT NULL,
   `url` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Đang đổ dữ liệu cho bảng `parts`
---
-
-INSERT INTO `parts` (`id`, `film_id`, `name`, `player`, `views`, `url`) VALUES
-(9, 24, 'Tập 1', '1576046901CHƠI TUNG HỨNG ĐÚNG CÁCH.mp4', 0, 'Tap-1.html24.html'),
-(10, 24, 'Tập 2', '1576047212CHƠI TUNG HỨNG ĐÚNG CÁCH.mp4', 0, 'Tap-2.html24.html'),
-(11, 24, 'đasadas', '1576047336CHƠI TUNG HỨNG ĐÚNG CÁCH.mp4', 0, 'dasadas.html24.html');
 
 -- --------------------------------------------------------
 
@@ -317,7 +316,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT cho bảng `films`
 --
 ALTER TABLE `films`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT cho bảng `follows`
@@ -335,7 +334,7 @@ ALTER TABLE `historys`
 -- AUTO_INCREMENT cho bảng `parts`
 --
 ALTER TABLE `parts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT cho bảng `reviews`
