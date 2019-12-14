@@ -22,6 +22,7 @@
     $parts      = executeQuery($sqlQuery, true);
     
     $quantity   = count($parts);
+
  ?>
 
 <!DOCTYPE html>
@@ -31,42 +32,24 @@
 <head>
 	<title><?=$films['name']?> - YFilms</title>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta name="_token" id="token" value="">
     <meta name="_socket" id="socket" value="6001">
 
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<meta http-equiv="cache-control" content="max-age=0" />
-	<meta http-equiv="cache-control" content="no-cache" />
-	<meta name="robots" content="index, follow" />
-	<meta name="language" content="Vietnamese, English" />
-	
-    <link rel="shortcut icon" href="./assets/ico.png" type="image/png" />   
-
-	<meta name="description" content="Doraemon Tập 1 - Tập đặc biệt: Ao cá trong phòng học &amp; Cỗ máy thời gian đâu mất rồi &amp; Nhớ lại! ấn tượng ngày đầu tiên" />
-	<meta name="keywords" content="doraemon,doraemon tap 1" />
-
-	<!-- Facebook Metadata /-->
-	<meta property="fb:app_id" content="362811147450608" />
-	<meta property="og:image" content="../i.imacdn.com/vg/2015/06/doraemon-tap-1-1435118450.jpg" />
-	<meta property="og:url" content="doraemon.php" />
-	<meta property="og:description" content="Doraemon Tập 1 - Tập đặc biệt: Ao cá trong phòng học &amp; Cỗ máy thời gian đâu mất rồi &amp; Nhớ lại! ấn tượng ngày đầu tiên" />
-	<meta property="og:title" content="Doraemon Tập 1 - Tập đặc biệt: Ao cá trong phòng học &amp; Cỗ máy thời gian đâu mất rồi &amp; Nhớ lại! ấn tượng ngày đầu tiên" />
-	<meta property="og:site_name" content="ClipAnime" />
-	<meta property="og:type" content="video.php" />
-
-	<!-- Google+ Metadata /-->
-	<meta itemprop="name" content="Doraemon Tập 1 - Tập đặc biệt: Ao cá trong phòng học &amp; Cỗ máy thời gian đâu mất rồi &amp; Nhớ lại! ấn tượng ngày đầu tiên" />
-	<meta itemprop="description" content="Doraemon Tập 1 - Tập đặc biệt: Ao cá trong phòng học &amp; Cỗ máy thời gian đâu mất rồi &amp; Nhớ lại! ấn tượng ngày đầu tiên" />
-	<meta itemprop="image" content="../i.imacdn.com/vg/2015/06/doraemon-tap-1-1435118450.jpg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Vietnamese, English" />
+    <link rel="shortcut icon" href="./assets/ico.png" type="image/png" />
 
 			<!-- Google webmaster tools verification -->
-		<meta name="google-site-verification" content="X6wTJolQe36XUJJeyIxqPMs9YJ0dqJXfDdy1yksGNhA" />
-		<!-- Bing verification -->
-		<meta name="msvalidate.01" content="C21FDE84CE65ABA807746F89A0D2964C" />
-	
-        <link rel="stylesheet" href="./public/css/film99f8.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+	<meta name="google-site-verification" content="X6wTJolQe36XUJJeyIxqPMs9YJ0dqJXfDdy1yksGNhA" />
+	<!-- Bing verification -->
+	<meta name="msvalidate.01" content="C21FDE84CE65ABA807746F89A0D2964C" />
+
+    <link rel="stylesheet" href="./public/css/film99f8.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 
     <link rel="stylesheet" href="./public/css/style.css">
 
@@ -101,9 +84,7 @@
                 <p>Tập: <span><?=$quantity?>/??</span></p>
                 <p>Lượt xem: <span><?php echo $films['views'] ?></span></p>
                 <p>Trạng thái <span><?php echo $films['status'] ?></span></p>
-                <?php foreach ($parts as $value): ?>
-                    <a class="click-view" href="./xemphim.php?id=<?=$value['film_id']?>">Xem phim</a>
-                <?php endforeach ?>
+                <a class="click-view" href="./xemphim.php">Xem phim</a>
                 <a class="click-follow" href="#follows">Theo dõi</a>
             </div>
             

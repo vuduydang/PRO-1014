@@ -32,10 +32,7 @@ require_once './commons/helpers.php';
     <meta http-equiv="cache-control" content="no-cache" />
     <meta name="robots" content="index, follow" />
     <meta name="language" content="Vietnamese, English" />
-    
-
-    
-       <link rel="shortcut icon" href="./assets/ico.png" type="image/png" />
+    <link rel="shortcut icon" href="./assets/ico.png" type="image/png" />
     
       <link rel="stylesheet" href="./public/css/home9039.css?id=0cadef886044cb02b356">
   

@@ -43,7 +43,7 @@ require_once("../commons/helpers.php");
 	$url_0 	= preg_replace('([\s]+)', '-', strip_tags($name)).'.html'; //xóa khoảng trắng
 	$url 	= strUnicode($url_0); //xóa dấu
 
-	$sqlInsert = "INSERT INTO films VALUES ('null','$name','$series','$year','$categories','$author','$bannerName','$thumbnailName','$content','$status','0','$url','1')"; 
+	$sqlInsert = "INSERT INTO films VALUES (null,'$name','$series','$year','$categories','$author','$bannerName','$thumbnailName','$content','$status','0','$url','1')"; 
 	executeQuery($sqlInsert);
 
 	header("location: dashboard.php");

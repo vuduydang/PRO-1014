@@ -4,6 +4,7 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+
 ul li{list-style: none;}
 a{
 	text-decoration: none;
@@ -49,6 +50,9 @@ a{
 }
 .nav .toggle li{
 	clear: both;
+}
+.nav .toggle li:hover{
+	background-color: #d5d5;
 }
 .nav .dropdown:hover .toggle{
 	display: block;

@@ -76,7 +76,7 @@ if (empty($_SESSION[AUTH_YF]) || $session['role_id'] != 1) {
 							<div><p>Đạo diễn : </p><input type="text" name="author" required placeholder="Steve Kloves"></div>
 							<div class="col-2">
 								<p>Series : </p><input type="text" name="series" required placeholder="Harry Potter">
-								<p>Năm : </p><input type="number" name="year" required placeholder="2001">
+								<p>Năm : </p><input type="number" name="year" min="2000" max="<?=date('Y')?>" required placeholder="<?=date('Y')?>">
 							</div>
 							<div class="col-2">
 								<p>Trạng thái : </p>

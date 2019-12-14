@@ -40,5 +40,4 @@ executeQuery($insert);
 
 $upload = "UPDATE films SET status = '$status' WHERE id = '$film_id'";
 executeQuery($upload);
-echo 'Thành công !';
 die();

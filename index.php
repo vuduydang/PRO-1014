@@ -42,17 +42,19 @@
       <link rel="stylesheet" href="./public/css/style.css">
 </head>
 <body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v5.0&appId=2415585875377184&autoLogAppEvents=1"></script>
 
     <?php include_once"./_share/header.php"; ?>
     
     <div class="container">
 
-                      <div class="banner-masthead">
-        <script type="text/javascript">
-          var _avlVar = _avlVar || [];
-          _avlVar.push(["685a2cbb1c3448729f4a578af4a29f25","[yo_page_url]","[width]","[height]"]);
-        </script>
-        <script type="text/javascript" src="../ss.yomedia.vn/js/yomedia-sdk30f4.js?v=3" id="s-685a2cbb1c3448729f4a578af4a29f25"></script>
+        <div class="banner-masthead">
+          <script type="text/javascript">
+            var _avlVar = _avlVar || [];
+            _avlVar.push(["685a2cbb1c3448729f4a578af4a29f25","[yo_page_url]","[width]","[height]"]);
+          </script>
+          <script type="text/javascript" src="../ss.yomedia.vn/js/yomedia-sdk30f4.js?v=3" id="s-685a2cbb1c3448729f4a578af4a29f25"></script>
         </div>
                       
       
@@ -156,7 +158,9 @@
 
         
 
-        <div class="video-hot"></div>
+        <div class="video-hot">
+          <div class="fb-page" data-href="https://www.facebook.com/movieostfilms/" data-tabs="272" data-width="" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/movieostfilms/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/movieostfilms/">Movie + OST Films</a></blockquote></div>
+        </div>
 
         <div class="anime-hot">
           <div class="tray-title">Anime HOT</div>

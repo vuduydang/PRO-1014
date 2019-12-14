@@ -50,6 +50,7 @@ require_once './commons/helpers.php';
 <body>
 
     <?php include_once"./_share/header.php"; ?>
+
     <div class="container">
     
         <div class="user-page">
@@ -63,9 +64,9 @@ require_once './commons/helpers.php';
         </div>
 
         <div class="user-page-body">
-                        <form method="POST" action="update_password.php">
+            <form method="POST" action="update_password.php">
                 <input type="hidden" name="password" value="">
-                    <div class="form-group">
+                <div class="form-group">
                     <label for="email">Mật khẩu cũ:</label>
                     <input type="password" required name="password" id="password" value=""><br><br>
                     <label for="email">Mật khẩu mới:</label>
@@ -86,7 +87,7 @@ require_once './commons/helpers.php';
     </div>    
 
     
-    <script type="text/javascript" src="../public/js/bfilms.js"></script>
+    <script type="text/javascript" src="./public/js/bfilms.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-81129102-2"></script>
     <script>
