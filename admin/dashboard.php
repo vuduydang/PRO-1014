@@ -37,9 +37,8 @@ $countParts = executeQuery($sqlQuery);
 	<link rel="stylesheet" href="../public/font-awesome/css/v4-shims.min.css">
 	
 	<script type="text/javascript">
-	    if (typeof(Storage) !== "undefined") {
+	    if (typeof(Storage) != "undefined") {
 	        sessionStorage.setItem('login', '1');
-	        alert("chạy")
 	    } else {
 	        document.write('Trình duyệt của bạn không hỗ trợ local storage');
 	    }
