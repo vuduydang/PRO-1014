@@ -48,7 +48,7 @@ $countParts = executeQuery($sqlQuery);
 	<div id="wrap">
 			<div class="head">
 				<img src="../assets/logo.png">
-				<a href="logout.php"><i class="fas fa-sign-out-alt"></i></a>
+				<a href="../"><i class="fas fa-sign-out-alt"></i></a>
 				<ul>
 					<li>
 						<i class="far fa-bell"></i>
@@ -72,6 +72,9 @@ $countParts = executeQuery($sqlQuery);
 					</li>
 					<li>
 						<a href="manager.php"><i class="fas fa-chart-line"></i>Quản lý phim</a>
+					</li>
+					<li>
+						<a href="categories.php"><i class="fas fa-chart-line"></i>Danh mục</a>
 					</li>
 					<li>
 						<a href="users.php"><i class="fas fa-chart-line"></i>Quản lý thành viên</a>

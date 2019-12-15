@@ -37,7 +37,7 @@ if (isset($_GET['id'])) {
     <div id="wrap">
             <div class="head">
                 <img src="../assets/logo.png">
-                <a href="../user/logout.php"><i class="fas fa-sign-out-alt"></i></a>
+                <a href="../"><i class="fas fa-sign-out-alt"></i></a>
                 <ul>
                     <li>
                         <i class="far fa-bell"></i>

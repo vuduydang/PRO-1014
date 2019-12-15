@@ -32,7 +32,7 @@ $lists = executeQuery($select, true);
 	<div id="wrap">
 			<div class="head">
 				<img src="../assets/logo.png">
-				<a href="../user/logout.php"><i class="fas fa-sign-out-alt"></i></a>
+				<a href="../"><i class="fas fa-sign-out-alt"></i></a>
 				<ul>
 					<li>
 						<i class="far fa-bell"></i>
@@ -57,8 +57,11 @@ $lists = executeQuery($select, true);
 					<li>
 						<a href="manager.php"><i class="fas fa-chart-line"></i>Quản lý phim</a>
 					</li>
+					<li>
+						<a href="categories.php"><i class="fas fa-chart-line"></i>Danh mục</a>
+					</li>
 					<li class="active">
-						<a href="manager.php"><i class="fas fa-chart-line"></i>Quản thành viên</a>
+						<a href="users.php"><i class="fas fa-chart-line"></i>Quản thành viên</a>
 					</li>
 				</ul>
 			</div>

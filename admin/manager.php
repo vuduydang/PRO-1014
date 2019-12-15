@@ -32,7 +32,7 @@ $select = "SELECT * FROM films";
 	<div id="wrap">
 			<div class="head">
 				<img src="../assets/logo.png">
-				<a href="../user/logout.php"><i class="fas fa-sign-out-alt"></i></a>
+				<a href="../"><i class="fas fa-sign-out-alt"></i></a>
 				<ul>
 					<li>
 						<i class="far fa-bell"></i>
@@ -58,21 +58,24 @@ $select = "SELECT * FROM films";
 						<a href="manager.php"><i class="fas fa-chart-line"></i>Quản lý phim</a>
 					</li>
 					<li>
+						<a href="categories.php"><i class="fas fa-chart-line"></i>Danh mục</a>
+					</li>
+					<li>
 						<a href="users.php"><i class="fas fa-chart-line"></i>Quản thành viên</a>
 					</li>
 				</ul>
 			</div>
 			<section class="content">
 				
-				<table>
+				<table class="manager">
 					<tr style="border-bottom: 1px solid #328">
-						<th>ID</th>
-						<th>TÊN</th>
-						<th width="220">THỂ LOẠI</th>
-						<th>NĂM</th>
-						<th>THỜI LƯỢNG</th>
-						<th>LƯỢT XEM</th>
-						<th>TÙY CHỈNH</th>
+						<th width="60">ID</th>
+						<th width="300">TÊN</th>
+						<th width="260">THỂ LOẠI</th>
+						<th width="100">NĂM</th>
+						<th width="100">THỜI LƯỢNG</th>
+						<th width="100">LƯỢT XEM</th>
+						<th width="100">TÙY CHỈNH</th>
 					</tr>
 					<?php
 						foreach ($lists as $value) {

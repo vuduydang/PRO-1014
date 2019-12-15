@@ -55,17 +55,17 @@ $lists 	= executeQuery($select, true);
 <body>
 	<div id="wrap">
 			<div class="head">
-				<a class="logo" href="../"><img class="logo" src="../images/logo.png"></a>
-				<a href="../logout.php">logout</a>
+				<img src="../assets/logo.png">
+				<a href="../"><i class="fas fa-sign-out-alt"></i></a>
 				<ul>
 					<li>
 						<i class="far fa-bell"></i>
 						<span id="notification">0</span>
 					</li>
 					<li>
-						<img class="avatar" src="../images/avatar.jpg">
+						<img class="avatar" src="../assets/avatars/avatar.jpg">
 						<span>xin chào</span>
-						<b><?php echo $_SESSION['admin'];?></b>
+						<b>- <?php echo $_SESSION[AUTH_YF]['name'];?></b>
 					</li>
 				</ul>
 			</div>
@@ -78,14 +78,14 @@ $lists 	= executeQuery($select, true);
 					<li>
 						<a href="addfilms.php"><i class="fas fa-plus"></i>Thêm Phim</a>
 					</li>
-					<li class="active">
+					<li>
 						<a href="manager.php"><i class="fas fa-chart-line"></i>Quản lý phim</a>
 					</li>
 					<li class="active">
-						<a href="manager.php"><i class="fas fa-chart-line"></i>Danh mục</a>
+						<a href="categories.php"><i class="fas fa-chart-line"></i>Danh mục</a>
 					</li>
 					<li>
-						<a href="manager.php"><i class="fas fa-chart-line"></i>Quản thành viên</a>
+						<a href="users.php"><i class="fas fa-chart-line"></i>Quản thành viên</a>
 					</li>
 				</ul>
 			</div>

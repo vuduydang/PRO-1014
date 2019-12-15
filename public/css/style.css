@@ -10,6 +10,9 @@ a{
 	text-decoration: none;
 	color: #000;
 }
+a:hover{
+	color: #444
+}
 #list-parts::-webkit-scrollbar-track
 {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
@@ -81,6 +84,8 @@ a{
 }
 .info>h1{margin-bottom: 20px}
 .info>p{line-height: 32px}
+.info a{color: #329}
+.info a:hover{color: blue}
 .info span{color: #5c00ef}
 .info .click-view, .info .click-follow{
 	display: inline-block;

@@ -1,25 +1,12 @@
 <?php
+session_start();
 require_once './commons/constants.php';
 require_once './commons/db.php';
 require_once './commons/helpers.php';
-      $value = isset($_GET['search-box']) ? $_GET['search-box'] : "";
-      $sqlQuery_films="SELECT * FROM films 
-                        WHERE 
-                        categories like '%$value%' 
-                        OR year LIKE '%$value%' 
-                        OR author LIKE '%$value%' 
-                        OR series LIKE '%$value%'
-                        OR name LIKE '%$value%'
-                        ";
-      $films = executeQuery($sqlQuery_films, true);
-      if (!$films) {
-          header("location: ./error.php");
-      }
-      if(isset($_GET['id'])){
-        $id=$_GET['id'];
-        $sqlQuery="SELECT * from users where id='$id'";
-        $users= executeQuery($sqlQuery, true);
-      }
+
+    if (empty($_SESSION[AUTH_YF])) {
+        header("location:".BASE_URL."");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -64,19 +51,23 @@ require_once './commons/helpers.php';
         </div>
 
         <div class="user-page-body">
-            <form method="POST" action="update_password.php">
-                <input type="hidden" name="password" value="">
+            <form method="POST" action="./router/update_password.php">
                 <div class="form-group">
-                    <label for="email">Mật khẩu cũ:</label>
-                    <input type="password" required name="password" id="password" value=""><br><br>
-                    <label for="email">Mật khẩu mới:</label>
-                    <input type="password" required name="password_new" id="password" value=""><br><br>
-                    <label for="email">Nhập lại mật khẩu mới:</label>
-                    <input type="password" required name="enter_password" id="password" value=""><br>
+                    <label for="old_password">Mật khẩu hiện tại:</label>
+                    <input type="password" name="old_password" required="">
+                </div>
+                <div class="form-group">
+                    <label for="password">Mật khẩu mới</label>
+                    <input type="password" required="" minlength="7" name="password_new">
+                </div>
+                <div class="form-group">
+                    <label for="password_confirmation">Nhập lại mật khẩu</label>
+                    <input type="password" required="" minlength="7" name="password_confirm">
                 </div>
                 <div class="form-group">
                     <button type="submit">Đổi mật khẩu</button>
                 </div>
+
             </form>
         </div>
     </div>

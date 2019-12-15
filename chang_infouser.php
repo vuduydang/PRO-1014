@@ -1,20 +1,12 @@
 <?php
+session_start();
 require_once './commons/constants.php';
 require_once './commons/db.php';
 require_once './commons/helpers.php';
-      $value = isset($_GET['search-box']) ? $_GET['search-box'] : "";
-      $sqlQuery_films="SELECT * FROM films 
-                        WHERE 
-                        categories like '%$value%' 
-                        OR year LIKE '%$value%' 
-                        OR author LIKE '%$value%' 
-                        OR series LIKE '%$value%'
-                        OR name LIKE '%$value%'
-                        ";
-      $films = executeQuery($sqlQuery_films, true);
-      if (!$films) {
-          header("location: ./error.php");
-      }
+
+    if (empty($_SESSION[AUTH_YF])) {
+        header("location:".BASE_URL."");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -58,8 +50,7 @@ require_once './commons/helpers.php';
         </div>
 
         <div class="user-page-body">
-              <form method="POST" action="update_infouser.php">
-                <input type="hidden" name="password" value="">
+              <form method="POST" action="./router/update_infouser.php">
                 <div class="form-group">
                     <div class="navbar-form-group">
                         <label>Tên hiển thị</label>
@@ -78,7 +69,7 @@ require_once './commons/helpers.php';
                         </label>
                     </div>
                     <label for="email">Sinh nhật:</label>
-                        <div class="navbar-form-group birthday">
+                    <div class="navbar-form-group birthday">
                         <div class="navbar-form-select day">
                             <label>Ngày sinh</label>
                             <input type="number" name="birthday" min="1" max="31">
@@ -91,6 +82,11 @@ require_once './commons/helpers.php';
                         <label>Năm sinh</label>
                             <input type="number" name="birthyear" min="1970" max="2010">
                         </div>
+                        <span class="tip"></span>
+                    </div>
+                    <div class="navbar-form-group">
+                        <label>Nhập mật khẩu</label>
+                        <input type="password" required="" minlength="7" name="password" placeholder="Confim password">
                         <span class="tip"></span>
                     </div>
                 </div>

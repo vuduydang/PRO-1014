@@ -22,7 +22,7 @@
     $parts      = executeQuery($sqlQuery, true);
     
     $quantity   = count($parts);
-
+    $categories = explode(', ', $films['categories']);
  ?>
 
 <!DOCTYPE html>
@@ -78,8 +78,16 @@
             </div>
             <div class="info">
                 <h1 class="film-info-title"><?php echo $films['name'] ?> - <?php echo $films['series'] ?></h1>
-                <p>Thể loại: <span><?php echo $films['categories'] ?></span></p>
-                <p>Đạo Diễn: <span><?php echo $films['author'] ?></span></p>
+                <p>Thể loại: 
+                    <span>
+                        <?php 
+                        foreach ($categories as $value) {
+                            echo "<a href='video.php?search-box=".$value['categories']."'>".$value['categories'].", </a>";
+                        }
+                        ?>
+                    </span>    
+                </p>
+                <p>Đạo Diễn: <span><a href="video.php?search-box=<?=$films['author']?>"><?=$films['author']?></a></span></p>
                 <p>Năm xuất bản: <span><?php echo $films['year'] ?></span></p>
                 <p>Tập: <span><?=$quantity?>/??</span></p>
                 <p>Lượt xem: <span><?php echo $films['views'] ?></span></p>
