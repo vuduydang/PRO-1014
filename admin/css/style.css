@@ -153,7 +153,7 @@ ul li,h1:hover{
 	border-radius: 24px;
 	margin-right: 60px
 }
-.dashboard article p , article span{
+.dashboard article p , .dashboard article span{
 	font-weight: 600;
 	font-size: 22px;
 }
@@ -275,3 +275,46 @@ ul li,h1:hover{
 .content table tr:nth-child(even){background-color: #efecec}
 .content table th{border-bottom: 1px solid #328; padding: 10px;}
 .content table td{padding: 10px;}
+
+/*Danh mục*/
+.content .category{
+	width: 260px;
+	float: left;
+	margin: 20px;
+	text-align: center;
+}
+.category h4{border-bottom: 1px #999 solid; line-height: 30px}
+.category ul li{
+	list-style: none;
+	display: block;
+	line-height: 24px;
+}
+.category ul li a{
+	display: inline-block;
+	float: right;
+	font-size: 12px;
+	color: #ff5858;
+	margin-right: 18px;
+}
+.category button{
+	width: 60px;
+	height: 32px;
+	background-color: #816dfb;
+	border: none;
+	border-radius: 10px;
+	color: #fff
+}
+.category ul form input{
+	width: 160px;
+	height: 32px;
+	background-color: #a3b0ff;
+	border: none;
+	padding: 0 10px;
+	border-radius: 12px;
+}
+.category ul form input:focus{outline: none;}
+.reviews{
+	border-top: 1px solid #666;
+	width: 760px;
+	clear: both;
+}

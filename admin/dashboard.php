@@ -38,8 +38,8 @@ $countParts = executeQuery($sqlQuery);
 	
 	<script type="text/javascript">
 	    if (typeof(Storage) !== "undefined") {
-	        // Gán dữ liệu
 	        sessionStorage.setItem('login', '1');
+	        alert("chạy")
 	    } else {
 	        document.write('Trình duyệt của bạn không hỗ trợ local storage');
 	    }
