@@ -15,7 +15,7 @@
     $select = "SELECT * FROM parts WHERE film_id = '$id'";
     $listP  = executeQuery($select, true);
 
-    $sqlQuery   = "SELECT * FROM reviews WHERE film_id = '$id'";
+    $sqlQuery   = "SELECT * FROM reviews WHERE film_id = '$id' ORDER BY id DESC";
     $reviews    = executeQuery($sqlQuery, true);
 ?>
 <!DOCTYPE html>

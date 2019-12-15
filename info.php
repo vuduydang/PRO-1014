@@ -8,7 +8,7 @@
         header("location: ./");
     }
 
-    $sqlQuery   = "SELECT * FROM reviews WHERE film_id = '$id'";
+    $sqlQuery   = "SELECT * FROM reviews WHERE film_id = '$id' ORDER BY id DESC";
     $reviews    = executeQuery($sqlQuery, true);
 
     $sqlQuery   = "select * from films  where id = $id";
@@ -174,6 +174,10 @@
                         <div class="comment-item-body">
                             <div class="author-name"><?=$user['name']?></div>
                             <div class="comment-content"><?=$value['content']?></div>
+                            <div class="comment-action">
+                                <!-- <span class="comment-reply"><i class="icon icon-comment"></i> trả lời</span> -->
+                                <span class="comment-time"><i class="icon icon-time"></i> <?=$value['date']?></span>
+                            </div>
                         </div>
                     </div>
                 <?php endforeach ?>
