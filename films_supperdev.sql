@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: localhost
--- Thời gian đã tạo: Th12 14, 2019 lúc 07:13 AM
+-- Thời gian đã tạo: Th12 15, 2019 lúc 07:40 PM
 -- Phiên bản máy phục vụ: 10.4.10-MariaDB
 -- Phiên bản PHP: 7.3.12
 
@@ -76,9 +76,9 @@ CREATE TABLE `films` (
 --
 
 INSERT INTO `films` (`id`, `name`, `series`, `year`, `categories`, `author`, `banner`, `thumbnail`, `content`, `status`, `views`, `url`, `active`) VALUES
-(25, 'Sword Art Online', 'SAO', 2019, 'Action, Comedy, Fantasy, Magic, Shounen', 'Reki Kawahara', '1576297082mZ1YbQR.jpg', '1576297082uLaaSM3.jpg', 'Sword art online là một bộ light novel Nhật Bản được viết bởi Tử Linh và được minh họa bởi abec. Bộ truyện lấy bối cảnh tương lai gần và nhiều thế giới VRMMO thực tế ảo.', 'Hoàn thành', 0, 'Sword-Art-Online.html', 1),
-(26, 'RADIANT 2ND SEASON', 'RADIANT', 2019, 'Hành Động, Phiêu Lưu, Phép Thuật, Fantasy', 'Dang cap nhat', '157629733999e3652dd05aa33b241251a51df604cc.jpg', '1576297339mZ1YbQR.jpg', 'Radiant là câu chuyện xoay quanh Seth – một người muốn trở thành một pháp sư vĩ đại và một nhóm phù thủy muốn ...\r\n', 'Đang chiếu', 0, 'RADIANT-2ND-SEASON.html', 1),
-(27, 'NIJIIRO DAYS', 'NIJIIRO DAYS', 2019, 'Hài Hước, Học Đường, Đời Thường, Romance, Shoujo', 'Dang cap nhat', '1576297551dashda.jpeg', '1576297551JQ1LzoC.jpg', 'Được dịch từ tiếng Anh-Rainbow Days là một bộ truyện tranh shoujo của Nhật Bản được viết và minh họa bởi Minami Mizuno, và được xuất bản trên tạp chí Bessatsu Margaret của Shueisha. Một CD drama đã được phát hành với tập thứ bảy của manga vào tháng 10 năm 2014.', 'Đang chiếu', 0, 'NIJIIRO-DAYS.html', 1),
+(25, 'Sword Art Online', 'SAO', 2019, 'Action, Comedy, Fantasy, Magic, Shounen', 'Reki Kawahara', '1576297082mZ1YbQR.jpg', '1576297082uLaaSM3.jpg', 'Sword art online là một bộ light novel Nhật Bản được viết bởi Tử Linh và được minh họa bởi abec. Bộ truyện lấy bối cảnh tương lai gần và nhiều thế giới VRMMO thực tế ảo.', 'Đang chiếu', 0, 'Sword-Art-Online.html', 1),
+(26, 'RADIANT 2ND SEASON', 'RADIANT', 2019, 'Hành Động, Phiêu Lưu, Phép Thuật, Fantasy', 'Dang cap nhat', '157629733999e3652dd05aa33b241251a51df604cc.jpg', '1576297339mZ1YbQR.jpg', 'Radiant là câu chuyện xoay quanh Seth – một người muốn trở thành một pháp sư vĩ đại và một nhóm phù thủy muốn ...\r\n', 'Hoàn thành', 0, 'RADIANT-2ND-SEASON.html', 1),
+(27, 'NIJIIRO DAYS', 'NIJIIRO DAYS', 2019, 'Hài Hước, Học Đường, Đời Thường, Romance, Shoujo', 'Dang cap nhat', '1576297551dashda.jpeg', '1576297551JQ1LzoC.jpg', 'Được dịch từ tiếng Anh-Rainbow Days là một bộ truyện tranh shoujo của Nhật Bản được viết và minh họa bởi Minami Mizuno, và được xuất bản trên tạp chí Bessatsu Margaret của Shueisha. Một CD drama đã được phát hành với tập thứ bảy của manga vào tháng 10 năm 2014.', 'Hoàn thành', 0, 'NIJIIRO-DAYS.html', 1),
 (28, 'DIABOLIK LOVERS', 'DIABOLIK LOVERS', 2013, 'Học Đường, Harem, Shoujo, Vampire', 'Dang cap nhat', '1576297894diaboliklovers.png', '1576297894dbUtIKc.jpg', 'Diabolik Lovers là một thương hiệu tiểu thuyết hình ảnh Nhật Bản của Rejet. Mục đầu tiên của nó được phát hành vào ngày 11 tháng 10 năm 2012 cho hệ thống PlayStation Portable.', 'Hoàn thành', 0, 'DIABOLIK-LOVERS.html', 1),
 (29, 'DIABOLIK LOVERS SS2', 'DIABOLIK LOVERS', 2015, 'Học Đường, Harem, Shoujo, Vampire', 'Dang cap nhat', '1576298020diaboliklovers.png', '1576298020k6Y2Xli.jpg', 'Diabolik Lovers là một thương hiệu tiểu thuyết hình ảnh Nhật Bản của Rejet. Mục đầu tiên của nó được phát hành vào ngày 11 tháng 10 năm 2012 cho hệ thống PlayStation Portable.', 'Đang chiếu', 0, 'DIABOLIK-LOVERS-SS2.html', 1),
 (30, 'CHAOS HEAD (BD)', 'CHAOS HEAD', 2019, 'Fantasy, Dementia', ' Mages, Nitroplus', '1576298627download.jpeg', '1576298627fFNWEGY.jpg', 'Chaos;Head là một visual novel phát triển bởi 5pb. và Nitroplus. Đây là game đầu tiên trong loạt Science Adventure, và ban đầu được phát hành cho Microsoft Windows năm 2008; bản nới rộng Xbox 360 tên Chaos;Head Noah phát hành 2009, rồi từ đó được chuyển sang nhiều nền tảng khác', 'Đang chiếu', 0, 'CHAOS-HEAD-(BD).html', 1),
@@ -125,6 +125,16 @@ CREATE TABLE `parts` (
   `url` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Đang đổ dữ liệu cho bảng `parts`
+--
+
+INSERT INTO `parts` (`id`, `film_id`, `name`, `player`, `views`, `url`) VALUES
+(15, 25, 'Tập 1: Sword Art Online', '1576339922【MAD】夏に去りし君を想フ【かぐや様は告らせたい】.mp4', 0, 'Tap-1:-Sword-Art-Online.html25.html'),
+(16, 26, 'Tập 1: RADIANT 2ND SEASON', '1576339975hotori morie.mp4', 0, 'Tap-1:-RADIANT-2ND-SEASON.html26.html'),
+(17, 25, 'Tập 2: Sword Art Online', '1576340957【MAD】夏に去りし君を想フ【かぐや様は告らせたい】.mp4', 0, 'Tap-1:-Sword-Art-Online25.html'),
+(18, 27, 'Tập 1: NIJIIRO DAYS', '1576434216hotori morie.mp4', 0, 'Tap-1:-NIJIIRO-DAYS27.html');
+
 -- --------------------------------------------------------
 
 --
@@ -147,7 +157,11 @@ INSERT INTO `reviews` (`id`, `film_id`, `user_id`, `content`, `date`) VALUES
 (1, 24, 28, 'hyhyhaha', '0000-00-00'),
 (2, 24, 28, 'hyhyhahagg', '00:30 / 2019-12-12'),
 (3, 24, 28, 'vuduyddanwg', '18:45 / 12-12-2019'),
-(4, 24, 28, 'test lại này  :bagia:', '18:46 / 12-12-2019');
+(4, 24, 28, 'test lại này  :bagia:', '18:46 / 12-12-2019'),
+(5, 25, 28, 'tessst cuoois', '23:51 / 14-12-2019'),
+(6, 30, 28, 'Thử comment phát xem sao', '23:54 / 14-12-2019'),
+(7, 25, 28, 'thử comment phát', '23:59 / 14-12-2019'),
+(8, 30, 28, ' :xitmau:', '00:25 / 15-12-2019');
 
 -- --------------------------------------------------------
 
@@ -195,7 +209,7 @@ CREATE TABLE `systems` (
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `password` varchar(500) NOT NULL,
+  `password` text NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `avatar` varchar(255) NOT NULL,
@@ -210,9 +224,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `name`, `email`, `avatar`, `gender`, `age`, `role_id`) VALUES
 (3, 'admin', '$2y$10$QYr7SvXdOguZz3dlnPxO.u0Y0Ffj6nNErwm168unZkzPoWRxR7..e', 'admin', 'haivdph07968@gmail.com', 'null.png', 0, '2000-11-19', 1),
-(19, 'vudang123', '$2y$10$29Q.4qUYKUfr9wfH8skyEenJep7UWBfIYP5DsDzregNccQNhY7HRi', 'Vũ Duy Đăng', 'vuduydang2000@gmail.com', 'null.png', 1, '1971-2-2', 1),
-(27, 'vudang12', '$2y$10$cy3.6fUlMVGkzn.x70zcYuj8HTswBNbFS42Zl3s1NXnNzKENMqEGm', 'Vũ Duy Đăng', 'vuduydang2000hb@gmail.com', 'null.png', 1, '2000-11-1', 0),
-(28, 'vudang', '$2y$10$aM8D2NtstuPjdU9m1fGJUeI39227IbTs0vY3unjzIsSZUM7ybyKHO', 'Vũ Duy Đăng', 'vuduydangs2@gmail.com', 'null.png', 1, '2000-11-11', 0);
+(28, 'vudang', '$2y$10$aM8D2NtstuPjdU9m1fGJUeI39227IbTs0vY3unjzIsSZUM7ybyKHO', 'Vũ Duy Đăng', 'vuduydangs2@gmail.com', 'null.png', 1, '2000-11-11', 0),
+(31, 'tktest', '$2y$10$A4FLAlMe.UHGO6v1LtdeIux4Bq5.WKI2hhHPE1VOWIFF39mVWnKVy', 'Ngaos Ngaos', 'ngaongao@gmail.com', 'null.png', 0, '1999-11-12', 0),
+(32, 'namnt', '$2y$10$7s.uC5ombtmayMxWy7ah9.weOKx2tNJ4ZFdEOcG60tPj2iWNZwFJm', 'Trung Nam', 'namnv@gmail.com', 'null.png', 1, '2000-06-01', 0);
 
 -- --------------------------------------------------------
 
@@ -334,13 +348,13 @@ ALTER TABLE `historys`
 -- AUTO_INCREMENT cho bảng `parts`
 --
 ALTER TABLE `parts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT cho bảng `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `roles`
@@ -352,7 +366,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT cho bảng `years`
