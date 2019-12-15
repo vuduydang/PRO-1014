@@ -59,10 +59,10 @@ if (isset($_GET['id'])) {
                     <li>
                         <a href="addfilms.php"><i class="fas fa-plus"></i>Thêm Phim</a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="manager.php"><i class="fas fa-chart-line"></i>Quản lý phim</a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="users.php"><i class="fas fa-chart-line"></i>Quản lý thành viên</a>
                     </li>
                 </ul>
@@ -76,23 +76,14 @@ if (isset($_GET['id'])) {
                             <input type="hidden" name="id" value="<?=$id?>" readonly><br>
                             <div><p>Tên Người Dùng : </p><input type="text" name="name" readonly value="<?=$list['name']?>"></div>
                             <div><p>Phân Quyền : </p><input type="text" name="role_id" readonly value="<?=$list['role_id']?>"></div>
-                                <!-- <p>Tên Tập : </p><input type="text" name="name_part" placeholder="vd: Tập 1 ahihi"> -->
                             <div class="col-2">
-                                <!-- <p>Player : </p><input type="text" name="player" placeholder="vd: Tập 1 ahihi"> -->
-                                <p>Trạng thái:</p><br>
+                                <br>
                                 <tr>
-                                    <td><input type="radio" name="role_id" value="0" style="float: left;"><p>0</p></td><br>
-                                    <td><input type="radio" name="role_id" value="1" style="float: left;"><p>1</p></td><br>
-                                    <td><input type="radio" name="role_id" value="2" style="float: left;"><p>2</p></td>
+                                    <td><input type="radio" name="role_id" value="0" style="float: left;"><p>Khóa</p></td><br>
+                                    <td><input type="radio" name="role_id" value="0" style="float: left;"><p>Thành Viên</p></td><br>
+                                    <td><input type="radio" name="role_id" value="1" style="float: left;"><p>Quản trị viên</p></td><br>
                                 </tr>
                             </div>
-                            <!-- <div class="col-2">
-                                <div class="browser-upload" style="left: 220px;">
-                                    <i class="title-browser-upload">Tải phim lên</i>
-                                    <input type="file" class="file" name="file_film">
-                                    <span class="browser"><i class="fas fa-cloud-upload-alt"></i></span>
-                                </div>
-                            </div> -->
                         </div>
                         <div class="right"></div>
                         <div class="button" id="push-part">
