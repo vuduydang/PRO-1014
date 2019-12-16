@@ -15,6 +15,14 @@
     $select = "SELECT * FROM parts WHERE film_id = '$id'";
     $listP  = executeQuery($select, true);
 
+    //tang views
+    $views      = $infoF['views']+1;
+    $insert     = "UPDATE films SET views = '$views' WHERE id = '$id'";
+    executeQuery($insert);
+    $views      = $infoP['views']+1;
+    $insert     = "UPDATE parts SET views = '$views' WHERE url = '$url'";
+    executeQuery($insert);
+
     $sqlQuery   = "SELECT * FROM reviews WHERE film_id = '$id' ORDER BY id DESC";
     $reviews    = executeQuery($sqlQuery, true);
 ?>

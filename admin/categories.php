@@ -16,23 +16,23 @@ $categories = executeQuery($select, true);
 $select = "SELECT * FROM years";
 $years 	= executeQuery($select, true);
 // Thống kê comment
-$select = "SELECT * FROM films";
+$select = "SELECT * FROM films LIMIT 10";
 $lists 	= executeQuery($select, true);
 
 
-// extract($_REQUEST);
-// if (isset($_POST['adddm'])) {
-// 	$sql	= "INSERT INTO danh_muc(name) VALUES ('$danhmuc')";
-// 	$stmt	=$conn -> prepare($sql);
-// 	$stmt->execute();
-// 	header("location: phanloai.php");
-// }
-// if (isset($_POST['addloai'])) {
-// 	$sql	= "INSERT INTO loai_sp(name) VALUES ('$loai')";
-// 	$stmt	=$conn -> prepare($sql);
-// 	$stmt->execute();
-// 	header("location: phanloai.php");
-// }
+extract($_REQUEST);
+if (isset($_POST['adddm'])) {
+	$sql	= "INSERT INTO categories VALUES (null,'$cate')";
+	executeQuery($sql);
+	header("location: ./categories.php");
+}
+if (isset($_POST['addloai'])) {
+	$sql	= "INSERT INTO years VALUES (null,'$year')";
+	executeQuery($sql);
+	header("location: ./categories.php");
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -82,7 +82,7 @@ $lists 	= executeQuery($select, true);
 						<a href="manager.php"><i class="fas fa-chart-line"></i>Quản lý phim</a>
 					</li>
 					<li class="active">
-						<a href="categories.php"><i class="fas fa-chart-line"></i>Danh mục</a>
+						<a href="categories.php"><i class="fas fa-chart-line"></i>Danh mục & Comment</a>
 					</li>
 					<li>
 						<a href="users.php"><i class="fas fa-chart-line"></i>Quản thành viên</a>
@@ -94,32 +94,34 @@ $lists 	= executeQuery($select, true);
 					<h4>Thể Loại</h4>
 					<ul>
 						<li>
-							<form action="" method="post">
-								<input type="text" name="danhmuc" required placeholder="thêm danh mục">
+							<form action="" method="post" autocomplete="off">
+								<input type="text" name="cate" required placeholder="thêm thể loại">
 								<button name="adddm">Thêm</button>
 							</form>
 						</li>
 					<?php
 						foreach ($categories as $value) {
 					?>
-						<li name="cate"><span><?=$value['categories']?></span><a href="#"><i class="fas fa-times"></i></a></li>
+						<li name="cate"><span><?=$value['categories']?></span><a href="./router/del-cate.php?empty=cate&id=<?=$value['id']?>"><i class="fas fa-times"></i></a></li>
 					<?php } ?>
+						<li><a href="#"><i class="fas fa-chevron-circle-down"></i></a></li>
 					</ul>
 				</article>
 				<article class="category">
 					<h4>Năm</h4>
 					<ul>
 						<li>
-							<form action="" method="post">
-								<input type="text" name="loai" required placeholder="thêm thể loại">
+							<form action="" method="post" autocomplete="off">
+								<input type="text" name="year" required placeholder="thêm năm">
 								<button name="addloai">Thêm</button>
 							</form>
 						</li>
 					<?php
 						foreach ($years as $value) {
 					?>
-						<li name="year"><span><?=$value['name']?></span><a href="#"><i class="fas fa-times"></i></a></li>
+						<li name="year"><span><?=$value['name']?></span><a href="./router/del-cate.php?empty=year&id=<?=$value['id']?>"><i class="fas fa-times"></i></a></li>
 					<?php } ?>
+						<li><a href="#"><i class="fas fa-chevron-circle-down"></i></a></li>
 					</ul>
 				</article>
 				<article class="reviews">
@@ -129,26 +131,26 @@ $lists 	= executeQuery($select, true);
 							<th width="200">TÊN PHIM</th>
 							<th>ẢNH NHỎ</th>
 							<th width="80">TỔNG COMMENT</th>
-							<th>COMMENT CUỐI</th>
-							<th>TÙY CHỈNH</th>
+							<th width="150">COMMENT CUỐI</th>
+							<th>Chi Tiết</th>
 						</tr>
 						<?php
 							foreach ($lists as $value) {
 								$id 	= $value['id'];
 								$count 	= "SELECT COUNT(*) FROM reviews WHERE film_id = '$id'";
 								$counts = executeQuery($count)[0];
+
+								$select	= "SELECT * FROM reviews WHERE film_id = '$id'";
+								$date	= executeQuery($select)['date'];
 						?>
 						<tr>
 							<td><?=$value["id"]?></td>
 							<td><?=$value["name"]?> </td>
 							<td><img width="60" src="../assets/thumbnails/<?=$value["thumbnail"]?>"></td>
 							<td><?=$counts?></td>
-							<td><?=$value[""]?></td>
+							<td><?=$date?></td>
 							<td>
-								<a href="addpart.php?id=<?=$value['id']?>"><i class="fas fa-plus"></i></a>
-								<a href="edit.php?id=<?=$value['id']?>" target="_blank"><i class="fas fa-edit"></i></a>
-								<a href="delete.php?id=<?=$value['id']?>" onclick="alert('Bạn chắc chắn muốn xóa phim này?');"><i class="far fa-trash-alt"></i></a>
-
+								<a href="detail-Comment.php?id=<?=$value['id']?>"><i class="fas fa-plus"></i></a>
 							</td>
 						</tr>
 						<?php } ?>

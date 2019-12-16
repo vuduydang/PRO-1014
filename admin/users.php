@@ -58,7 +58,7 @@ $lists = executeQuery($select, true);
 						<a href="manager.php"><i class="fas fa-chart-line"></i>Quản lý phim</a>
 					</li>
 					<li>
-						<a href="categories.php"><i class="fas fa-chart-line"></i>Danh mục</a>
+						<a href="categories.php"><i class="fas fa-chart-line"></i>Danh mục & Comment</a>
 					</li>
 					<li class="active">
 						<a href="users.php"><i class="fas fa-chart-line"></i>Quản thành viên</a>

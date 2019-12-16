@@ -1,8 +1,8 @@
 <?php
 session_start();
-require_once("../commons/constants.php");
-require_once("../commons/db.php");
-require_once("../commons/helpers.php");
+require_once("../../commons/constants.php");
+require_once("../../commons/db.php");
+require_once("../../commons/helpers.php");
 
 $session = isset($_SESSION[AUTH_YF]) ? $_SESSION[AUTH_YF] : "";
 if (empty($_SESSION[AUTH_YF]) || $session['role_id'] != 1) {
@@ -15,8 +15,8 @@ if (empty($_SESSION[AUTH_YF]) || $session['role_id'] != 1) {
 
 	$id_film= $listF['id'];
 	$select = "SELECT * FROM parts WHERE film_id='$id_film'";
-	$listP	= executeQuery($select);
-
+	$listP	= executeQuery($select, true);
+	
 	$del1 = "DELETE FROM films WHERE id='$id'";
 	$del2 = "DELETE FROM parts WHERE film_id='$id'";
 	executeQuery($del1);
@@ -38,8 +38,11 @@ if (empty($_SESSION[AUTH_YF]) || $session['role_id'] != 1) {
 //     rmdir($dir);
 //   }
 // }
-// remove_dir($dir);
 
-		unlink("../assets/thumbnails/". $listF['thumbnail']);
-		unlink("../assets/banners/". $listF['banner']);
-		header("location: manager.php");
+unlink(BASE_URL."/assets/thumbnails/". $listF['thumbnail']);
+unlink(BASE_URL."/assets/banners/". $listF['banner']);
+
+foreach ($listP as $value) {
+	unlink(BASE_URL."/videos/". $listP['player']);
+}
+header("location: ../manager.php");

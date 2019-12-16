@@ -25,9 +25,9 @@ if (empty($_SESSION[AUTH_YF]) || $session['role_id'] != 1) {
 	<link rel="stylesheet" href="../public/font-awesome/css/svg-with-js.css">
 	<link rel="stylesheet" href="../public/font-awesome/css/solid.min.css">
 	<link rel="stylesheet" href="../public/font-awesome/css/v4-shims.min.css">
-	<!-- <script src="js/jquery-ui.min.js" type="text/javascript"></script> -->
+	<script src="js/jquery-ui.min.js" type="text/javascript"></script>
 	<script src="js/jquery.min.js" type="text/javascript"></script>
-	<script src="js/nicEdit-latest.js" type="text/javascript"></script>
+	<!-- <script src="js/nicEdit-latest.js" type="text/javascript"></script> -->
 	<!-- <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script> -->
 						
 </head>
@@ -61,7 +61,7 @@ if (empty($_SESSION[AUTH_YF]) || $session['role_id'] != 1) {
 						<a href="manager.php"><i class="fas fa-chart-line"></i>Quản lý phim</a>
 					</li>
 					<li>
-						<a href="categories.php"><i class="fas fa-chart-line"></i>Danh mục</a>
+						<a href="categories.php"><i class="fas fa-chart-line"></i>Danh mục & Comment</a>
 					</li>
 					<li>
 						<a href="users.php"><i class="fas fa-chart-line"></i>Quản thành viên</a>
@@ -72,10 +72,10 @@ if (empty($_SESSION[AUTH_YF]) || $session['role_id'] != 1) {
 				
 				<div class="addfilms">
 					<h2>Thêm phim</h2>
-					<form action="./push-films.php" method="post" enctype="multipart/form-data">
+					<form action="./router/push-films.php" method="post" enctype="multipart/form-data" autocomplete="off">
 						<div class="left">
 							<div><p>Tên Phim : </p><input type="text" name="name" required placeholder="HARRY POTTER VÀ HÒN ĐÁ PHÙ THỦY"></div>
-							<div><p>Thể Loại : </p><input type="text" name="categories" required placeholder="Hành Động, Viễn Tưởng, ..."></div>
+							<div><p>Thể Loại : </p><input type="text" name="categories" id="tags" required placeholder="Hành Động, Viễn Tưởng, ..."></div>
 							<div><p>Đạo diễn : </p><input type="text" name="author" required placeholder="Steve Kloves"></div>
 							<div class="col-2">
 								<p>Series : </p><input type="text" name="series" required placeholder="Harry Potter">
@@ -92,12 +92,12 @@ if (empty($_SESSION[AUTH_YF]) || $session['role_id'] != 1) {
 							<div class="col-2">
 								<div class="browser-upload">
 									<i class="title-browser-upload">Thumbnail</i>
-									<input type="file" class="file" name="thumbnail">
+									<input type="file" class="file" name="thumbnail" accept="image/*">
 									<span class="browser"><i class="fas fa-cloud-upload-alt"></i></span>
 								</div>
 								<div class="browser-upload">
 									<i class="title-browser-upload">Banner</i>
-									<input type="file" class="file" name="banner">
+									<input type="file" class="file" name="banner" accept="image/*">
 									<span class="browser"><i class="fas fa-cloud-upload-alt"></i></span>
 								</div>
 							</div>

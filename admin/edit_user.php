@@ -62,6 +62,9 @@ if (isset($_GET['id'])) {
                     <li>
                         <a href="manager.php"><i class="fas fa-chart-line"></i>Quản lý phim</a>
                     </li>
+                    <li>
+                        <a href="categories.php"><i class="fas fa-chart-line"></i>Danh mục & Comment</a>
+                    </li>
                     <li class="active">
                         <a href="users.php"><i class="fas fa-chart-line"></i>Quản lý thành viên</a>
                     </li>
@@ -71,7 +74,7 @@ if (isset($_GET['id'])) {
 
                 <form action="chang_user.php" method="post" enctype="multipart/form-data">
                     <div class="addfilms">
-                    <h2>Thêm Tập</h2>
+                    <h2>Sửa thông tin</h2>
                         <div class="left">
                             <input type="hidden" name="id" value="<?=$id?>" readonly><br>
                             <div><p>Tên Người Dùng : </p><input type="text" name="name" readonly value="<?=$list['name']?>"></div>
