@@ -8,6 +8,6 @@ echo "<script type='text/javascript'>
 		sessionStorage.removeItem('login');
 	</script>";
 
-header("location: ../index.php");
+// header("location: ../index.php");
 
 ?>

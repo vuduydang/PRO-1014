@@ -103,7 +103,7 @@
         
         <div class="film-related video" style="margin-top: -16px;">
             <hr>
-            <h3 class="dsp">Tập phim liên quan</h3>
+            <h3 class="dsp">Danh sách tập</h3>
             <?php foreach ($listP as  $value) : ?>
                 <div class="film-related-item">
                     <div class="film-related-thumbnail">
@@ -112,7 +112,7 @@
                         </a>
                     </div>
                     <div class="film-related-meta">
-                        <a href="xemphim.php?id=<?=$value['film_id']?>">
+                        <a href="xemphim.php?url=<?=$value['url']?>">
                             <div class="film-related-title"><?php echo $value['name'] ?></div>
                         </a>
                         <div class="film-related-views">Lượt xem : <?php echo $value['views']?></div>
@@ -208,10 +208,13 @@
 	<script type="text/javascript">
         $(document).ready(function(){
             setTimeout(function(){
-                $(".player-video").attr("src",
-                    "./videos/<?=$infoP['player']?>"+"#t=0.1");
+                if ("<?=$infoP['player']?>" != "") {
+                    $(".player-video").attr("src","./videos/<?=$infoP['player']?>"+"#t=0.1");
+                }else{
+                    $(".player-video").attr("src","./videos/error.mp4"+"#t=0.1");
+                }
                 
-            }, 1000);
+            }, 1500);
                     });
     </script>
       	

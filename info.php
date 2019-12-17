@@ -24,7 +24,6 @@
 
     $sqlQuery   = "select * from parts  where film_id = '$id'";
     $parts      = executeQuery($sqlQuery, true);
-    
 
     $quantity   = count($parts);
     $categories = explode(', ', $films['categories']);
@@ -123,7 +122,7 @@
                         </a>
                         </div>
                         <div class="film-related-meta">
-                            <a href="xemphim.php?id=<?=$value['film_id']?>">
+                            <a href="xemphim.php?url=<?=$value['url']?>">
                                 <div class="film-related-title"><?php echo $value['name'] ?></div>
                             </a>
                             <div class="film-related-views">Lượt xem : <?php echo $value['views'] ?></div>
