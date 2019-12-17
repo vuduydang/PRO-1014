@@ -21,23 +21,7 @@ if (empty($_SESSION[AUTH_YF]) || $session['role_id'] != 1) {
 	$del2 = "DELETE FROM parts WHERE film_id='$id'";
 	executeQuery($del1);
 	executeQuery($del2);
-// $folder1=preg_replace('/([^\pL\.\ ]+)/u', '', strip_tags($list['name'])); //xóa kí tự đặc biệt trong chuỗi
-// $folder =preg_replace('([\s]+)', '', strip_tags($folder1));
-// $dir = "../films/".$folder;
-// function remove_dir($dir = null) {
-//   if (is_dir($dir)) {
-//     $objects = scandir($dir);
 
-//     foreach ($objects as $object) {
-//       if ($object != "." && $object != "..") {
-//         if (filetype($dir."/".$object) == "dir") remove_dir($dir."/".$object);
-//         else unlink($dir."/".$object);
-//       }
-//     }
-//     reset($objects);
-//     rmdir($dir);
-//   }
-// }
 
 unlink(BASE_URL."/assets/thumbnails/". $listF['thumbnail']);
 unlink(BASE_URL."/assets/banners/". $listF['banner']);
