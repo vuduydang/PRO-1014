@@ -58,7 +58,7 @@ $select = "SELECT * FROM films";
 						<a href="manager.php"><i class="fas fa-chart-line"></i>Quản lý phim</a>
 					</li>
 					<li>
-						<a href="categories.php"><i class="fas fa-chart-line"></i>Danh mục</a>
+						<a href="categories.php"><i class="fas fa-chart-line"></i>Danh mục & Comment</a>
 					</li>
 					<li>
 						<a href="users.php"><i class="fas fa-chart-line"></i>Quản thành viên</a>
@@ -93,7 +93,7 @@ $select = "SELECT * FROM films";
 						<td>
 							<a href="addpart.php?id=<?=$value['id']?>"><i class="fas fa-plus"></i></a>
 							<a href="edit.php?id=<?=$value['id']?>" target="_blank"><i class="fas fa-edit"></i></a>
-							<a href="delete.php?id=<?=$value['id']?>" onclick="alert('Bạn chắc chắn muốn xóa phim này?');"><i class="far fa-trash-alt"></i></a>
+							<a href="./router/delete.php?id=<?=$value['id']?>" onclick="confirm('Bạn chắc chắn muốn xóa phim này?')==true;"><i class="far fa-trash-alt"></i></a>
 
 						</td>
 					</tr>

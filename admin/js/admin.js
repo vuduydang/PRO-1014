@@ -36,7 +36,7 @@ $(document).ready(function(){
 			formData.append('status', $("select[name*='status']").val());
 
         $.ajax({
-                url: "push-parts.php",
+                url: "./router/push-parts.php",
                 type: "post",
                 dataType: "text",
                 cache: false,
@@ -59,3 +59,4 @@ $(document).ready(function(){
             })
 	});
 })
+

@@ -21,6 +21,7 @@
     $sqlQuery   = "select * from parts  where film_id = '$id'";
     $parts      = executeQuery($sqlQuery, true);
     
+
     $quantity   = count($parts);
     $categories = explode(', ', $films['categories']);
  ?>
