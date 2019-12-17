@@ -8,6 +8,10 @@
         header("location: ./");
     }
 
+    $url    = $_GET['url'];
+    $select = "SELECT * FROM parts WHERE url = '$url'";
+    $infoP  = executeQuery($select);
+
     $sqlQuery   = "SELECT * FROM reviews WHERE film_id = '$id' ORDER BY id DESC";
     $reviews    = executeQuery($sqlQuery, true);
 
@@ -114,9 +118,9 @@
                 <?php foreach ($parts as  $value) : ?>
                     <div class="film-related-item">
                         <div class="film-related-thumbnail">
-                            <a href="xemphim.php?id=<?=$value['film_id']?>">
-                                <video class="video-item-thumbnail" src="./videos/video1.mp4#t=0.1"></video>
-                            </a>
+                        <a href="xemphim.php?url=<?=$value['url']?>">
+                            <video class="video-item-thumbnail" src="./videos/<?=$value['player']?>#t=5"></video>
+                        </a>
                         </div>
                         <div class="film-related-meta">
                             <a href="xemphim.php?id=<?=$value['film_id']?>">
