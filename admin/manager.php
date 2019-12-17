@@ -9,7 +9,7 @@ if (empty($_SESSION[AUTH_YF]) || $session['role_id'] != 1) {
 	header("location:".BASE_URL."/admin/");
 }
 
-$select = "SELECT * FROM films";
+$select = "SELECT * FROM films ORDER BY id DESC";
  $lists = executeQuery($select, true);
 ?>
 <!DOCTYPE html>
@@ -88,7 +88,11 @@ $select = "SELECT * FROM films";
 						<td><?=$value["name"]?> </td>
 						<td><?=$value["categories"]?></td>
 						<td><?=$value["year"]?></td>
-						<td><?=$counts?>/??</td>
+						<td><?=$counts?> /
+							<?php if ($value['status']=='Hoàn thành') {
+								echo $counts;
+							}else{echo "??";} ?>
+						</td>
 						<td><?=$value["views"]?></td>
 						<td>
 							<a href="addpart.php?id=<?=$value['id']?>"><i class="fas fa-plus"></i></a>

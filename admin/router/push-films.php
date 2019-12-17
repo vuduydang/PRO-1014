@@ -2,9 +2,9 @@
 
 // error_reporting(0);
 session_start();
-require_once("../commons/constants.php");
-require_once("../commons/db.php");
-require_once("../commons/helpers.php");
+require_once("../../commons/constants.php");
+require_once("../../commons/db.php");
+require_once("../../commons/helpers.php");
 
 
 
@@ -30,8 +30,8 @@ require_once("../commons/helpers.php");
 
 	$type = ["image/png", "image/jpg", "image/jpeg"];
 	if (in_array($thumbnail['type'], $type) && in_array($banner['type'], $type)) {
-		move_uploaded_file($thumbnail['tmp_name'], "../assets/thumbnails/".$thumbnailName);
-		move_uploaded_file($banner['tmp_name'], "../assets/banners/". $bannerName);
+		move_uploaded_file($thumbnail['tmp_name'], "../../assets/thumbnails/".$thumbnailName);
+		move_uploaded_file($banner['tmp_name'], "../../assets/banners/". $bannerName);
 	}else {
 		echo "<script>alert('Yêu cầu nhập đúng định dạnh ảnh PNG hoặc JPG !')</script>";
 		echo "<script>window.history.back()</script>";
@@ -46,4 +46,4 @@ require_once("../commons/helpers.php");
 	$sqlInsert = "INSERT INTO films VALUES (null,'$name','$series','$year','$categories','$author','$bannerName','$thumbnailName','$content','$status','0','$url','1')"; 
 	executeQuery($sqlInsert);
 
-	header("location: dashboard.php");
+	header("location: ../dashboard.php");

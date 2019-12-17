@@ -25,7 +25,7 @@ if ($film_id == "" || $name == "" || $file_film == "" || $status == "") {
 $type = ["video/mp4", "video/ogg", "video/webm"];
 $nameFilm = time().$file_film['name'];
 if (in_array($file_film['type'], $type)) {
-	move_uploaded_file($file_film['tmp_name'], "../videos/". $nameFilm);
+	move_uploaded_file($file_film['tmp_name'], "../../videos/". $nameFilm);
 }else {
 	echo 'Không đúng định dạng video';
 	die();
