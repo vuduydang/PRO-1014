@@ -70,7 +70,7 @@
          
          data-name="Doraemon" data-episode-min="1" data-episode-max="505">
         <div class="banner">
-            <img src="./assets/banners/<?=$films['banner'] ?>" alt="" style="width: 100%; height: 100%">
+            <img src="./assets/banners/<?=$films['banner'] ?>" alt="" style="width: 100%; height: auto;">
         </div>
                                                 
 

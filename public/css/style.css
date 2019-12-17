@@ -63,7 +63,9 @@ a:hover{
  /*Banner*/
 .banner{
 	width: 98%;
-	height: 480px;
+	height: auto;
+	max-height: 480px;
+	overflow: hidden;
 	margin: 16px auto;
 }
 
@@ -77,12 +79,11 @@ a:hover{
 }
 .info{
 	position: relative;
-	overflow: hidden;
-	width: 540px;
+	width: 46%;
 	height: 410px;
 	float: left;
 }
-.info>h1{margin-bottom: 20px}
+.info>h1{margin-bottom: 20px; max-height: 34px;overflow: hidden;}
 .info>p{line-height: 32px}
 .info a{color: #329}
 .info a:hover{color: blue}
