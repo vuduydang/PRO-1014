@@ -3,7 +3,7 @@
 define('BASE_URL', 'http://localhost/Git/PRO-1014');
 define('AUTH_YF', 'SESSION_AUTH');
 
-error_reporting(0);
+// error_reporting(0);
 
 
 ?>

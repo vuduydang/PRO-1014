@@ -23,10 +23,10 @@ if (empty($_SESSION[AUTH_YF]) || $session['role_id'] != 1) {
 	executeQuery($del2);
 
 
-unlink(BASE_URL."/assets/thumbnails/". $listF['thumbnail']);
-unlink(BASE_URL."/assets/banners/". $listF['banner']);
+unlink("../../assets/thumbnails/". $listF['thumbnail']);
+unlink("../../assets/banners/". $listF['banner']);
 
 foreach ($listP as $value) {
-	unlink(BASE_URL."/videos/". $listP['player']);
+	unlink("../../videos/". $listP['player']);
 }
 header("location: ../manager.php");
