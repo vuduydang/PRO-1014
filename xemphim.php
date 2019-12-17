@@ -6,8 +6,6 @@
     $url    = $_GET['url'];
     $select = "SELECT * FROM parts WHERE url = '$url'";
     $infoP  = executeQuery($select);
-    $sql_view = "UPDATE parts SET views = views + 1 WHERE url = '$url'";
-    $ad_view=executeQuery($sql_view);
 
     $id     = $infoP['film_id'];
     $select = "SELECT * FROM films WHERE id = '$id'";
