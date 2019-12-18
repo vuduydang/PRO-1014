@@ -841,7 +841,7 @@ function filmOnLoad() {
 function createPlayer() {
     player.init = !0, player.filmId = film.id, player.episodeId = film.episodeId, player.cache_.window_width = window.innerWidth;
     var e = createElement("context", "div", "player-context", {
-        innerHTML: "ClipAnime"
+        innerHTML: "YFilms"
     });
     e.style.display = "none", document.body.appendChild(e), player.contextMenu = e;
     for (var t = [{
@@ -4152,7 +4152,7 @@ var container = getElement(".container"),
     comments = [],
     emoji = {},
     player = {
-        el_: getElement("#player"),
+        el_: getElement("#playerYF"),
         init: !0,
         timer: null,
         ios: {},
