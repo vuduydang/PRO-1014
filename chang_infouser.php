@@ -86,7 +86,7 @@ require_once './commons/helpers.php';
                     </div>
                     <div class="navbar-form-group">
                         <label>Nhập mật khẩu</label>
-                        <input type="password" required="" minlength="7" name="password" placeholder="Confim password">
+                        <input type="password" required="" minlength="6" name="password" placeholder="Confim password">
                         <span class="tip"></span>
                     </div>
                 </div>

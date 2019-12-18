@@ -13,8 +13,13 @@ require_once"../commons/helpers.php";
     	// lấy dữ liệu từ csdl bảng users dựa vào email
     	$sqlUserQuery = "SELECT * FROM users WHERE username = '$user'";
     	$user = executeQuery($sqlUserQuery);
-        
+        if ($user['role_id']=='-1') {
+               echo "Tài Khoản đã bị khóa !";
+               die();
+            }
+
     	if($user && password_verify($password, $user['password'])){
+            
     		$_SESSION[AUTH_YF] = [
     			"id" => $user['id'],
     			"username" => $user['username'],

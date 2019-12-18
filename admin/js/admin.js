@@ -1,3 +1,9 @@
+if (typeof(Storage) != "undefined") {
+	        sessionStorage.setItem('login', '1');
+	    } else {
+	        document.write('Trình duyệt của bạn không hỗ trợ local storage');
+	    }
+
 $(document).ready(function(){
 	if (window.File && window.FileReader && window.FileList && window.Blob){
 		$("input[name*='thumbnail']").focusout(function(){

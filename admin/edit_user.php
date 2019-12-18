@@ -82,7 +82,7 @@ if (isset($_GET['id'])) {
                             <div class="col-2">
                                 <br>
                                 <tr>
-                                    <td><input type="radio" name="role_id" value="0" style="float: left;"><p>Khóa</p></td><br>
+                                    <td><input type="radio" name="role_id" value="-1" style="float: left;"><p>Khóa</p></td><br>
                                     <td><input type="radio" name="role_id" value="0" style="float: left;"><p>Thành Viên</p></td><br>
                                     <td><input type="radio" name="role_id" value="1" style="float: left;"><p>Quản trị viên</p></td><br>
                                 </tr>

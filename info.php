@@ -17,6 +17,9 @@
 
     $sqlQuery   = "select * from films  where id = $id";
     $films      = executeQuery($sqlQuery);
+    if (!$films) {
+        header("location: ./");
+    }
 
     $sr         = $films['series'];
     $sqlQuery   = "SELECT * FROM films WHERE series LIKE '%$sr%'";

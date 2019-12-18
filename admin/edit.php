@@ -18,12 +18,9 @@ if (isset($_GET['id'])) {
 
 if (isset($_POST['update'])) {
 	extract($_REQUEST);
-	$insert = "UPDATE films_db SET content = :content WHERE id = :id";
-	$stmt	= $conn->prepare($insert);
-	$stmt->bindParam(':id',$id);
-	$stmt->bindParam(':content',$contents);
-	$stmt->execute();
-	if ($stmt->rowCount()>0) {
+	$insert = "UPDATE films SET content = '$contents' WHERE id = '$id'";
+	$query = executeQuery($insert);
+	if ($query) {
 		echo '<script>close();</script>';
 	}else {
 		echo '<script>alert("Cập Nhật Thất bại")</script>';
