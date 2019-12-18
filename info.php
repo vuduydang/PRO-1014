@@ -21,6 +21,10 @@
         header("location: ./");
     }
 
+    if (!$films) {
+        header('location: ./');
+    }
+
     $sr         = $films['series'];
     $sqlQuery   = "SELECT * FROM films WHERE series LIKE '%$sr%'";
     $series     = executeQuery($sqlQuery, true);
