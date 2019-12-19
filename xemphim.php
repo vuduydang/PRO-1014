@@ -43,24 +43,24 @@
 	<meta name="robots" content="index, follow" />
 	<meta name="language" content="Vietnamese, English" />
 	
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./assets/ico.png" type="image/png" />
 
 	<meta name="description" content="Doraemon Tập 1 - Tập đặc biệt: Ao cá trong phòng học &amp; Cỗ máy thời gian đâu mất rồi &amp; Nhớ lại! ấn tượng ngày đầu tiên" />
 	<meta name="keywords" content="doraemon,doraemon tap 1" />
 
 	<!-- Facebook Metadata /-->
 	<meta property="fb:app_id" content="362811147450608" />
-	<meta property="og:image" content="../i.imacdn.com/vg/2015/06/doraemon-tap-1-1435118450.jpg" />
-	<meta property="og:url" content="doraemon.php" />
+	<!-- <meta property="og:image" content="../i.imacdn.com/vg/2015/06/doraemon-tap-1-1435118450.jpg" /> -->
+	<!-- <meta property="og:url" content="doraemon.php" /> -->
 	<meta property="og:description" content="Doraemon Tập 1 - Tập đặc biệt: Ao cá trong phòng học &amp; Cỗ máy thời gian đâu mất rồi &amp; Nhớ lại! ấn tượng ngày đầu tiên" />
 	<meta property="og:title" content="Doraemon Tập 1 - Tập đặc biệt: Ao cá trong phòng học &amp; Cỗ máy thời gian đâu mất rồi &amp; Nhớ lại! ấn tượng ngày đầu tiên" />
 	<meta property="og:site_name" content="ClipAnime" />
-	<meta property="og:type" content="video.php" />
+	<!-- <meta property="og:type" content="video.php" /> -->
 
 	<!-- Google+ Metadata /-->
 	<meta itemprop="name" content="Doraemon Tập 1 - Tập đặc biệt: Ao cá trong phòng học &amp; Cỗ máy thời gian đâu mất rồi &amp; Nhớ lại! ấn tượng ngày đầu tiên" />
 	<meta itemprop="description" content="Doraemon Tập 1 - Tập đặc biệt: Ao cá trong phòng học &amp; Cỗ máy thời gian đâu mất rồi &amp; Nhớ lại! ấn tượng ngày đầu tiên" />
-	<meta itemprop="image" content="../i.imacdn.com/vg/2015/06/doraemon-tap-1-1435118450.jpg" />
+	<!-- <meta itemprop="image" content="../i.imacdn.com/vg/2015/06/doraemon-tap-1-1435118450.jpg" /> -->
     <link rel="stylesheet" type="text/css" href="./public/css/video-js.css">
 			<!-- Google webmaster tools verification -->
 		<meta name="google-site-verification" content="X6wTJolQe36XUJJeyIxqPMs9YJ0dqJXfDdy1yksGNhA" />
@@ -215,6 +215,7 @@
 
     <!-- push link video -->
     <script type="text/javascript" src="./public/js/main.js"></script>
+    <script type="text/javascript" src="./public/js/control-player.js"></script>
 	<!-- <script type="text/javascript">
         $(document).ready(function(){
             setTimeout(function(){

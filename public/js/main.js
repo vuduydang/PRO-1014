@@ -18,7 +18,7 @@ pauseOff.onclick = function(){
 var videoElement = document.getElementById("my-video");
 var source = document.getElementById("source");
 var videoT = document.getElementsByTagName("video")[0];
-console.log(source.src);
+
 function handleVisibilityChange() {
   setTimeout(function(){
     if (document[hidden]) {
@@ -32,21 +32,37 @@ function handleVisibilityChange() {
 // Warn if the browser doesn't support addEventListener or the Page Visibility API
 if (typeof document.addEventListener === "undefined" || hidden === undefined) {
   console.log("This demo requires a browser, such as Google Chrome or Firefox, that supports the Page Visibility API.");
-} else {
-  // Handle page visibility change   
-  document.addEventListener(visibilityChange, handleVisibilityChange, false);
+} else { 
+  // document.addEventListener(visibilityChange, handleVisibilityChange, false);
 
 }
 
-$.()
-$(document).on('click', 'video', function(){
-  var i = 0;
-        if (this.paused) {
-          clearInterval(time);
-        } else {
-          var time = setInterval(function(){
-            i = "aa";
-          }, 1000);
-        }
-  console.log(i);
-});
+
+// $(document).on('click', 'video#my-video_html5_api', function(){
+//   var i = 0;
+//         if (this.paused) {
+//         } else {
+//           var time = setInterval(function(){
+//             i += 1;
+//             console.log(i);
+//           }, 1000);
+//           clearInterval(time);
+//         }
+// });
+
+//             var i = 0;
+// var video = $('video');
+// console.log(video);
+// if (video.paused) {
+//           clearInterval(time);
+//         } else {
+//           var time = setInterval(function(){
+//             i += 1;
+//             console.log(i);
+//           }, 1000);
+//         }
+
+// var time = setInterval(function(){
+//             i+=1;
+//             console.log(i)
+//           }, 1000);
