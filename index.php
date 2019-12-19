@@ -26,6 +26,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta name="_token" id="token" value="">
     <meta name="_socket" id="socket" value="6001">
+    <script data-ad-client="ca-pub-2698344071802520" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta http-equiv="cache-control" content="max-age=0" />
@@ -150,14 +151,9 @@
           <?php endforeach ?>
             
         </section>
-
-        
       </div>
 
-            <div class="column-right">
-
-        
-
+      <div class="column-right">
         <div class="video-hot">
           <div class="fb-page" data-href="https://www.facebook.com/movieostfilms/" data-tabs="272" data-width="" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/movieostfilms/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/movieostfilms/">Movie + OST Films</a></blockquote></div>
         </div>

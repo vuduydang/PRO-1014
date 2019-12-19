@@ -30,11 +30,12 @@
 
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
-	<title></title>
+	<title><?=$infoP['name']?></title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta name="_token" id="token" value="">
     <meta name="_socket" id="socket" value="6001">
+    <script data-ad-client="ca-pub-2698344071802520" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta http-equiv="cache-control" content="max-age=0" />
@@ -60,7 +61,7 @@
 	<meta itemprop="name" content="Doraemon Tập 1 - Tập đặc biệt: Ao cá trong phòng học &amp; Cỗ máy thời gian đâu mất rồi &amp; Nhớ lại! ấn tượng ngày đầu tiên" />
 	<meta itemprop="description" content="Doraemon Tập 1 - Tập đặc biệt: Ao cá trong phòng học &amp; Cỗ máy thời gian đâu mất rồi &amp; Nhớ lại! ấn tượng ngày đầu tiên" />
 	<meta itemprop="image" content="../i.imacdn.com/vg/2015/06/doraemon-tap-1-1435118450.jpg" />
-
+    <link rel="stylesheet" type="text/css" href="./public/css/video-js.css">
 			<!-- Google webmaster tools verification -->
 		<meta name="google-site-verification" content="X6wTJolQe36XUJJeyIxqPMs9YJ0dqJXfDdy1yksGNhA" />
 		<!-- Bing verification -->
@@ -83,15 +84,16 @@
          
          data-name="Doraemon" data-episode-min="1" data-episode-max="505">
 	<div class="clearfix"></div>
-                                                
-	<script type="text/javascript">
-              var _avlVar = _avlVar || [];
-              _avlVar.push(["685a2cbb1c3448729f4a578af4a29f25","[yo_page_url]","[width]","[height]"]);
-    </script>
         
 
         <div class="player-wrapper">
-            <div id="player" class="player"></div>
+            <div id="player" class="player">
+                <video id="my-video" class="video-js" controls preload="auto" poster="./assets/img/video-bg.jpg" data-setup="{}" style="width: 100%; height: 100%">
+                    <source id="source" src="./videos/<?=$infoP['player']?>" type='video/mp4'>
+                    <p class="vjs-no-js">Bạn phải bật javascript để xem video này, và nâng cấp trình duyệt <a href="http://videojs.com/html5-video-support/" target="_blank">hỗ trợ HTML5 video</a></p>
+                </video>
+                <script type="text/javascript" src="./public/js/video.js"></script>
+            </div>
             
         </div>
 
@@ -126,7 +128,7 @@
 
         <div class="film-info"><hr>
             <div class="film-info-subteam">
-                <div class="film-related-title"><h3><!-- <?=$infoF['name']?> --></h3></div>
+                <div class="film-related-title"><h3><?=$infoP['name']?></h3></div>
             </div>
             <hr>
             <div class="film-info-description">
@@ -205,7 +207,7 @@
 
     <!-- push link video -->
     <script type="text/javascript" src="./public/js/main.js"></script>
-	<script type="text/javascript">
+	<!-- <script type="text/javascript">
         $(document).ready(function(){
             setTimeout(function(){
                 if ("<?=$infoP['player']?>" != "") {
@@ -216,7 +218,7 @@
                 
             }, 1500);
         });
-    </script>
+    </script> -->
       	
 </body>
 

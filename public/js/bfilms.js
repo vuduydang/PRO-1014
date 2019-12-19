@@ -4866,7 +4866,7 @@ window.onpopstate = function(e) {
 });
 
 function setComment(){
-    $(document).keypress(function (e) {
+    $('#id_film').keypress(function (e) {
         if (e.which == 13) {
             var a = $("#id_film").val();
             var i = $("#comment-input").val();
