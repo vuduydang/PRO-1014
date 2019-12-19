@@ -11,8 +11,14 @@ if (typeof document.hidden !== "undefined") {
   visibilityChange = "webkitvisibilitychange";
 }
  
+var pauseOff = document.getElementsByName("ctr-pause")[0];
+pauseOff.onclick = function(){
+  document.getElementById("my-video").setAttribute('id','my-video-off');
+}
 var videoElement = document.getElementById("my-video");
-
+var source = document.getElementById("source");
+var videoT = document.getElementsByTagName("video")[0];
+console.log(source.src);
 function handleVisibilityChange() {
   setTimeout(function(){
     if (document[hidden]) {
@@ -20,7 +26,7 @@ function handleVisibilityChange() {
     } else {
       videoElement.play();
     }
-  }, 2000);
+  }, 1000);
 }
 
 // Warn if the browser doesn't support addEventListener or the Page Visibility API
@@ -31,3 +37,16 @@ if (typeof document.addEventListener === "undefined" || hidden === undefined) {
   document.addEventListener(visibilityChange, handleVisibilityChange, false);
 
 }
+
+$.()
+$(document).on('click', 'video', function(){
+  var i = 0;
+        if (this.paused) {
+          clearInterval(time);
+        } else {
+          var time = setInterval(function(){
+            i = "aa";
+          }, 1000);
+        }
+  console.log(i);
+});

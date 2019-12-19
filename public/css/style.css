@@ -119,3 +119,16 @@ a:hover{
 	overflow: scroll;
 	overflow-x: hidden;
 }
+
+/*controller*/
+.controller{
+	clear: both;
+    display: block;
+    padding: 6px;
+}
+.controller>div{display: inline-block; margin-left: 10px}
+.controller>div .controller-icon{
+	font-size: 14px;
+	cursor: pointer;
+}
+.controller>div .controller-name{font-size: 12px; cursor: default;}

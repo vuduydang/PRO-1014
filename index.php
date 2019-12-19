@@ -24,10 +24,8 @@
     <title>ClipAnime Video & Anime Online</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <script data-ad-client="ca-pub-6378568937093697" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <meta name="_token" id="token" value="">
     <meta name="_socket" id="socket" value="6001">
-    <script data-ad-client="ca-pub-2698344071802520" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta http-equiv="cache-control" content="max-age=0" />

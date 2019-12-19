@@ -96,11 +96,9 @@
             </div>
             
         </div>
-
         <div class="player-meta">
-            
         </div>
-
+        
         
         
         <div class="film-related video" style="margin-top: -16px;">
@@ -122,7 +120,17 @@
                 </div>
             <?php endforeach ?>
         </div>
-                
+        
+        <div class="controller">
+            <div>
+                <span class="controller-icon" name="ctr-adsb" style="color: #370080"><i class="fas fa-shield-alt"></i></span>
+                <span class="controller-name">Ads Block</span>
+            </div>
+            <div>
+                <span class="controller-icon" name="ctr-pause" style="color:green"><i class="fas fa-toggle-off"></i></span>
+                <span class="controller-name">Tự động pause</span>
+            </div>
+        </div>
         
         <!-- INFO -->
 
