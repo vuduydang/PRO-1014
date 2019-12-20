@@ -217,9 +217,7 @@
     <!-- push link video -->
     <script type="text/javascript" src="./public/js/main.js"></script>
     <script type="text/javascript" src="./public/js/control-player.js"></script>
-    <?php if(isset($_SESSION[AUTH_YF])): ?>
-    <script type="text/javascript" src="./public/js/control-player.js"></script>
-    <?php endif ?>
+    
 	<!-- <script type="text/javascript">
         $(document).ready(function(){
             setTimeout(function(){

@@ -403,8 +403,7 @@ function login() {
                     e.innerHTML = "<li>Thông tin đăng nhập không chính xác</li>", e.parentNode.classList.remove("hidden"), loginButton.classList.remove("disabled"), navbarLoading.classList.add("hidden");
                 }else{
                     if (typeof(Storage) !== "undefined") {
-                        // Gán dữ liệu
-                        sessionStorage.setItem('login', '1');
+                        sessionStorage.setItem('login', 'true');
                     } else {
                         alert('Trình duyệt của bạn không hỗ trợ local storage');
                     }
@@ -4137,6 +4136,7 @@ var container = getElement(".container"),
     replyInput = getElement("#reply-input"),
     episodeSelect = getElement(".episode-select input"),
     episodeSelectButton = getElement(".episode-select .play-button"),
+    controller = getElement(".controller"),
     film = {
         id: container.getAttribute("data-id"),
         episodeId: container.getAttribute("data-episode-id"),
@@ -4895,3 +4895,6 @@ function setComment(){
 }
 
 setComment();
+controller.onclick = function() {
+    if (!LoginSuccess) return void showLoginForm();
+}
