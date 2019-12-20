@@ -71,13 +71,11 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 
 
-    
 
     </head>
 <body>
 
     <?php include_once"./_share/header.php"; ?>
-    
 
     <div class="container" data-id="01" data-episode-id="<?=$infoP['id']?>"
          data-type="" data-is-upcoming="" data-copyrighted=""

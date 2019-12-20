@@ -11,10 +11,7 @@ if (typeof document.hidden !== "undefined") {
   visibilityChange = "webkitvisibilitychange";
 }
  
-var pauseOff = document.getElementsByName("ctr-pause")[0];
-pauseOff.onclick = function(){
-  document.getElementById("my-video").setAttribute('id','my-video-off');
-}
+
 var videoElement = document.getElementById("my-video");
 var source = document.getElementById("source");
 var videoT = document.getElementsByTagName("video")[0];

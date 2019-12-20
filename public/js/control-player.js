@@ -1,6 +1,4 @@
 jQuery(document).ready(function($) {
-	
-
 	var source = document.getElementById("source");
 	var videoElement = document.getElementById("my-video");
 
@@ -17,19 +15,36 @@ jQuery(document).ready(function($) {
                 'empty': 'true'
             },
             success : function(msg){
-            	console.log(msg)
-                videoElement.play();
+                // videoElement.play();
+                console.log('success');
             },
             error : function(){
                 console.log('lỗi kết nối !');
             }
         })
 	});
+	var timeLine = setInterval(rehist,1000)
 
-	setInterval(function(){
-		var userId = $('.container').data('id');
-		var partId = $('.container').data('episode-id');
-		$.ajax({
+    //click clear auto pause
+    var status = 'on';
+    $("span[name='ctr-pause']").click(function(){
+       if (status == 'on') {
+            clearInterval(timeLine);
+            status = 'off';
+            $(this).css('color','#333333');
+            $(this).children('i').css('transform','rotate(180deg)');
+       }else{
+            timeLine = setInterval(rehist,1000)
+            status = 'on';
+            $(this).css('color','green');
+            $(this).children('i').css('transform','rotate(0deg)');
+       }
+    })
+     
+    function rehist(){
+        var userId = $('.container').data('id');
+        var partId = $('.container').data('episode-id');
+        $.ajax({
             url: "http://localhost/Git/PRO-1014/router/get-history.php",
             type: "POST",
             dataType: 'text',
@@ -39,13 +54,13 @@ jQuery(document).ready(function($) {
             },
             success : function(msg){
                     if (partId != msg) {
-                    	videoElement.pause();
+                        videoElement.pause();
                     }
             },
             error : function(){
                 console.log('lỗi kết nối !');
             }
         })
-	},1000)
+    }
 
 });
