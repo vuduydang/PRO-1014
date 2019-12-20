@@ -1,3 +1,4 @@
+
 jQuery(document).ready(function($) {
 	var source = document.getElementById("source");
 	var videoElement = document.getElementById("my-video");
@@ -63,4 +64,12 @@ jQuery(document).ready(function($) {
         })
     }
 
+});
+
+jQuery(document).ready(function($) {
+     $("span[name='ctr-adsb']").click(function(){
+        $(this).css('color','green');
+
+        $('.ads').css('display','none');
+     })
 });

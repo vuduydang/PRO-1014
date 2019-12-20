@@ -61,9 +61,6 @@
 
       <div class="column-left">
         <!-- Latest episodes -->
-
-
-
          
 
         <section class="tray episode">
@@ -89,7 +86,7 @@
               <?php endforeach ?>
         </section>
 
-
+        <div id="ads-2" class="ads"></div>
         
         <!-- END latest episodes -->
 
@@ -122,7 +119,7 @@
         <!-- Picked films -->
         
 
-        
+        <div id="ads-2" class="ads"></div>
 
         
         <!-- END ranking films -->
@@ -170,7 +167,9 @@
           </div>
             <?php endforeach ?>
         </div>
+        <div id="ads-1" class="ads"></div>
       </div>
+
       
     </div> <!-- /container -->
 
@@ -181,7 +180,7 @@
     
 </div>    
 
-    
+<script type="text/javascript" src="./public/js/main.js"></script>
 <script type="text/javascript" src="./public/js/bfilms.js"></script>
 
 
@@ -196,6 +195,4 @@
 </script>
             
 </body>
-
-<!-- Mirrored from clipanime.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 07 Nov 2019 07:01:12 GMT -->
 </html>

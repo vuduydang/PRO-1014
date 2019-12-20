@@ -63,3 +63,11 @@ if (typeof document.addEventListener === "undefined" || hidden === undefined) {
 //             i+=1;
 //             console.log(i)
 //           }, 1000);
+
+
+// main
+$(document).ready(function(){
+  $('.ads').each(function(){
+    $(this).append("<img style='width:100%; height:100%' src='https://seongon.com/wp-content/uploads/2019/01/google-ads-image.jpg'>")
+  })
+})

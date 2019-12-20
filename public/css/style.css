@@ -132,3 +132,16 @@ a:hover{
 	cursor: pointer;
 }
 .controller>div .controller-name{font-size: 12px; cursor: default;}
+
+/*ADS*/
+div.ads{
+	width: auto;
+	clear: both;
+    background-color: #9999991c;
+}
+#ads-1{
+	height: 320px;
+}
+#ads-2{
+    height: 120px;
+}

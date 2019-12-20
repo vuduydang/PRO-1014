@@ -117,6 +117,8 @@
                     </div>
                 </div>
             <?php endforeach ?>
+            <hr>
+            <div id="ads-1" class="ads"></div>
         </div>
 
         <div class="clearfix"></div>
@@ -144,7 +146,7 @@
                     <?=$infoF['content']?>
             </div>
             <hr>
-
+            <div id="ads-2" class="ads"></div>
             <!-- BÌNH LUẬN -->
             <div class="player-sidebar-body body-comment hidde">
                 <h3><i class="fas fa-film"></i> BÌNH LUẬN PHIM</h3>
@@ -215,6 +217,9 @@
     <!-- push link video -->
     <script type="text/javascript" src="./public/js/main.js"></script>
     <script type="text/javascript" src="./public/js/control-player.js"></script>
+    <?php if(isset($_SESSION[AUTH_YF])): ?>
+    <script type="text/javascript" src="./public/js/control-player.js"></script>
+    <?php endif ?>
 	<!-- <script type="text/javascript">
         $(document).ready(function(){
             setTimeout(function(){
