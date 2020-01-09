@@ -105,7 +105,7 @@ $lists 	= executeQuery($select, true);
 							<td><?=$ifos['name']?></td>
 							<td><?=$value["content"]?> </td>
 							<td><?=$value["date"]?></td>
-							<td><a href="delete_comment.php?id=<?php echo $value['id'] ?>" onclick="return confirm('Bạn có thực sự muốn xóa không ?')">x</a></td>
+							<td><a href="./router/delete_comment.php?id=<?php echo $value['id'] ?>" onclick="return confirm('Bạn có thực sự muốn xóa không ?')">x</a></td>
 						</tr>
 						<?php } ?>
 					</table>

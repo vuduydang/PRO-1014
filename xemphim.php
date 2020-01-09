@@ -85,6 +85,7 @@
         
 
         <div class="player-wrapper">
+            <div id="playerYF" class="player" style="display: none;"></div>
             <div id="player" class="player">
                 <video id="my-video" class="video-js" controls preload="auto" poster="./assets/img/video-bg.jpg" data-setup="{}" style="width: 100%; height: 100%">
                     <source id="source" src="./videos/<?=$infoP['player']?>" type='video/mp4'>
@@ -118,7 +119,9 @@
                 </div>
             <?php endforeach ?>
             <hr>
-            <div id="ads-1" class="ads"></div>
+            <div id="ads" class="ads-1">
+                <a href="https://vnfbs.com/affiliate?ppu=13048905" target="_blank" style="outline: none"><img src="https://vnfbs.com/upload/promo/banner/db63828d70170fb721bab46631ac63a6.gif?ppu=13048905" width="340" height="320" border="0"></a>
+            </div>
         </div>
 
         <div class="clearfix"></div>
@@ -146,7 +149,9 @@
                     <?=$infoF['content']?>
             </div>
             <hr>
-            <div id="ads-2" class="ads"></div>
+            <div id="ads" class="ads-2">
+                <a href="https://vnfbs.com/promo/100DepositBonus?ppu=13048905" target="_blank" style="outline: none"><img src="https://vnfbs.com/upload/promo/banner/3dc409a3eddaeeb0171cfd7447a2b52a.gif?ppu=13048905" width="880" height="120" border="0"></a>
+            </div>
             <!-- BÌNH LUẬN -->
             <div class="player-sidebar-body body-comment hidde">
                 <h3><i class="fas fa-film"></i> BÌNH LUẬN PHIM</h3>

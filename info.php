@@ -100,10 +100,10 @@
                     </span>    
                 </p>
                 <p>Đạo Diễn: <span><a href="video.php?search-box=<?=$films['author']?>"><?=$films['author']?></a></span></p>
-                <p>Năm xuất bản: <span><?php echo $films['year'] ?></span></p>
-                <p>Tập: <span><?=$quantity?>/??</span></p>
-                <p>Lượt xem: <span><?php echo $films['views'] ?></span></p>
-                <p>Trạng thái <span><?php echo $films['status'] ?></span></p>
+                <p>Năm xuất bản: <a href="#?"><?php echo $films['year'] ?></a></p>
+                <p>Tập: <a href="#?"><?=$quantity?>/??</a></p>
+                <p>Lượt xem: <a href="#?"><?php echo $films['views'] ?></a></p>
+                <p>Trạng thái <a href="#?"><?php echo $films['status'] ?></a></p>
                 <a class="click-view" href="./xemphim.php?url=<?=$parts[0]['url']?>">Xem phim</a>
                 <a class="click-follow" href="#follows">Theo dõi</a>
             </div>
@@ -224,11 +224,11 @@
     		<!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-81129102-2"></script>
         <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+          // window.dataLayer = window.dataLayer || [];
+          // function gtag(){dataLayer.push(arguments);}
+          // gtag('js', new Date());
 
-          gtag('config', 'UA-81129102-2');
+          // gtag('config', 'UA-81129102-2');
         </script>
 	    	
 </body>

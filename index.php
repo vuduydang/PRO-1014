@@ -38,7 +38,7 @@
        <link rel="shortcut icon" href="./assets/ico.png" type="image/png" />
     
       <link rel="stylesheet" href="./public/css/home9039.css?id=0cadef886044cb02b356">
-  
+    <link rel="stylesheet" type="text/css" class="darktheme" href="">
       <link rel="stylesheet" href="./public/css/style.css">
 </head>
 <body>
@@ -86,7 +86,9 @@
               <?php endforeach ?>
         </section>
 
-        <div id="ads-2" class="ads"></div>
+        <div id="ads" class="ads-2">
+          <a href="https://vnfbs.com/promo/trade-100usd?ppu=13048905" target="_blank" style="outline: none"><img src="https://vnfbs.com/upload/promo/banner/064d828d60dc4ab76d937967e0489d06.gif?ppu=13048905" width="880" height="120" border="0"></a>
+        </div>
         
         <!-- END latest episodes -->
 
@@ -117,9 +119,10 @@
         
 
         <!-- Picked films -->
-        
 
-        <div id="ads-2" class="ads"></div>
+        <div id="ads" class="ads-2">
+          <a href="https://vnfbs.com/promo/vpsservice?ppu=13048905" target="_blank" style="outline: none"><img src="https://vnfbs.com/upload/promo/banner/6da30214544ad0fa9b7e2fc071d9da01.gif?ppu=13048905" width="880" height="120" border="0"></a>
+        </div>
 
         
         <!-- END ranking films -->
@@ -167,7 +170,9 @@
           </div>
             <?php endforeach ?>
         </div>
-        <div id="ads-1" class="ads"></div>
+        <div id="ads" class="ads-1">
+          <a href="https://vnfbs.com/promo/partner-bonus?ppu=13048905" target="_blank" style="outline: none"><img src="https://vnfbs.com/upload/promo/banner/595f36786a19d67400335e1d155812d6.gif?ppu=13048905" width="320" height="320" border="0"></a>
+        </div>
       </div>
 
       

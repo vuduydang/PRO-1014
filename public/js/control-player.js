@@ -69,6 +69,7 @@ jQuery(document).ready(function($) {
 
     $("span[name='ctr-adsb']").click(function(){
         $(this).css('color','green');
-        $('.ads').css('display','none');
+        $('.ads-1').css('display','none');
+        $('.ads-2').css('display','none');
     })
 });

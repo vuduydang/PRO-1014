@@ -150,7 +150,9 @@ if (isset($_POST['addloai'])) {
 							<td><?=$counts?></td>
 							<td><?=$date?></td>
 							<td>
-								<a href="detail-Comment.php?id=<?=$value['id']?>"><i class="fas fa-plus"></i></a>
+								<a href="./detail-Comment.php?id=<?=$value['id']?>"><i class="fas fa-info"></i></a>
+								<span>-</span>
+								<a href="./router/delete_comment.php?id=<?=$value['id']?>&empty=clear"onclick="return confirm('Bạn có thực sự muốn xóa không ?')"><i class="fas fa-trash"></i></a>
 							</td>
 						</tr>
 						<?php } ?>

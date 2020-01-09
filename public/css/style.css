@@ -8,7 +8,6 @@
 ul li{list-style: none;}
 a{
 	text-decoration: none;
-	color: #000;
 }
 a:hover{
 	color: #444
@@ -85,9 +84,8 @@ a:hover{
 }
 .info>h1{margin-bottom: 20px; max-height: 34px;overflow: hidden;}
 .info>p{line-height: 32px}
-.info a{color: #329}
 .info a:hover{color: blue}
-.info span{color: #5c00ef}
+.info p{color: #5c00ef}
 .info .click-view, .info .click-follow{
 	display: inline-block;
 	position: absolute;
@@ -134,14 +132,14 @@ a:hover{
 .controller>div .controller-name{font-size: 12px; cursor: default;}
 
 /*ADS*/
-div.ads{
+div#ads{
 	width: auto;
 	clear: both;
     background-color: #9999991c;
 }
-#ads-1{
+.ads-1{
 	height: 320px;
 }
-#ads-2{
+.ads-2{
     height: 120px;
 }

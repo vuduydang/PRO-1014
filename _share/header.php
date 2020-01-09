@@ -18,6 +18,9 @@ session_start();
 </head>
 <?php if (empty($_SESSION[AUTH_YF])) { ?>
 <header>
+    <script type='text/javascript'>
+        sessionStorage.removeItem('login');
+    </script>
     <nav class="navbar">
         <div class="navbar-container">
             <div class="navbar-header">
@@ -205,6 +208,13 @@ $auth_yf = $_SESSION[AUTH_YF];
 
 ?>
 <header>
+    <script type="text/javascript">
+        if (typeof(Storage) != "undefined") {
+            sessionStorage.setItem('login', '1');
+        } else {
+            document.write('Trình duyệt của bạn không hỗ trợ local storage');
+        }
+    </script>
     <nav class="navbar">
         <div class="navbar-container">
             <div class="navbar-header">

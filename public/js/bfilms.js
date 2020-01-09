@@ -3970,7 +3970,7 @@ var navbar = getElement("nav"),
     searchLoading = searchResult.querySelector(".loading"),
     searchNoitem = searchResult.querySelector(".result-noitem"),
     cssTheme = document.createElement("link");
-cssTheme.id = "dark-theme", cssTheme.rel = "stylesheet", cssTheme.type = "text/css", cssTheme.href = "/css/dark.css?v=" + (new Date).getTime(), window.addEventListener("resize", navbarOnload), window.addEventListener("scroll", hideFloatingAction), window.addEventListener("load", navbarOnload);
+cssTheme.id = "dark-theme", cssTheme.rel = "stylesheet", cssTheme.type = "text/css", cssTheme.href = "http://localhost/Git/PRO-1014/public/css/dark.css?v=" + (new Date).getTime(), window.addEventListener("resize", navbarOnload), window.addEventListener("scroll", hideFloatingAction), window.addEventListener("load", navbarOnload);
 for (var i = navbarTab.children.length - 1; i >= 0; i--) clickOnTab(navbarTab.children[i]);
 var navbarLeftBrand = document.createElement("div");
 navbarLeftBrand.className = "navbar-brand", navbarLeftBrand.innerHTML = '<a class="logo" href="/"><img src="./assets/logo.png" alt="YFilms"></a>', navbarLeft.appendChild(navbarLeftBrand), userAvatar.onclick = function() {
@@ -4137,6 +4137,7 @@ var container = getElement(".container"),
     episodeSelect = getElement(".episode-select input"),
     episodeSelectButton = getElement(".episode-select .play-button"),
     controller = getElement(".controller"),
+    darktheme = getElement("#user-theme"),
     film = {
         id: container.getAttribute("data-id"),
         episodeId: container.getAttribute("data-episode-id"),
@@ -4866,7 +4867,7 @@ window.onpopstate = function(e) {
 });
 
 function setComment(){
-    $('#id_film').keypress(function (e) {
+    $('#comment-input').keypress(function (e) {
         if (e.which == 13) {
             var a = $("#id_film").val();
             var i = $("#comment-input").val();
@@ -4887,7 +4888,6 @@ function setComment(){
                 },
                 error : function(){
                     alert('Lỗi kết nối, vui lòng thử lại');
-                    // e.innerHTML = "<li>Lỗi kết nối, vui lòng thử lại</li>", e.parentNode.classList.remove("hidden"), loginButton.classList.remove("disabled"), navbarLoading.classList.add("hidden");
                 }
             })
         }
@@ -4898,3 +4898,6 @@ setComment();
 controller.onclick = function() {
     if (!LoginSuccess) return void showLoginForm();
 }
+// darktheme.onclick = function() {
+//     $('darktheme').attr('href', './public/css/dark.css')
+// }

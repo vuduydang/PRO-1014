@@ -26,7 +26,6 @@ function handleVisibilityChange() {
   }, 1000);
 }
 
-// Warn if the browser doesn't support addEventListener or the Page Visibility API
 if (typeof document.addEventListener === "undefined" || hidden === undefined) {
   console.log("This demo requires a browser, such as Google Chrome or Firefox, that supports the Page Visibility API.");
 } else { 
@@ -66,8 +65,10 @@ if (typeof document.addEventListener === "undefined" || hidden === undefined) {
 
 
 // main
-$(document).ready(function(){
-  $('.ads').each(function(){
-    $(this).append("<img style='width:100%; height:100%' src='https://seongon.com/wp-content/uploads/2019/01/google-ads-image.jpg'>")
-  })
-})
+// $(document).ready(function(){
+//   var ads_2 = `<a href="https://vnfbs.com/promo/trade-100usd?ppu=13048905" target="_blank" style="outline: none"><img src="https://vnfbs.com/upload/promo/banner/064d828d60dc4ab76d937967e0489d06.gif?ppu=13048905" width="880" height="120" border="0"></a>`;
+//   $('.ads-2').each(function(){
+//     $(this).append(ads_2)
+//   })
+// })
+
